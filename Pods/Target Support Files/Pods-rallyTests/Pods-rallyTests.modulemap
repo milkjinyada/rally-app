@@ -1,0 +1,6 @@
+framework module Pods_rallyTests {
+  umbrella header "Pods-rallyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
