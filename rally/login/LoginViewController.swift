@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController,UITextFieldDelegate {
     
+
     @IBOutlet weak var lbStatus: UILabel!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -75,6 +76,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         txtPassword.delegate=self
        
     }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

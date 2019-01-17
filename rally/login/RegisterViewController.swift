@@ -8,17 +8,39 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
     @IBOutlet weak var regisEmail: UITextField!
     @IBOutlet weak var regisPass: UITextField!
     @IBOutlet weak var regisConfrimPass: UITextField!
+    @IBOutlet weak var regisName: UITextField!
+    @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbEmail: UILabel!
     @IBOutlet weak var lbpass: UILabel!
     @IBOutlet weak var lbConfrimpass: UILabel!
    
+    var ref : DatabaseReference! //ไว้สำหรับอ้างอิงไปยัง database ว่าจะเก็บใน DB  ชื่ออะไร
+    
     @IBAction func registerClick(_ sender: Any)
     {
+        if regisName.text!.characters.count == 0
+        {
+            lbName.text = "กรุณากรอกชื่อผู้ใช้"
+            regisEmail.backgroundColor = UIColor(red: 255/255, green: 138/255, blue: 138/255, alpha: 0.5)
+            return
+        }
+        else if regisName.text!.characters.count>10
+        {
+            lbName.text = "กรุณากรอกไม่เกิน 10 ตัวอักษร"
+            regisEmail.backgroundColor = UIColor(red: 255/255, green: 138/255, blue: 138/255, alpha: 0.5)
+            return
+        }
+        else
+        {
+            regisEmail.backgroundColor = UIColor.white
+            lbEmail.text=""
+        }
         if regisEmail.text!.characters.count<6
         {
             lbEmail.text = "อีเมลไม่ถูกต้อง"
@@ -55,7 +77,11 @@ class RegisterViewController: UIViewController {
             
             let email = regisEmail.text
             let password = regisPass.text
+            var status = 0
+            let name = regisName.text
             
+
+            //Auth เอาไว้เช็คว่า email นี้เคยมีคนสมัครรึยัง
             Auth.auth().createUser(withEmail: email!, password: password!, completion: { (firebaseUser, firebaseError) in
                 if let error = firebaseError
                 {
@@ -63,6 +89,14 @@ class RegisterViewController: UIViewController {
                     return
                 }
                 else{
+                    var MemberEmail = email
+                    MemberEmail = replaceSpacialCharacter(inputStr:email!)
+                    self.ref = Database.database().reference(withPath: "Member")
+                    let memberData = member(name: name!, email: email!, status: status)
+                    let memberItemRef = self.ref.child(MemberEmail!) //เอาไว้แยกข้อมูลของแต่ละ user ผ่านอีเมล ถ้าไม่มีตัวนี้ข้อมูลของทุกคนจะรวมกันหมดเลย
+                    memberItemRef.setValue(memberData.toAnyObject())
+                
+                    
                     let alert = UIAlertController(title: "Succeed", message: "Sign in Succeed", preferredStyle: .alert)
                     let resultAlert = UIAlertAction(title: "OK", style: .default, handler: { (alertAction) in
                         self.dismiss(animated: true, completion: nil)
@@ -75,6 +109,21 @@ class RegisterViewController: UIViewController {
                 }
             })
         }
+        
+        //ใน firebase ไม่สามารถใช้อักขระพิเศษได้ในการตั้งชื่อ doc เลยต้องแปลง เพื่อจะใช้ อีเมลเป็นชื่อ doc
+        func replaceSpacialCharacter(inputStr:String) -> String{
+            var outputStr = inputStr
+            
+            outputStr = outputStr.replacingOccurrences(of: ".", with: "dot")
+            outputStr = outputStr.replacingOccurrences(of: "#", with: "sharp")
+            outputStr = outputStr.replacingOccurrences(of: "$", with: "dollar")
+            outputStr = outputStr.replacingOccurrences(of: "[", with: "stasign")
+            outputStr = outputStr.replacingOccurrences(of: "}", with: "endsign")
+            
+            return outputStr
+        }
+        
+
         
     }
     override func viewDidLoad() {
