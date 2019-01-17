@@ -60,11 +60,17 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
                 user.group = dictionary["group"] as? String
                 user.sex = dictionary["sex"] as? String
                 user.join = dictionary["join"] as? String
-                self.users.append(user)
-                DispatchQueue.main.async {
-                    self.Num()
-                    self.tableview.reloadData()
+                user.status = dictionary["status"] as? Int
+            //เช็ค status ว่าเป็น ผู้ใช้หรือ admin ถ้าเป็น ผู้ใช้ ถึงเพิ่มชื่อเข้าไปใน tb
+                if user.status == 0 {
+                    self.users.append(user)
+                    DispatchQueue.main.async {
+                        self.Num()
+                        self.tableview.reloadData()
+                    }
                 }
+                
+                
             }
         })
     }
