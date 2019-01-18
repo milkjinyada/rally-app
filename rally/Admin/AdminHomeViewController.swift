@@ -52,6 +52,11 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 68.0;//Choose your custom row height
+    }
+    
     func fetchUser() {
         Database.database().reference().child("Member").observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: Any]{

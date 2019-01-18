@@ -15,7 +15,7 @@ class tbMemberCell: UITableViewCell {
     @IBOutlet weak var membergroup: UILabel!
     @IBOutlet weak var membersex: UIImageView!
     @IBOutlet weak var memberstatus: UIImageView!
-    
+    @IBOutlet weak var memberimg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
