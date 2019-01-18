@@ -67,9 +67,9 @@ class CreateChanelViewController: UIViewController {
                 
              
                 
-                let AdminhomeVC = self.storyboard?.instantiateViewController(withIdentifier: "adminhome") as! AdminHomeViewController
+                let AdminTabbarVC = self.storyboard?.instantiateViewController(withIdentifier: "admintabbar") as! TabbarViewController
                 
-                self.navigationController?.present(AdminhomeVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
+                self.navigationController?.present(AdminTabbarVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
                 return
             })
         }

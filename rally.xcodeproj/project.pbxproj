@@ -10,6 +10,7 @@
 		3600649A21E12EFE005FD39C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3600649921E12EFE005FD39C /* GoogleService-Info.plist */; };
 		3600649B21E12EFE005FD39C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3600649921E12EFE005FD39C /* GoogleService-Info.plist */; };
 		3600649C21E12EFE005FD39C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3600649921E12EFE005FD39C /* GoogleService-Info.plist */; };
+		362F2F3821F249BC00BCDE96 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362F2F3721F249BC00BCDE96 /* TabbarViewController.swift */; };
 		36513C1A21E14128001652FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36F678E921DDEBAC0009977A /* Info.plist */; };
 		36513C1E21E14256001652FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C1D21E14256001652FF /* LoginViewController.swift */; };
 		36513C2121E14274001652FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C1F21E14273001652FF /* RegisterViewController.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		332D9422826449797B768FA4 /* Pods_rallyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rallyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3600649921E12EFE005FD39C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		362F2F3721F249BC00BCDE96 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		36513C1D21E14256001652FF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		36513C1F21E14273001652FF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		36513C2021E14274001652FF /* ResetpassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetpassView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		36C8028321F0DFDF009F6877 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				362F2F3721F249BC00BCDE96 /* TabbarViewController.swift */,
 				36C8028121F0DFD3009F6877 /* AdminHomeViewController.swift */,
 				36C8028421F0E8BE009F6877 /* tbMemberCell.swift */,
 			);
@@ -546,6 +549,7 @@
 				36C8028521F0E8BE009F6877 /* tbMemberCell.swift in Sources */,
 				36513C1E21E14256001652FF /* LoginViewController.swift in Sources */,
 				36513C2121E14274001652FF /* RegisterViewController.swift in Sources */,
+				362F2F3821F249BC00BCDE96 /* TabbarViewController.swift in Sources */,
 				36C8027F21F0A6B2009F6877 /* SettingsChannelViewController.swift in Sources */,
 				36C8027C21E51CEF009F6877 /* CreateChanelViewController.swift in Sources */,
 				36F678E321DDEBAB0009977A /* rally.xcdatamodeld in Sources */,

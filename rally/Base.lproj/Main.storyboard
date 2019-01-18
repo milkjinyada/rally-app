@@ -625,23 +625,7 @@
             </objects>
             <point key="canvasLocation" x="1789.5999999999999" y="26.600985221674879"/>
         </scene>
-        <!--สรุปคะแนน-->
-        <scene sceneID="vKg-EL-MZN">
-            <objects>
-                <viewController id="BNu-DT-mzA" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="X3f-45-xfd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="zg5-5h-ZBS"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="สรุปคะแนน" image="game-controller" id="Qia-a1-4ts"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X90-Zb-aSI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5161" y="27"/>
-        </scene>
-        <!--แชท-->
+        <!--Chat-->
         <scene sceneID="Ym7-Y3-G7L">
             <objects>
                 <viewController id="twW-uA-wsv" sceneMemberID="viewController">
@@ -651,13 +635,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OJ7-aX-KJ1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="แชท" image="chat-2" id="Gcv-1p-wAm"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="icon-chat" id="Gcv-1p-wAm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCf-Zf-ojk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5964" y="27"/>
+            <point key="canvasLocation" x="5170" y="27"/>
         </scene>
-        <!--ลำดับการแข่งขัน-->
+        <!--Ranking-->
         <scene sceneID="PyO-pG-FnA">
             <objects>
                 <viewController id="JT2-56-Z45" sceneMemberID="viewController">
@@ -667,13 +651,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lNO-Gv-6rT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ลำดับการแข่งขัน" image="award" id="X1S-hy-Mgm"/>
+                    <tabBarItem key="tabBarItem" title="Ranking" image="icon-rank" id="X1S-hy-Mgm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egE-oK-PCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4380" y="27"/>
         </scene>
-        <!--ข้อมูล-->
+        <!--Detail-->
         <scene sceneID="lW2-LA-lnv">
             <objects>
                 <viewController storyboardIdentifier="adminhome" id="HBQ-e5-jEa" customClass="AdminHomeViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
@@ -839,7 +823,7 @@
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="7qO-ce-XTG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ข้อมูล" id="lJi-Mc-Uo8"/>
+                    <tabBarItem key="tabBarItem" title="Detail" image="icon-memberlist" id="lJi-Mc-Uo8"/>
                     <connections>
                         <outlet property="channelname" destination="Yya-3S-P18" id="kXZ-rB-kye"/>
                         <outlet property="groupnum" destination="lDg-7k-sOM" id="dbC-m3-JFz"/>
@@ -853,10 +837,10 @@
             </objects>
             <point key="canvasLocation" x="3629.5999999999999" y="26.600985221674879"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tabbar View Controller-->
         <scene sceneID="KIG-Zp-dP7">
             <objects>
-                <tabBarController id="k0x-Xj-RN0" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="admintabbar" id="k0x-Xj-RN0" customClass="TabbarViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DOV-GZ-AgS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -867,7 +851,6 @@
                     <connections>
                         <segue destination="HBQ-e5-jEa" kind="relationship" relationship="viewControllers" id="dIb-YD-mvP"/>
                         <segue destination="JT2-56-Z45" kind="relationship" relationship="viewControllers" id="lhA-bB-DJk"/>
-                        <segue destination="BNu-DT-mzA" kind="relationship" relationship="viewControllers" id="L9B-Q0-1am"/>
                         <segue destination="twW-uA-wsv" kind="relationship" relationship="viewControllers" id="Wyr-Yh-555"/>
                         <segue destination="D5T-Zk-ihX" kind="relationship" relationship="viewControllers" id="Xyy-Vl-HV2"/>
                     </connections>
@@ -876,7 +859,7 @@
             </objects>
             <point key="canvasLocation" x="2666" y="27"/>
         </scene>
-        <!--ตั่งค่า-->
+        <!--settings-->
         <scene sceneID="u3f-zx-oIv">
             <objects>
                 <viewController storyboardIdentifier="settingschannel" id="D5T-Zk-ihX" customClass="SettingsChannelViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
@@ -995,11 +978,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Elg-lA-8q2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ตั่งค่า" image="settings" id="Wy7-ox-poH"/>
+                    <tabBarItem key="tabBarItem" title="settings" image="icon-settings" id="Wy7-ox-poH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhp-k1-p9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6737" y="27"/>
+            <point key="canvasLocation" x="5924" y="27"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZOV-ie-uQ4">
@@ -1129,6 +1112,10 @@
         <image name="display-1" width="74" height="74"/>
         <image name="finish-line" width="512" height="512"/>
         <image name="game-controller" width="20" height="20"/>
+        <image name="icon-chat" width="48" height="49"/>
+        <image name="icon-memberlist" width="48" height="49"/>
+        <image name="icon-rank" width="48" height="49"/>
+        <image name="icon-settings" width="48" height="49"/>
         <image name="logo" width="125" height="125"/>
         <image name="man" width="512" height="512"/>
         <image name="no" width="120" height="120"/>
