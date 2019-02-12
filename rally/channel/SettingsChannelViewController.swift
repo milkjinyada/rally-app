@@ -10,6 +10,15 @@ import UIKit
 
 class SettingsChannelViewController: UIViewController {
 
+    @IBOutlet weak var missionnum: UILabel!
+    @IBOutlet weak var groupnum: UILabel!
+   
+    @IBAction func MissionStp(_ sender: UIStepper) {
+        missionnum.text = String(Int(sender.value))
+    }
+    @IBAction func GroupStp(_ sender: UIStepper) {
+        groupnum.text = String(Int(sender.value))
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

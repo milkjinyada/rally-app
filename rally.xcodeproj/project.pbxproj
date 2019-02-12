@@ -11,7 +11,7 @@
 		3600649B21E12EFE005FD39C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3600649921E12EFE005FD39C /* GoogleService-Info.plist */; };
 		3600649C21E12EFE005FD39C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3600649921E12EFE005FD39C /* GoogleService-Info.plist */; };
 		362F2F3821F249BC00BCDE96 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362F2F3721F249BC00BCDE96 /* TabbarViewController.swift */; };
-		36513C1A21E14128001652FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36F678E921DDEBAC0009977A /* Info.plist */; };
+		362F2F3921F256BA00BCDE96 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36F678E921DDEBAC0009977A /* Info.plist */; };
 		36513C1E21E14256001652FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C1D21E14256001652FF /* LoginViewController.swift */; };
 		36513C2121E14274001652FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C1F21E14273001652FF /* RegisterViewController.swift */; };
 		36513C2221E14274001652FF /* ResetpassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C2021E14274001652FF /* ResetpassView.swift */; };
@@ -376,7 +376,7 @@
 			files = (
 				36F678E821DDEBAC0009977A /* LaunchScreen.storyboard in Resources */,
 				3600649A21E12EFE005FD39C /* GoogleService-Info.plist in Resources */,
-				36513C1A21E14128001652FF /* Info.plist in Resources */,
+				362F2F3921F256BA00BCDE96 /* Info.plist in Resources */,
 				36F6791321DDF9A80009977A /* DB ADMAN X ULTRALI.TTF in Resources */,
 				36F678E521DDEBAC0009977A /* Assets.xcassets in Resources */,
 				36F6791021DDF9A80009977A /* DB ADMAN X BD.TTF in Resources */,
