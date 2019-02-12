@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P42-ZW-UDq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Le5-6U-uZq">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1207,7 +1207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUp-c8-Lv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="-682"/>
+            <point key="canvasLocation" x="4042" y="-682"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qka-70-pxO">
@@ -1255,7 +1255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHP-Zf-TFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3210" y="-682"/>
+            <point key="canvasLocation" x="4774" y="-682"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Vkd-93-WF6">
@@ -1286,7 +1286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIe-Ss-0Hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3926" y="-682"/>
+            <point key="canvasLocation" x="5490" y="-682"/>
         </scene>
         <!--Detail-->
         <scene sceneID="N2q-8Y-8mU">
@@ -1305,6 +1305,183 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDP-Na-nVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5553" y="27"/>
+        </scene>
+        <!--Question Game View Controller-->
+        <scene sceneID="ISw-aW-fVY">
+            <objects>
+                <viewController id="Le5-6U-uZq" customClass="QuestionGameViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="55h-1n-J5g"/>
+                        <viewControllerLayoutGuide type="bottom" id="2ID-MH-AF3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oBP-0Z-2hI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PTk-QS-W8l">
+                                <rect key="frame" x="46" y="168.33333333333334" width="283" height="475.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which dog is most stubborn?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJ3-Ut-0NA">
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbo-iC-oLb" userLabel="Feedback Field">
+                                        <rect key="frame" x="0.0" y="49.333333333333314" width="283" height="26.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" red="0.0" green="0.57647058819999997" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="9LC-No-dzD">
+                                        <rect key="frame" x="0.0" y="105.66666666666666" width="283" height="209.99999999999997"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty5-3b-RvU" userLabel="Option One">
+                                                <rect key="frame" x="0.0" y="0.0" width="283" height="50"/>
+                                                <color key="backgroundColor" red="0.048471356440000002" green="0.4674099612" blue="0.59009665249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Vl7-Rp-UwV"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Goldendoodle"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="checkAnswer:" destination="Le5-6U-uZq" eventType="touchUpInside" id="3vt-hM-e0R"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLW-qc-fRv" userLabel="Option Two">
+                                                <rect key="frame" x="0.0" y="80" width="283" height="50"/>
+                                                <color key="backgroundColor" red="0.047058823530000002" green="0.47450980390000003" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="vij-9R-rrf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Shiba Inu"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="checkAnswer:" destination="Le5-6U-uZq" eventType="touchUpInside" id="YJK-8P-geb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffe-ph-Dh5" userLabel="Option Three">
+                                                <rect key="frame" x="0.0" y="160" width="283" height="50"/>
+                                                <color key="backgroundColor" red="0.047058823530000002" green="0.47450980390000003" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="MAE-N0-RnE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Shih Tzu"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="checkAnswer:" destination="Le5-6U-uZq" eventType="touchUpInside" id="vTy-Tt-IIP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMn-Zw-LWj" userLabel="Option Four">
+                                        <rect key="frame" x="0.0" y="345.66666666666663" width="283" height="50"/>
+                                        <color key="backgroundColor" red="0.047058823530000002" green="0.47450980390000003" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SPm-Mf-Nua"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Pomeranian"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="checkAnswer:" destination="Le5-6U-uZq" eventType="touchUpInside" id="kli-tb-4aY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbr-BU-3T9" userLabel="Next Question Button">
+                                        <rect key="frame" x="0.0" y="425.66666666666663" width="283" height="50"/>
+                                        <color key="backgroundColor" red="0.001034291461" green="0.57836431259999999" blue="0.53066295389999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="PSN-C8-U88"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Next Question"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="nextQuestionTapped:" destination="Le5-6U-uZq" eventType="touchUpInside" id="I0T-dk-JYb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmJ-gd-8aA">
+                                <rect key="frame" x="21" y="52" width="47" height="47"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="67A-0M-tCw"/>
+                                    <constraint firstAttribute="height" constant="47" id="RkH-k2-Vjg"/>
+                                    <constraint firstAttribute="width" secondItem="PmJ-gd-8aA" secondAttribute="height" multiplier="1:1" id="UBE-Ow-X0L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIMER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTs-zY-dkX">
+                                <rect key="frame" x="20.000000000000004" y="107" width="49.333333333333343" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jTs-zY-dkX" secondAttribute="height" multiplier="49:15" id="4l6-Mo-rUY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.031372549020000001" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PmJ-gd-8aA" firstAttribute="leading" secondItem="oBP-0Z-2hI" secondAttribute="leadingMargin" constant="5" id="1Kn-p6-rzj"/>
+                            <constraint firstItem="PmJ-gd-8aA" firstAttribute="top" secondItem="55h-1n-J5g" secondAttribute="bottom" constant="8" id="1QB-oA-eF3"/>
+                            <constraint firstItem="PTk-QS-W8l" firstAttribute="leading" secondItem="oBP-0Z-2hI" secondAttribute="leadingMargin" constant="30" id="Ac2-l6-H9V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PTk-QS-W8l" secondAttribute="trailing" constant="30" id="Rx4-So-mCa"/>
+                            <constraint firstItem="PmJ-gd-8aA" firstAttribute="leading" secondItem="oBP-0Z-2hI" secondAttribute="leadingMargin" constant="5" id="UTv-eS-k1d"/>
+                            <constraint firstItem="PmJ-gd-8aA" firstAttribute="top" secondItem="55h-1n-J5g" secondAttribute="bottom" constant="8" id="irZ-K5-RMp"/>
+                            <constraint firstItem="jTs-zY-dkX" firstAttribute="leading" secondItem="oBP-0Z-2hI" secondAttribute="leadingMargin" constant="4" id="l97-RD-Wph"/>
+                            <constraint firstItem="jTs-zY-dkX" firstAttribute="top" secondItem="PmJ-gd-8aA" secondAttribute="bottom" constant="8" id="mJb-wU-zd3"/>
+                            <constraint firstItem="PTk-QS-W8l" firstAttribute="centerX" secondItem="oBP-0Z-2hI" secondAttribute="centerX" id="reo-sy-nx3"/>
+                            <constraint firstItem="PTk-QS-W8l" firstAttribute="centerY" secondItem="oBP-0Z-2hI" secondAttribute="centerY" id="zAC-lI-M8j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="346-H5-Hqg"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="feedbackField" destination="dbo-iC-oLb" id="KES-Fy-0M7"/>
+                        <outlet property="firstChoiceButton" destination="Ty5-3b-RvU" id="E7E-w8-HV2"/>
+                        <outlet property="fourthChoiceButton" destination="hMn-Zw-LWj" id="oXH-IS-set"/>
+                        <outlet property="nextQuestionButton" destination="kbr-BU-3T9" id="ULM-Ir-wtt"/>
+                        <outlet property="questionField" destination="MJ3-Ut-0NA" id="F7K-Qt-aQD"/>
+                        <outlet property="secondChoiceButton" destination="KLW-qc-fRv" id="xhe-MV-FrJ"/>
+                        <outlet property="thirdChoiceButton" destination="Ffe-ph-Dh5" id="jQP-7X-6KP"/>
+                        <outlet property="timerLebelQ" destination="PmJ-gd-8aA" id="YAw-bK-9UP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gd4-x7-YOo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2564" y="-682"/>
         </scene>
     </scenes>
     <resources>

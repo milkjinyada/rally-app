@@ -16,6 +16,9 @@
 		36513C2121E14274001652FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C1F21E14273001652FF /* RegisterViewController.swift */; };
 		36513C2221E14274001652FF /* ResetpassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C2021E14274001652FF /* ResetpassView.swift */; };
 		36513C2421E1435E001652FF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C2321E1435E001652FF /* Const.swift */; };
+		368385902212B09100E6A561 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683858E2212B09000E6A561 /* QuestionModel.swift */; };
+		368385912212B09100E6A561 /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683858F2212B09000E6A561 /* ScoreModel.swift */; };
+		368385942212B0E000E6A561 /* QuestionGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368385932212B0E000E6A561 /* QuestionGameViewController.swift */; };
 		36C8027921E51A6E009F6877 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36F678E921DDEBAC0009977A /* Info.plist */; };
 		36C8027A21E51A6F009F6877 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36F678E921DDEBAC0009977A /* Info.plist */; };
 		36C8027C21E51CEF009F6877 /* CreateChanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C8027B21E51CEF009F6877 /* CreateChanelViewController.swift */; };
@@ -73,6 +76,9 @@
 		36513C1F21E14273001652FF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		36513C2021E14274001652FF /* ResetpassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetpassView.swift; sourceTree = "<group>"; };
 		36513C2321E1435E001652FF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		3683858E2212B09000E6A561 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		3683858F2212B09000E6A561 /* ScoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreModel.swift; sourceTree = "<group>"; };
+		368385932212B0E000E6A561 /* QuestionGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionGameViewController.swift; sourceTree = "<group>"; };
 		36C8027B21E51CEF009F6877 /* CreateChanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChanelViewController.swift; sourceTree = "<group>"; };
 		36C8027D21EB566B009F6877 /* rally.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rally.entitlements; sourceTree = "<group>"; };
 		36C8027E21F0A6B2009F6877 /* SettingsChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChannelViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +151,32 @@
 			path = login;
 			sourceTree = "<group>";
 		};
+		368385922212B09900E6A561 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				368385962212B55500E6A561 /* AR */,
+				368385952212B53F00E6A561 /* Question */,
+			);
+			path = game;
+			sourceTree = "<group>";
+		};
+		368385952212B53F00E6A561 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				3683858E2212B09000E6A561 /* QuestionModel.swift */,
+				3683858F2212B09000E6A561 /* ScoreModel.swift */,
+				368385932212B0E000E6A561 /* QuestionGameViewController.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		368385962212B55500E6A561 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
 		36C8028021F0A6C6009F6877 /* channel */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +225,7 @@
 				36C8027D21EB566B009F6877 /* rally.entitlements */,
 				36C8028021F0A6C6009F6877 /* channel */,
 				36513C1C21E14245001652FF /* login */,
+				368385922212B09900E6A561 /* game */,
 				36C8028321F0DFDF009F6877 /* Admin */,
 				36F6790B21DDF98A0009977A /* font */,
 				36F678DA21DDEBAB0009977A /* AppDelegate.swift */,
@@ -546,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				368385912212B09100E6A561 /* ScoreModel.swift in Sources */,
 				36C8028521F0E8BE009F6877 /* tbMemberCell.swift in Sources */,
 				36513C1E21E14256001652FF /* LoginViewController.swift in Sources */,
 				36513C2121E14274001652FF /* RegisterViewController.swift in Sources */,
@@ -553,6 +587,8 @@
 				36C8027F21F0A6B2009F6877 /* SettingsChannelViewController.swift in Sources */,
 				36C8027C21E51CEF009F6877 /* CreateChanelViewController.swift in Sources */,
 				36F678E321DDEBAB0009977A /* rally.xcdatamodeld in Sources */,
+				368385942212B0E000E6A561 /* QuestionGameViewController.swift in Sources */,
+				368385902212B09100E6A561 /* QuestionModel.swift in Sources */,
 				36F678DD21DDEBAB0009977A /* ViewController.swift in Sources */,
 				36F678DB21DDEBAB0009977A /* AppDelegate.swift in Sources */,
 				36C8028721F1053A009F6877 /* User.swift in Sources */,
