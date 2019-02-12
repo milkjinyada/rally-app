@@ -19,6 +19,11 @@
 		368385902212B09100E6A561 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683858E2212B09000E6A561 /* QuestionModel.swift */; };
 		368385912212B09100E6A561 /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683858F2212B09000E6A561 /* ScoreModel.swift */; };
 		368385942212B0E000E6A561 /* QuestionGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368385932212B0E000E6A561 /* QuestionGameViewController.swift */; };
+		368385982212B5DF00E6A561 /* ARHacheGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368385972212B5DF00E6A561 /* ARHacheGameViewController.swift */; };
+		3683859A2212B63200E6A561 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368385992212B63200E6A561 /* HomeViewController.swift */; };
+		3683859C2212B78000E6A561 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 3683859B2212B78000E6A561 /* Sounds */; };
+		3683859E2212B7E500E6A561 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3683859D2212B7E500E6A561 /* art.scnassets */; };
+		368385A02212B93100E6A561 /* Particles in Resources */ = {isa = PBXBuildFile; fileRef = 3683859F2212B93100E6A561 /* Particles */; };
 		36C8027921E51A6E009F6877 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36F678E921DDEBAC0009977A /* Info.plist */; };
 		36C8027A21E51A6F009F6877 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36F678E921DDEBAC0009977A /* Info.plist */; };
 		36C8027C21E51CEF009F6877 /* CreateChanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C8027B21E51CEF009F6877 /* CreateChanelViewController.swift */; };
@@ -79,6 +84,11 @@
 		3683858E2212B09000E6A561 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		3683858F2212B09000E6A561 /* ScoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreModel.swift; sourceTree = "<group>"; };
 		368385932212B0E000E6A561 /* QuestionGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionGameViewController.swift; sourceTree = "<group>"; };
+		368385972212B5DF00E6A561 /* ARHacheGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARHacheGameViewController.swift; sourceTree = "<group>"; };
+		368385992212B63200E6A561 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3683859B2212B78000E6A561 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		3683859D2212B7E500E6A561 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		3683859F2212B93100E6A561 /* Particles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Particles; sourceTree = "<group>"; };
 		36C8027B21E51CEF009F6877 /* CreateChanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChanelViewController.swift; sourceTree = "<group>"; };
 		36C8027D21EB566B009F6877 /* rally.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rally.entitlements; sourceTree = "<group>"; };
 		36C8027E21F0A6B2009F6877 /* SettingsChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChannelViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +183,10 @@
 		368385962212B55500E6A561 /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				3683859F2212B93100E6A561 /* Particles */,
+				3683859B2212B78000E6A561 /* Sounds */,
+				368385972212B5DF00E6A561 /* ARHacheGameViewController.swift */,
+				368385992212B63200E6A561 /* HomeViewController.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -232,6 +246,7 @@
 				36F678DC21DDEBAB0009977A /* ViewController.swift */,
 				36513C2321E1435E001652FF /* Const.swift */,
 				36F678DE21DDEBAB0009977A /* Main.storyboard */,
+				3683859D2212B7E500E6A561 /* art.scnassets */,
 				36F678E421DDEBAC0009977A /* Assets.xcassets */,
 				36F678E621DDEBAC0009977A /* LaunchScreen.storyboard */,
 				36F678E921DDEBAC0009977A /* Info.plist */,
@@ -407,6 +422,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				368385A02212B93100E6A561 /* Particles in Resources */,
+				3683859C2212B78000E6A561 /* Sounds in Resources */,
+				3683859E2212B7E500E6A561 /* art.scnassets in Resources */,
 				36F678E821DDEBAC0009977A /* LaunchScreen.storyboard in Resources */,
 				3600649A21E12EFE005FD39C /* GoogleService-Info.plist in Resources */,
 				362F2F3921F256BA00BCDE96 /* Info.plist in Resources */,
@@ -582,7 +600,9 @@
 				368385912212B09100E6A561 /* ScoreModel.swift in Sources */,
 				36C8028521F0E8BE009F6877 /* tbMemberCell.swift in Sources */,
 				36513C1E21E14256001652FF /* LoginViewController.swift in Sources */,
+				368385982212B5DF00E6A561 /* ARHacheGameViewController.swift in Sources */,
 				36513C2121E14274001652FF /* RegisterViewController.swift in Sources */,
+				3683859A2212B63200E6A561 /* HomeViewController.swift in Sources */,
 				362F2F3821F249BC00BCDE96 /* TabbarViewController.swift in Sources */,
 				36C8027F21F0A6B2009F6877 /* SettingsChannelViewController.swift in Sources */,
 				36C8027C21E51CEF009F6877 /* CreateChanelViewController.swift in Sources */,
