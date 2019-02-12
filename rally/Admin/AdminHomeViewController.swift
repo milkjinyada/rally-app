@@ -34,13 +34,16 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     var num = [Int]()
     var userEmail:String! = "" //ไว้เก็บบัญชีผู้ใช้
     
-    //ดึงข้อมูลจาก firebase
-    var databaseRef:DatabaseReference! //กำหนด ref
+//ดึงข้อมูลจาก firebase
+    
+    //กำหนด ref
+    var databaseRef:DatabaseReference!
+    var channeldataRef:DatabaseReference!
     private var _databaseHandle:DatabaseHandle! = nil //กำหนด  handle
     
     func databaseInit()
     {
-        databaseRef = Database.database().reference().child("Member").child(userEmail!) //ดึง ref
+        databaseRef = Database.database().reference().child("Member").child(userEmail!)
         databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let snapshot = snapshot.value as? [String:AnyObject]
@@ -55,10 +58,65 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
                 {
                     strSenderDisplayName = ""
                 }
+               
+                var strSenderChannelName = ""
+                if let strTemp = snapshot["channelname"] as? String
+                {
+                    strSenderChannelName = strTemp
+                }
+                else
+                {
+                    strSenderChannelName = ""
+                }
                 
                 self.username.text = strSenderDisplayName
+                self.channelname.text = strSenderChannelName
             }
         })
+        
+        channeldataRef = Database.database().reference().child("Member").child("\(self.userEmail!)/channeldata")
+        channeldataRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let snapshot = snapshot.value as? [String:AnyObject]
+            {
+                //เอาค่าจาก firbase มาใส่ไว้ในตัวแปร
+                var strSenderMission = ""
+                if let strTemp = snapshot["Mission"] as? String
+                {
+                    strSenderMission = strTemp
+                }
+                else
+                {
+                    strSenderMission = ""
+                }
+                
+                var strSenderTime = ""
+                if let strTemp = snapshot["Time"] as? String
+                {
+                    strSenderTime = strTemp
+                }
+                else
+                {
+                    strSenderTime = ""
+                }
+                var strSenderGroup = ""
+                if let strTemp = snapshot["Group"] as? String
+                {
+                    strSenderGroup = strTemp
+                }
+                else
+                {
+                    strSenderGroup = ""
+                }
+                
+                self.missionnum.text = strSenderMission
+                self.groupnum.text = strSenderGroup
+                self.timepermission.text = strSenderTime
+                
+            }
+        })
+        
+        
     }
     
     //เวลาออกให้ เคลีย database handle ออกสะ
@@ -106,6 +164,7 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
         return 68.0;//Choose your custom row height
     }
     
+//ดึงข้อมูล Member มาใส่ใน tableview
     func fetchUser() {
         Database.database().reference().child("Member").observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: Any]{
@@ -115,7 +174,8 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
                 user.sex = dictionary["sex"] as? String
                 user.join = dictionary["join"] as? String
                 user.status = dictionary["status"] as? Int
-            //เช็ค status ว่าเป็น ผู้ใช้หรือ admin ถ้าเป็น ผู้ใช้ ถึงเพิ่มชื่อเข้าไปใน tb
+           
+                //เช็ค status ว่าเป็น ผู้ใช้หรือ admin ถ้าเป็น ผู้ใช้ ถึงเพิ่มชื่อเข้าไปใน tb
                 if user.status == 0 {
                     self.users.append(user)
                     DispatchQueue.main.async {
