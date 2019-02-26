@@ -81,13 +81,15 @@ class RegisterViewController: UIViewController {
             let name = regisName.text
             
 
-            //Auth เอาไว้เช็คว่า email นี้เคยมีคนสมัครรึยัง
+//Auth เอาไว้เช็คว่า email นี้เคยมีคนสมัครรึยัง
             Auth.auth().createUser(withEmail: email!, password: password!, completion: { (firebaseUser, firebaseError) in
+            //ถ้าเคยสมัครแล้วให้ขึ้นเตือน
                 if let error = firebaseError
                 {
                     Const().ShowAlert(title: "Error", message: error.localizedDescription, viewContronller: self)
                     return
                 }
+            //ถ้ายัง ก็ทำการสมัครและเก็บขึ้น DB
                 else{
                     var MemberEmail = email
                     MemberEmail = replaceSpacialCharacter(inputStr:email!)

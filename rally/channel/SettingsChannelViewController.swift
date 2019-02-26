@@ -12,7 +12,7 @@ import Firebase
 class SettingsChannelViewController: UIViewController {
     
     var userEmail:String! = ""
-    var MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
+   
     var mission : String = ""
     var time : String = ""
     var group : String = ""
@@ -55,6 +55,8 @@ class SettingsChannelViewController: UIViewController {
     }
 
 //เก็บ Rally Setting ขึ้น firebase
+    
+    var MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
     @IBAction func SettingChannelbtn(_ sender: Any) {
         let SettingData: Dictionary<String,AnyObject> =
             [
@@ -151,6 +153,16 @@ class SettingsChannelViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-
+    //ส่งข้อมูลผ่านสาย segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        //ส่งจำนวน Mission ที่ผู้ดูแลเลือกไป เพื่อเลือกเกมในแต่ละ Mission
+        if segue.identifier == "gamesetting" {
+            
+            let GamesettingView = segue.destination as! GameSettingViewController
+            GamesettingView.game = Int(mission)!
+        }
+    }
+    
 }

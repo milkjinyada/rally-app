@@ -184,7 +184,6 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
                     }
                 }
                 
-                
             }
         })
     }
@@ -198,11 +197,9 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
         
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUser()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {

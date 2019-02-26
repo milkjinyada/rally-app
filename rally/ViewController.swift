@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var UserName: UILabel!
    
     var userEmail:String! = "" //ไว้เก็บบัญชีผู้ใช้
+    var status:Int!
     
 //ดึงข้อมูลจาก firebase
     var databaseRef:DatabaseReference! //กำหนด ref
@@ -38,6 +39,18 @@ class ViewController: UIViewController {
                 }
                 
                 self.UserName.text = strSenderDisplayName
+               
+                var strSenderStatus = ""
+                if let strTemp = snapshot["status"] as? String
+                {
+                    strSenderStatus = strTemp
+                }
+                else
+                {
+                    strSenderStatus = ""
+                }
+                
+                self.status = Int(strSenderStatus)
             }
         })
     }
@@ -71,7 +84,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
         //เช็คว่ามีการ login ไหมถ้าไม่มีในไปเริ่มที่หน้า login ก่อน
         if (Auth.auth().currentUser == nil) //ไม่มีการ login
         {
@@ -82,6 +95,15 @@ class ViewController: UIViewController {
             print(Auth.auth().currentUser)
             
         }
+        // ถ้า Login แล้ว จะเช็ค Status ว่าเป็นผู้ดูแลหรือเป็นผู้ใช้
+//        else
+//        {
+//            if status == 1{
+//                //ให้ ไปเริ่มที่หน้า  login
+//                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginID") as! LoginViewController
+//                self.navigationController?.present(loginVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
+//            }
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -14,4 +14,9 @@ class User: NSObject {
     var sex:String?
     var join:String?
     var status:Int?
+    var channalname:String?
+    var groupnum:Int?
+    var grouping:String?
+    var mission:Int?
+    var time:Int?
 }
