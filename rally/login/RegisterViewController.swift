@@ -19,7 +19,26 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var lbEmail: UILabel!
     @IBOutlet weak var lbpass: UILabel!
     @IBOutlet weak var lbConfrimpass: UILabel!
-   
+    @IBOutlet weak var lbSex: UILabel!
+    
+    var sex:String = ""
+    var c:Bool = false
+    @IBOutlet weak var SexSegment: UISegmentedControl!
+    @IBAction func SEXsegment(_ sender: UISegmentedControl) {
+        
+        switch SexSegment.selectedSegmentIndex
+        {
+        case 0:
+            sex = "man"
+        case 1:
+            sex = "woman"
+        case UISegmentedControl.noSegment:
+            c = true
+        default:
+            break
+        }
+        
+    }
     var ref : DatabaseReference! //ไว้สำหรับอ้างอิงไปยัง database ว่าจะเก็บใน DB  ชื่ออะไร
     
     @IBAction func registerClick(_ sender: Any)
@@ -74,10 +93,17 @@ class RegisterViewController: UIViewController {
         {
             regisConfrimPass.backgroundColor = UIColor.white
             lbConfrimpass.text=""
-            
+        }
+        if c == false
+        {
+            lbSex.text = "กรุณาเลือกเพศ"
+        }
+        else
+        {
             let email = regisEmail.text
             let password = regisPass.text
             var status = 0
+            var join = "no"
             let name = regisName.text
             
 
@@ -94,7 +120,7 @@ class RegisterViewController: UIViewController {
                     var MemberEmail = email
                     MemberEmail = replaceSpacialCharacter(inputStr:email!)
                     self.ref = Database.database().reference(withPath: "Member")
-                    let memberData = member(name: name!, email: email!, status: status)
+                    let memberData = member(name: name!, email: email!, status: status, join:join, sex:self.sex)
                     let memberItemRef = self.ref.child(MemberEmail!) //เอาไว้แยกข้อมูลของแต่ละ user ผ่านอีเมล ถ้าไม่มีตัวนี้ข้อมูลของทุกคนจะรวมกันหมดเลย
                     memberItemRef.setValue(memberData.toAnyObject())
                 

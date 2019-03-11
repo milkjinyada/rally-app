@@ -53,14 +53,19 @@ class member{
     var name: String!
     var email: String!
     var status: Int = 0
+    var join: String!
+    var sex:String!
     let key: String
     var conpleted: Bool!
     let ref: DatabaseReference!
-    init(name: String, email: String, status:Int, key: String = "") {
+    init(name: String, email: String, status:Int, join: String, sex:String, key: String = "") {
         self.key = key
         self.name = name
         self.email = email
         self.status = status
+        self.join = join
+        self.sex = sex
+        
         self.ref = nil
     }
     //ไว้ใช้เวลาอยากจะเรียกข้อมูลจาก firebase มาโชว์ว่าอยากจะโชว์อะไรบ้าง
@@ -70,6 +75,8 @@ class member{
         name = snapshotValue["name"] as! String
         email = snapshotValue["email"] as! String
         status = snapshotValue["status"] as! Int
+        join = snapshotValue["join"] as! String
+        sex = snapshotValue["sex"] as! String
         ref = snapshot.ref
     }
     //อยากจะเอาข้อมูลอะไรไปเก็บใน firebase ก็ใช้ตัวนี้
@@ -77,7 +84,9 @@ class member{
         return [
             "name": name,
             "email": email,
-            "status": status
+            "status": status,
+            "join": join,
+            "sex": sex
         ]
     }
 }

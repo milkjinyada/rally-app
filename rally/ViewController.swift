@@ -40,14 +40,14 @@ class ViewController: UIViewController {
                 
                 self.UserName.text = strSenderDisplayName
                
-                var strSenderStatus = ""
-                if let strTemp = snapshot["status"] as? String
+                var strSenderStatus = 0
+                if let strTemp = snapshot["status"] as? Int
                 {
                     strSenderStatus = strTemp
                 }
                 else
                 {
-                    strSenderStatus = ""
+                    strSenderStatus = 0
                 }
                 
                 self.status = Int(strSenderStatus)
@@ -84,6 +84,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getUserEmail()
        
         //เช็คว่ามีการ login ไหมถ้าไม่มีในไปเริ่มที่หน้า login ก่อน
         if (Auth.auth().currentUser == nil) //ไม่มีการ login
@@ -106,10 +108,7 @@ class ViewController: UIViewController {
 //        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        getUserEmail()
-    }
-    
+
     func getUserEmail()
     {
         let AuthEmail = Auth.auth().currentUser?.email //ดึง email ที่ login  อยู่ปัจจุบัน

@@ -51,10 +51,20 @@ class CreateChanelViewController: UIViewController {
 
                 
             //ถ้าชื่อห้องไม่ซ้ำ เก็บชื่อห้องไปยัง DB
+                
+                let ChannelData: Dictionary<String,AnyObject> = //จะใส่อะไรไปใน firebase ให้ใส่ในนี้ เป็นแบบ dic
+                    [
+                        "User" : self.username as AnyObject,
+                        "ChannelName": channelName as AnyObject
+                ]
+                
+                let ChannelItemRef = self.ChannelRef.child(channelName!) //เอาไว้แยกข้อมูลของแต่ละ user ผ่านอีเมล ถ้าไม่มีตัวนี้ข้อมูลของทุกคนจะรวมกันหมดเลย
+                ChannelItemRef.setValue(ChannelData)//ส่งขึ้น firebase
+
                             
                 let MemberItemRef = self.MemberRef.child("\(self.username)/channelname")
                 MemberItemRef.setValue(channelName)//ส่งขึ้น firebase
-                
+
             //เปลื่ยน status user
                 let StatusItemRef = self.MemberRef.child("\(self.username)/status")
                 StatusItemRef.setValue(1)//ส่งขึ้น firebase

@@ -117,12 +117,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5x-Gc-egp">
-                                <rect key="frame" x="90" y="590" width="195" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5x-Gc-egp">
+                                <rect key="frame" x="-1" y="657" width="156" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="24"/>
-                                <state key="normal" title="Register">
+                                <state key="normal" image="sign up btn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -130,51 +128,44 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ใช้ในการเข้าสู่ระบบ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P4I-jY-llj">
-                                <rect key="frame" x="64" y="379" width="247" height="30"/>
+                                <rect key="frame" x="65" y="332" width="247" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="อีเมล" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efu-z3-oib">
-                                <rect key="frame" x="64" y="349" width="32" height="22"/>
+                                <rect key="frame" x="65" y="302" width="32" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whV-7g-g7D">
-                                <rect key="frame" x="64" y="449" width="247" height="30"/>
+                                <rect key="frame" x="65" y="402" width="247" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="รหัสผ่าน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fke-3V-5CU">
-                                <rect key="frame" x="64" y="419" width="53" height="22"/>
+                                <rect key="frame" x="65" y="372" width="53" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jau-X1-LdG">
-                                <rect key="frame" x="64" y="519" width="247" height="30"/>
+                                <rect key="frame" x="65" y="472" width="247" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ยืนยันรหัสผ่าน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yta-vs-twe">
-                                <rect key="frame" x="64" y="489" width="88" height="22"/>
+                                <rect key="frame" x="65" y="442" width="88" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ลงทะเบียน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNY-xI-Upi">
-                                <rect key="frame" x="151" y="173" width="72" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -190,55 +181,91 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-LX-UYY">
-                                <rect key="frame" x="125" y="420" width="186" height="19"/>
+                                <rect key="frame" x="126" y="373" width="186" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxo-pb-WBc">
-                                <rect key="frame" x="160" y="491" width="151" height="19"/>
+                                <rect key="frame" x="161" y="444" width="151" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHz-oJ-5Hn">
-                                <rect key="frame" x="110" y="351" width="201" height="19"/>
+                                <rect key="frame" x="111" y="304" width="201" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ชื่อที่ต้องการใช้ใน App" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byv-9i-caX">
-                                <rect key="frame" x="64" y="309" width="247" height="30"/>
+                                <rect key="frame" x="65" y="262" width="247" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5x-cg-WgT">
-                                <rect key="frame" x="64" y="279" width="63" height="22"/>
+                                <rect key="frame" x="65" y="232" width="63" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ono-wA-twd">
-                                <rect key="frame" x="142" y="281" width="201" height="19"/>
+                                <rect key="frame" x="143" y="234" width="201" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLR-TM-BuY">
+                                <rect key="frame" x="27" y="132" width="322" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="35"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avb-cU-szy">
+                                <rect key="frame" x="96" y="520" width="151" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="เพศ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0T0-En-nhm">
+                                <rect key="frame" x="64" y="518" width="24" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YTV-c0-irJ">
+                                <rect key="frame" x="64" y="548" width="247" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Man"/>
+                                    <segment title="Woman"/>
+                                </segments>
+                                <color key="tintColor" red="0.79607843140000001" green="0.62352941179999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="GroupingSegment:" destination="D5T-Zk-ihX" eventType="valueChanged" id="hcD-8m-Uxn"/>
+                                    <action selector="SEXsegment:" destination="f3L-7W-1gG" eventType="valueChanged" id="yoh-Uk-s5g"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TDj-yM-ZpK"/>
                     </view>
                     <connections>
+                        <outlet property="SexSegment" destination="YTV-c0-irJ" id="QSl-HF-Yal"/>
                         <outlet property="lbConfrimpass" destination="nxo-pb-WBc" id="5l7-yb-22G"/>
                         <outlet property="lbEmail" destination="tHz-oJ-5Hn" id="lXI-6j-bAt"/>
                         <outlet property="lbName" destination="Ono-wA-twd" id="74f-a7-YpK"/>
+                        <outlet property="lbSex" destination="Avb-cU-szy" id="s6h-at-niI"/>
                         <outlet property="lbpass" destination="dFq-LX-UYY" id="Q0l-fK-AeG"/>
                         <outlet property="regisConfrimPass" destination="Jau-X1-LdG" id="e8g-5d-Abh"/>
                         <outlet property="regisEmail" destination="P4I-jY-llj" id="1eu-p7-8h1"/>
@@ -248,12 +275,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTp-Jq-geC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="-746"/>
+            <point key="canvasLocation" x="53.600000000000001" y="-746.30541871921184"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fristview" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,7 +328,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EER-Py-7F3" kind="show" id="cGs-oM-UVy"/>
+                                    <segue destination="dYm-42-14v" kind="show" id="cJt-Vy-FSe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -344,13 +371,6 @@
                                     <segue destination="huv-DK-VYE" kind="show" id="Sut-SG-CTW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="เข้าร่วมกิจกรรม" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdJ-97-GD2">
-                                <rect key="frame" x="130" y="336" width="115" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dea-9s-ewi">
                                 <rect key="frame" x="16" y="44" width="61" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -358,10 +378,14 @@
                                 <state key="normal" title="&lt; back">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <connections>
-                                    <segue destination="P42-ZW-UDq" kind="show" id="Xo3-wB-kl5"/>
-                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Join Channel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olh-pu-Ll5">
+                                <rect key="frame" x="37" y="147" width="322" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="35"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YyG-XU-KVU"/>
@@ -369,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9L-X7-qJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53.600000000000001" y="761.82266009852219"/>
+            <point key="canvasLocation" x="-722" y="776"/>
         </scene>
         <!--แชท-->
         <scene sceneID="lRQ-5c-4bh">
@@ -385,12 +409,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tv3-64-1NK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="1578"/>
+            <point key="canvasLocation" x="3798" y="776"/>
         </scene>
         <!--Game-->
         <scene sceneID="6EM-GM-g65">
             <objects>
-                <viewController id="2VI-rO-2cf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userhomeview" id="2VI-rO-2cf" customClass="UserHomeViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iwd-ri-8Z5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -477,7 +501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXJ-PF-HQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2457" y="1578"/>
+            <point key="canvasLocation" x="1574" y="776"/>
         </scene>
         <!--การแจ้งเตือน-->
         <scene sceneID="Xh0-Gy-BWA">
@@ -493,7 +517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iu5-7V-PO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3297" y="1578"/>
+            <point key="canvasLocation" x="3066" y="776"/>
         </scene>
         <!--ตั้งค่า-->
         <scene sceneID="sb1-aI-W8y">
@@ -511,12 +535,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ks-XO-lJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4095" y="1578"/>
+            <point key="canvasLocation" x="4527" y="776"/>
         </scene>
         <!--ลำดับคะแนน-->
         <scene sceneID="XE0-5D-fDb">
             <objects>
-                <viewController id="s1l-Rg-a4I" customClass="ViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="s1l-Rg-a4I" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wkn-2g-AID">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -527,12 +551,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZ1-g2-P5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="1578"/>
+            <point key="canvasLocation" x="2322" y="776"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--User Tabber View Controller-->
         <scene sceneID="HNP-q4-T75">
             <objects>
-                <tabBarController useStoryboardIdentifierAsRestorationIdentifier="YES" id="huv-DK-VYE" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="usertabber" useStoryboardIdentifierAsRestorationIdentifier="YES" id="huv-DK-VYE" customClass="UserTabberViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="kLI-Mk-2Z6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -540,16 +564,16 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="s1l-Rg-a4I" kind="relationship" relationship="viewControllers" id="u2i-uU-JK2"/>
-                        <segue destination="gIl-sF-MD7" kind="relationship" relationship="viewControllers" id="bgd-5t-bBo"/>
                         <segue destination="2VI-rO-2cf" kind="relationship" relationship="viewControllers" id="Zp5-yI-iS5"/>
+                        <segue destination="s1l-Rg-a4I" kind="relationship" relationship="viewControllers" id="u2i-uU-JK2"/>
                         <segue destination="zcf-sp-Ytd" kind="relationship" relationship="viewControllers" id="axM-rb-kAV"/>
+                        <segue destination="gIl-sF-MD7" kind="relationship" relationship="viewControllers" id="bgd-5t-bBo"/>
                         <segue destination="mcL-zJ-Ehu" kind="relationship" relationship="viewControllers" id="uFD-d1-MuJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HL7-45-rfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="1578"/>
+            <point key="canvasLocation" x="838" y="776"/>
         </scene>
         <!--Create Chanel View Controller-->
         <scene sceneID="db5-S9-WsY">
@@ -639,7 +663,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCf-Zf-ojk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8806" y="27"/>
+            <point key="canvasLocation" x="8476" y="27"/>
         </scene>
         <!--Ranking-->
         <scene sceneID="PyO-pG-FnA">
@@ -810,7 +834,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egE-oK-PCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8015" y="27"/>
+            <point key="canvasLocation" x="7719" y="27"/>
         </scene>
         <!--Admin Home View Controller-->
         <scene sceneID="lW2-LA-lnv">
@@ -1001,7 +1025,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZ9-vC-0bH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7266" y="27"/>
+            <point key="canvasLocation" x="6858" y="27"/>
         </scene>
         <!--Choose Game View Controller-->
         <scene sceneID="0Dh-BN-q1W">
@@ -1093,7 +1117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HL-jf-lra" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4383" y="27"/>
+            <point key="canvasLocation" x="4242" y="27"/>
         </scene>
         <!--Game Setting View Controller-->
         <scene sceneID="Pq2-HO-KQ5">
@@ -1243,7 +1267,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRY-gh-wLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5767" y="27"/>
+            <point key="canvasLocation" x="5178" y="27"/>
         </scene>
         <!--settings-->
         <scene sceneID="u3f-zx-oIv">
@@ -1470,7 +1494,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDP-Na-nVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6550" y="27"/>
+            <point key="canvasLocation" x="5980" y="27"/>
         </scene>
         <!--Question Game View Controller-->
         <scene sceneID="ISw-aW-fVY">
@@ -1647,7 +1671,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gd4-x7-YOo" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2457" y="2317"/>
+            <point key="canvasLocation" x="-722" y="1544"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="aUR-b5-b08">
@@ -1694,7 +1718,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mhb-ve-7es" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2457" y="3013"/>
+            <point key="canvasLocation" x="-722" y="2240"/>
         </scene>
         <!--Hache Game View Controller-->
         <scene sceneID="drZ-KU-2XF">
@@ -1803,7 +1827,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDX-Qu-8i1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3260" y="3013"/>
+            <point key="canvasLocation" x="81" y="2240"/>
+        </scene>
+        <!--Scanqr-->
+        <scene sceneID="DRJ-EF-88Z">
+            <objects>
+                <viewController id="dYm-42-14v" customClass="Scanqr" customModule="QR_Code2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Rc-c7-qNb"/>
+                        <viewControllerLayoutGuide type="bottom" id="aMk-ge-dMi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O4g-nY-HS7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sq" translatesAutoresizingMaskIntoConstraints="NO" id="yYf-0P-oLw">
+                                <rect key="frame" x="27.666666666666657" y="246" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="QlK-p2-9BX"/>
+                                    <constraint firstAttribute="height" constant="320" id="boL-5z-4zB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Join Channel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uE-tg-N5p">
+                                <rect key="frame" x="37" y="135" width="322" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="35"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yYf-0P-oLw" firstAttribute="centerX" secondItem="O4g-nY-HS7" secondAttribute="centerX" id="Okd-vy-dn0"/>
+                            <constraint firstItem="yYf-0P-oLw" firstAttribute="centerY" secondItem="O4g-nY-HS7" secondAttribute="centerY" id="pzg-5r-hht"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cXm-XU-GLV"/>
+                    </view>
+                    <connections>
+                        <outlet property="square" destination="yYf-0P-oLw" id="fo0-gV-xEG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WBq-DU-Jsh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="776"/>
         </scene>
     </scenes>
     <resources>
@@ -1844,6 +1910,8 @@
         <image name="no" width="120" height="120"/>
         <image name="playButtonIcon" width="100" height="100"/>
         <image name="settings" width="20" height="20"/>
+        <image name="sign up btn" width="156" height="63"/>
+        <image name="sq" width="1333" height="1333"/>
         <image name="target" width="100" height="100"/>
         <image name="textfield" width="345" height="63"/>
         <image name="time" width="40" height="40"/>
@@ -1855,8 +1923,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZME-hI-vVj"/>
-        <segue reference="J2H-Nr-OwG"/>
-        <segue reference="72e-t3-Nd2"/>
-        <segue reference="5IX-eY-HNN"/>
+        <segue reference="rQu-eQ-dmY"/>
+        <segue reference="wYd-R9-Ue6"/>
     </inferredMetricsTieBreakers>
 </document>
