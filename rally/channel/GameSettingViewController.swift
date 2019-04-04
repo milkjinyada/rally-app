@@ -29,9 +29,9 @@ class GameSettingViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func CreateChanelBtn(_ sender: Any) {
         
-        //เก็บรายชื่อเกมขึ้น Firbase
-        let SettingItemRef = self.MemberRef.child("\(self.userEmail!)/channeldata/game")
-        SettingItemRef.setValue(GameSettingViewController.listgame)//ส่งขึ้น firebase
+        // เก็บรายชื่อเกมขึ้น Firbase
+        // let SettingItemRef = self.MemberRef.child("\(self.userEmail!)/channeldata/game")
+        // SettingItemRef.setValue(GameSettingViewController.listgame)//ส่งขึ้น firebase
         
     }
     var gamenum:Int!

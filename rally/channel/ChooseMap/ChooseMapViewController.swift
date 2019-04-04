@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  LocationPickerController
-//
-//  Created by koogawa on 2016/04/30.
-//  Copyright © 2016 koogawa. All rights reserved.
-//
-
 import UIKit
 import CoreLocation
 import Firebase
@@ -14,9 +6,6 @@ import FirebaseDatabase
 class ChooseMapViewController: UIViewController {
     
      var ref = DatabaseReference.init()
-
-
-    @IBOutlet weak var locationLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +37,9 @@ class ChooseMapViewController: UIViewController {
             })
         let navigationController = UINavigationController(rootViewController: viewController)
         self.present(navigationController, animated: true, completion: nil)
+        
+        let homeView = self.storyboard?.instantiateViewController(withIdentifier: "gamesetting") as! GameSettingViewController
+        self.present(homeView, animated: true, completion: nil)
     }
     
    

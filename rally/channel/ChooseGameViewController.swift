@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import CoreLocation
+import Firebase
+import FirebaseDatabase
 
 class ChooseGameViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
    
     var gamenum:String = ""
+    var counter:Bool = false
+
     
+    var ref : DatabaseReference! = Database.database().reference(withPath: "Member")
+    
+    @IBOutlet weak var Alertlb: UILabel!
     @IBOutlet weak var titel: UILabel!
     @IBOutlet weak var Gamenamelb: UILabel!
     @IBOutlet weak var GameListpicker: UIPickerView!
@@ -20,11 +28,48 @@ class ChooseGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         datail.isHidden = true
     }
     @IBOutlet weak var datail: UITextView!
+    
+    @IBAction func chooselocationbtn(_ sender: Any) {
+        
+        counter = true
+        
+        var gamename: String = Gamenamelb.text!
+        let viewController = LocationPickerController(success: {
+            [weak self] (coordinate: CLLocationCoordinate2D) -> Void in
+            
+            var lat : String
+            var long : String
+            lat = "".appendingFormat("%.8f", coordinate.latitude)
+            long = "".appendingFormat("%.8f", coordinate.longitude)
+            
+            print(lat)
+            print(long)
+            
+            //SAVE ข้อมูลเกมขึ้น Firebase
+            let dict = ["gamename":"\(gamename)","lat": lat,"long": long] as [String: Any]
+            self?.ref.child("\(ViewController.userEmail!)/channeldata/game/เกมที่:\(GameSettingViewController.n)").setValue(dict)
+            
+            
+        })
+        let navigationController = UINavigationController(rootViewController: viewController)
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
     @IBAction func savegamebtn(_ sender: Any) {
-
-        GameSettingViewController.listgame[GameSettingViewController.n] = (Gamenamelb.text!)
-        GameSettingViewController.imgname[GameSettingViewController.n] = "covergame"
-
+        
+        if counter == false{
+            Alertlb.text = "กรุณาเลือกสถานที่สำหรับเกมนี้"
+        }
+        else
+        {
+            GameSettingViewController.listgame[GameSettingViewController.n] = (Gamenamelb.text!)
+            GameSettingViewController.imgname[GameSettingViewController.n] = "covergame"
+            counter = false
+            
+            let homeView = self.storyboard?.instantiateViewController(withIdentifier: "gamesetting") as! GameSettingViewController
+            self.present(homeView, animated: true, completion: nil)
+        }
+       
     }
     
     let Games = ["เกมถามตอบ", "เกมสลับภาพ", "เกมปาขวาน", "เกมเดินให้ดี", "เกมบวกเลข"]
@@ -85,6 +130,7 @@ class ChooseGameViewController: UIViewController, UIPickerViewDataSource, UIPick
         super.viewDidLoad()
         titel.text = "Choose Game\(gamenum)"
         datail.isHidden = true
+        
         
     }
     

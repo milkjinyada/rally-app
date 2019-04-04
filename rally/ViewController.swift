@@ -13,7 +13,7 @@ class ViewController: UIViewController {
  
     @IBOutlet weak var UserName: UILabel!
    
-    var userEmail:String! = "" //ไว้เก็บบัญชีผู้ใช้
+    static var userEmail:String! = "" //ไว้เก็บบัญชีผู้ใช้
     var status:Int!
     
 //ดึงข้อมูลจาก firebase
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     func databaseInit()
     {
-        databaseRef = Database.database().reference().child("Member").child(userEmail!) //ดึง ref
+        databaseRef = Database.database().reference().child("Member").child(ViewController.userEmail!) //ดึง ref
         databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
         
             if let snapshot = snapshot.value as? [String:AnyObject]
@@ -127,8 +127,8 @@ class ViewController: UIViewController {
         let AuthEmail = Auth.auth().currentUser?.email //ดึง email ที่ login  อยู่ปัจจุบัน
         if AuthEmail != nil //ต้องมีค่า
         {
-            userEmail = AuthEmail
-            userEmail = replaceSpacialCharacter(inputStr:userEmail)
+            ViewController.userEmail = AuthEmail
+            ViewController.userEmail = replaceSpacialCharacter(inputStr:ViewController.userEmail)
             databaseRelease() //ให้มันเคลียค่าทิ้งสะก่อน
             databaseInit()
         }
@@ -154,7 +154,7 @@ class ViewController: UIViewController {
         //ส่งอีเมล User ไป
         if segue.identifier == "passuser" {
             let CreateChannelView = segue.destination as! CreateChanelViewController
-            CreateChannelView.username = userEmail
+            CreateChannelView.username = ViewController.userEmail
         }
     }
 

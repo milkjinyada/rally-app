@@ -114,8 +114,8 @@ internal extension LocationPickerController {
         }
 
         self.success?(self.mapView.centerCoordinate)
-
         self.dismiss(animated: true, completion: nil)
+        
     }
 }
 

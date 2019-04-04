@@ -1144,19 +1144,33 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baG-5W-ZEk">
-                                <rect key="frame" x="60" y="705" width="254" height="47"/>
+                                <rect key="frame" x="57" y="493" width="254" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Choose Location of Game"/>
+                                <connections>
+                                    <action selector="chooselocationbtn:" destination="23g-Fv-zxS" eventType="touchUpInside" id="1jh-1M-vRh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e11-CS-CG8">
+                                <rect key="frame" x="57" y="713" width="254" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="button-white"/>
                                 <connections>
-                                    <action selector="savegamebtn:" destination="23g-Fv-zxS" eventType="touchUpInside" id="nny-5k-E1U"/>
-                                    <segue destination="nUr-cm-PcU" kind="show" id="aqs-BN-FWT"/>
+                                    <action selector="savegamebtn:" destination="23g-Fv-zxS" eventType="touchUpInside" id="6mA-bB-Pex"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVh-Yf-RcQ">
-                                <rect key="frame" x="167" y="714" width="39" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Next" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tb4-k6-QgE">
+                                <rect key="frame" x="142" y="725" width="84" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="21"/>
                                 <color key="textColor" red="0.79607843140000001" green="0.62352941179999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emK-YP-ddj">
+                                <rect key="frame" x="56" y="534" width="257" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1164,6 +1178,7 @@
                         <viewLayoutGuide key="safeArea" id="6Hd-2W-3oM"/>
                     </view>
                     <connections>
+                        <outlet property="Alertlb" destination="emK-YP-ddj" id="8go-K3-wHH"/>
                         <outlet property="GameListpicker" destination="71g-oU-bL1" id="jS4-8H-OgO"/>
                         <outlet property="Gamenamelb" destination="yKW-JL-Lfa" id="6EB-R0-oBt"/>
                         <outlet property="datail" destination="REC-9L-KoX" id="V7w-aR-vc0"/>
@@ -1172,12 +1187,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HL-jf-lra" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4242" y="27"/>
+            <point key="canvasLocation" x="4240.8000000000002" y="26.600985221674879"/>
         </scene>
         <!--Game Setting View Controller-->
         <scene sceneID="Pq2-HO-KQ5">
             <objects>
-                <viewController id="9Jl-OE-Oay" customClass="GameSettingViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gamesetting" id="9Jl-OE-Oay" customClass="GameSettingViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5fz-Ng-0M8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1803,7 +1818,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZP-PM-ILz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cZP-PM-ILz" secondAttribute="height" multiplier="375:667" id="dnI-tJ-zni"/>
                                 </constraints>
@@ -1836,7 +1851,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxR-Z6-oj8">
-                                <rect key="frame" x="23" y="16.000000000000007" width="60" height="59.999999999999993"/>
+                                <rect key="frame" x="23" y="16" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.1529411765" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="XlR-y4-u4b"/>
@@ -1847,7 +1862,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5op-RK-smj">
-                                <rect key="frame" x="291" y="16.000000000000007" width="60" height="59.999999999999993"/>
+                                <rect key="frame" x="291" y="16" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.1529411765" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="UXj-Zc-bmP"/>
@@ -1858,7 +1873,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHj-kx-iQG">
-                                <rect key="frame" x="139" y="551" width="96" height="96"/>
+                                <rect key="frame" x="139" y="662" width="96" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="JEq-Ag-zHV"/>
                                     <constraint firstAttribute="height" constant="96" id="xDz-PE-NNT"/>
@@ -2216,35 +2231,18 @@
                                 <rect key="frame" x="0.0" y="-2" width="375" height="814"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q39-Df-LRh">
-                                <rect key="frame" x="67.666666666666686" y="124" width="240" height="0.0"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="t8l-hy-O1t"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtu-oX-SF6">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtu-oX-SF6">
                                 <rect key="frame" x="130" y="132" width="115" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose Location"/>
                                 <connections>
-                                    <action selector="didTapSelectLocationButton:" destination="nUr-cm-PcU" eventType="touchUpInside" id="htz-4d-7LX"/>
+                                    <action selector="didTapSelectLocationButton:" destination="nUr-cm-PcU" eventType="touchUpInside" id="ZVI-KX-Shx"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="wtu-oX-SF6" firstAttribute="top" secondItem="q39-Df-LRh" secondAttribute="bottom" constant="8" symbolic="YES" id="7Y3-8O-emb"/>
-                            <constraint firstItem="q39-Df-LRh" firstAttribute="centerX" secondItem="wtu-oX-SF6" secondAttribute="centerX" id="9SG-Uo-Ccr"/>
-                            <constraint firstItem="q39-Df-LRh" firstAttribute="top" secondItem="eIP-U4-0Jb" secondAttribute="bottom" constant="80" id="QSa-t1-OyR"/>
-                            <constraint firstItem="q39-Df-LRh" firstAttribute="centerX" secondItem="0x3-n8-Wfo" secondAttribute="centerX" id="ohh-JQ-p6g"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mwU-6S-pK7"/>
                     </view>
-                    <connections>
-                        <outlet property="locationLabel" destination="q39-Df-LRh" id="HdK-oS-v53"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwP-H1-voR" sceneMemberID="firstResponder"/>
             </objects>
@@ -2411,9 +2409,9 @@
         <image name="whitefame" width="306" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="72e-t3-Nd2"/>
-        <segue reference="SYg-34-ZKe"/>
-        <segue reference="CP3-ug-JWW"/>
-        <segue reference="wYd-R9-Ue6"/>
+        <segue reference="OY4-8N-giN"/>
+        <segue reference="8St-TK-qIK"/>
+        <segue reference="ZME-hI-vVj"/>
+        <segue reference="5IX-eY-HNN"/>
     </inferredMetricsTieBreakers>
 </document>

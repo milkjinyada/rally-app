@@ -34,9 +34,7 @@ class Scanqr: UIViewController {
         
         let screenSize: CGRect = UIScreen.main.bounds
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: screenSize.minX , y: 30, width: view.frame.size.width, height:  view.frame.size.height))
-        //screenSize.maxY=736.0
-        //let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 8, width: 320, height: 44)) ต้นฉบับ
-        //let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: screenSize.minX , y: 3, width: screenSize.width, height: 44)) ปรับขนาด1
+
         self.view.addSubview(navBar);
         
         let navItem = UINavigationItem(title: "Scan QR Group");
