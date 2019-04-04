@@ -53,7 +53,7 @@ class CreateChanelViewController: UIViewController {
             //ถ้าชื่อห้องไม่ซ้ำ เก็บชื่อห้องไปยัง DB
                 
                 let ChannelData: Dictionary<String,AnyObject> = //จะใส่อะไรไปใน firebase ให้ใส่ในนี้ เป็นแบบ dic
-                    [
+                [
                         "User" : self.username as AnyObject,
                         "ChannelName": channelName as AnyObject
                 ]

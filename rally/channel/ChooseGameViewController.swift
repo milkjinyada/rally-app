@@ -27,7 +27,7 @@ class ChooseGameViewController: UIViewController, UIPickerViewDataSource, UIPick
 
     }
     
-    let Games = ["เกมถามตอบ", "เกมสลับภาพ", "เกมปาขวาน", "เกมจับคู่", "เกมจับผิด"]
+    let Games = ["เกมถามตอบ", "เกมสลับภาพ", "เกมปาขวาน", "เกมเดินให้ดี", "เกมบวกเลข"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {

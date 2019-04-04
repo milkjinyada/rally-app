@@ -1287,6 +1287,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="CreateChanelBtn:" destination="9Jl-OE-Oay" eventType="touchUpInside" id="hyp-Ob-kxP"/>
                                     <action selector="SettingChannelbtn:" destination="D5T-Zk-ihX" eventType="touchUpInside" id="Rq5-7J-CLY"/>
                                     <segue destination="k0x-Xj-RN0" kind="show" id="2Rc-hc-Yo9"/>
                                 </connections>
