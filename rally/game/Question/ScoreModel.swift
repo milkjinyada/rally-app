@@ -52,20 +52,20 @@ class ScoreModel  {
         let Name_ = s2
         let post : [String: AnyObject] = ["Score" : Name_ as AnyObject]
         let databaseRef = Database.database().reference()
-        databaseRef.child("Posts").childByAutoId().setValue(post) //หัวข้อชื่อ Posts
+        databaseRef.child("QuestionGame").childByAutoId().setValue(post) 
         
 
         if (percentaile > 0.75) {
-            return "ทำคะแนนได้ดี\n You got \(correctAnswers) out of 15 correct answers!"
+            return "Score = \(correctAnswers)"
             
             
         }
         else if (percentaile > 0.5) {
-            return "เยี่ยมม\n You got \(correctAnswers) out of 15 correct answers!"
+            return "Score = \(correctAnswers)"
 
         }
         else {
-            return "พยายามกว่านี้อีก\n You got \(correctAnswers) out of 15 correct answers!"
+             return "Score = \(correctAnswers)"
         }
   
     }

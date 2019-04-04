@@ -29,7 +29,7 @@ class QuestionGameViewController: UIViewController {
     
     
     //จำนวนคำถาม
-    let numberOfQuestionPerRound = 15
+    let numberOfQuestionPerRound = 10
     var currentQuestion: Question? = nil
     
     var gameStartSound: SystemSoundID = 0
@@ -139,12 +139,31 @@ class QuestionGameViewController: UIViewController {
         score.getQuestionsAsked() == 15
         nextQuestionButton.setTitle("Play again", for: .normal)
         
+        NextgameQuiz()
+        
         feedbackField.isHidden = true
         firstChoiceButton.isHidden = true
         secondChoiceButton.isHidden = true
         thirdChoiceButton.isHidden = true
         fourthChoiceButton.isHidden = true
         
+        
+        
+    }
+    
+    //เล่นเกมเสร็จขึ้นแจ้งเตือนให้กลับไปหน้าสแกนเริ่มเกมต่อไป
+    func NextgameQuiz() {
+        
+        let alert = UIAlertController(title: "Success", message: "You got score:\(score.s2)!!" , preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
+            
+            //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า Nextpage
+            //(withIdentifier: "next") ใส่ตรง StorybordID ของหน้าที่ต้องการให้เด้งไปนะจ๊ะ
+            let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
+            self.present(homeView, animated: true, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
     }
     
     //

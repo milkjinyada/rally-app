@@ -11,6 +11,16 @@ import UIKit
 import AVFoundation
 import FirebaseDatabase
 
+internal extension Scanqr{
+    
+    @objc func didTapCancelButton() {
+        //กดbutton Cancle ให้กดกลับมาหน้าก่อนหน้า
+        let homeView = self.storyboard?.instantiateViewController(withIdentifier: "fristview") as! ViewController
+        self.present(homeView, animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+    }
+}
+
 class Scanqr: UIViewController {
     
     
@@ -21,7 +31,19 @@ class Scanqr: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: screenSize.minX , y: 30, width: view.frame.size.width, height:  view.frame.size.height))
+        //screenSize.maxY=736.0
+        //let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 8, width: 320, height: 44)) ต้นฉบับ
+        //let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: screenSize.minX , y: 3, width: screenSize.width, height: 44)) ปรับขนาด1
+        self.view.addSubview(navBar);
+        
+        let navItem = UINavigationItem(title: "Scan QR Group");
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: nil, action: #selector(Scanqr.didTapCancelButton));
+        navItem.rightBarButtonItem = cancelItem;
+        navBar.setItems([navItem], animated: false);
+        navBar.tintColor = UIColor.black
         
         //Creating session
         let session = AVCaptureSession()
@@ -48,7 +70,8 @@ class Scanqr: UIViewController {
         output.metadataObjectTypes = supportCode
         
         video = AVCaptureVideoPreviewLayer(session: session)
-        video.frame = view.layer.bounds
+//      video.frame = view.layer.bounds
+        video.frame = view.alignmentRect(forFrame: CGRect(x: 0 , y: 10, width: screenSize.width, height: screenSize.height))
         view.layer.addSublayer(video)
         
         self.view.bringSubviewToFront(square)
@@ -114,64 +137,3 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//ถ่าย QR แล้วขึ้นเอลิท อันเก่า
-
-//func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-//
-//    //        func captureOutput(_ captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [Any], from connection: AVCaptureConnection) {
-//    print("2222")
-//
-//    if metadataObjects != nil && metadataObjects.count != 0
-//    {
-//        if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
-//        {
-//            if supportCode.contains(object.type)
-//                //                if object.type == AVMetadataObject.ObjectType
-//            {
-//                let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
-//                alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
-//                    UIPasteboard.general.string = object.stringValue
-//
-//                    //ปริ๊นคำที่ถ่ายออกมา
-//                    print(object.stringValue)
-//                }))
-//
-//                present(alert, animated: true, completion: nil)
-//            }
-//        }
-//    }
-//}
-//

@@ -97,7 +97,7 @@ class ARHacheGameViewController: UIViewController, ARSCNViewDelegate, SCNPhysics
     // MARK: - timer
     
     //to store how many sceonds the game is played for
-    var seconds = 60
+    var seconds = 41
     
     //timer
     var timer = Timer()
@@ -124,7 +124,7 @@ class ARHacheGameViewController: UIViewController, ARSCNViewDelegate, SCNPhysics
     //resets the timer
     func resetTimer(){
         timer.invalidate()
-        seconds = 60
+        seconds = 41
         timerLabel.text = "\(seconds)"
     }
     

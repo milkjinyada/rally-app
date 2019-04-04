@@ -51,6 +51,7 @@ class ViewController: UIViewController {
                 }
                 
                 self.status = Int(strSenderStatus)
+                //self.Checkstatus()
             }
         })
     }
@@ -100,12 +101,23 @@ class ViewController: UIViewController {
         // ถ้า Login แล้ว จะเช็ค Status ว่าเป็นผู้ดูแลหรือเป็นผู้ใช้
 //        else
 //        {
+//            print(status)
 //            if status == 1{
 //                //ให้ ไปเริ่มที่หน้า  login
-//                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginID") as! LoginViewController
-//                self.navigationController?.present(loginVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
+//                let AdminVC = self.storyboard?.instantiateViewController(withIdentifier: "admintabbar") as! TabbarViewController
+//                self.navigationController?.present(AdminVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
 //            }
 //        }
+    }
+    
+    func Checkstatus()
+    {
+        print(status)
+        if status == 1{
+            //ให้ ไปเริ่มที่หน้า  login
+            let AdminVC = self.storyboard?.instantiateViewController(withIdentifier: "admintabbar") as! TabbarViewController
+            self.navigationController?.present(AdminVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
+        }
     }
     
 
