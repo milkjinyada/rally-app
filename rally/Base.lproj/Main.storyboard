@@ -889,7 +889,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egE-oK-PCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7719" y="27"/>
+            <point key="canvasLocation" x="7687" y="27"/>
         </scene>
         <!--Admin Home View Controller-->
         <scene sceneID="lW2-LA-lnv">
@@ -1076,6 +1076,9 @@
                                 <state key="normal" title="QR CODE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="0dp-fd-p5C" kind="show" id="9Pw-CR-tO3"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Settingicon" translatesAutoresizingMaskIntoConstraints="NO" id="ViD-Kh-8LK">
                                 <rect key="frame" x="137" y="356" width="21" height="13"/>
@@ -2382,12 +2385,52 @@
             </objects>
             <point key="canvasLocation" x="2412" y="1544"/>
         </scene>
+        <!--CreateQR-->
+        <scene sceneID="ud3-Hc-fpG">
+            <objects>
+                <viewController id="0dp-fd-p5C" customClass="CreateQR" customModule="QR_Code2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wo3-bu-WAd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-QRCode" translatesAutoresizingMaskIntoConstraints="NO" id="qUp-he-ZY3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fame" translatesAutoresizingMaskIntoConstraints="NO" id="n61-tf-m32">
+                                <rect key="frame" x="-2" y="179" width="378" height="357"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QR Code Channel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktU-bT-amv">
+                                <rect key="frame" x="37" y="116" width="322" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="35"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRt-Wv-m93">
+                                <rect key="frame" x="54" y="229" width="267" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="eV1-sF-RR5"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageqr" destination="LRt-Wv-m93" id="fbB-br-fon"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oln-u4-UDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6856.8000000000002" y="-672.41379310344826"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Arrow" width="13" height="8"/>
         <image name="BG-1" width="377" height="381"/>
         <image name="BG-2" width="375" height="812"/>
         <image name="BG-Game-1" width="375" height="812"/>
+        <image name="BG-QRCode" width="375" height="812"/>
         <image name="BG-userdisplay" width="107" height="107"/>
         <image name="BG-userdisplay2" width="107" height="107"/>
         <image name="BG-whitecell" width="336" height="62"/>
@@ -2442,6 +2485,6 @@
         <segue reference="72e-t3-Nd2"/>
         <segue reference="8St-TK-qIK"/>
         <segue reference="ZME-hI-vVj"/>
-        <segue reference="5IX-eY-HNN"/>
+        <segue reference="wYd-R9-Ue6"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -72,6 +72,7 @@ class ViewController: UIViewController {
     
 //ฟังก์ชั่น logout
     @IBAction func logout(_ sender: Any) {
+       
         Const().logOut()
         
         if (Auth.auth().currentUser == nil)
@@ -99,16 +100,7 @@ class ViewController: UIViewController {
             print(Auth.auth().currentUser)
             
         }
-        // ถ้า Login แล้ว จะเช็ค Status ว่าเป็นผู้ดูแลหรือเป็นผู้ใช้
-//        else
-//        {
-//            print(status)
-//            if status == 1{
-//                //ให้ ไปเริ่มที่หน้า  login
-//                let AdminVC = self.storyboard?.instantiateViewController(withIdentifier: "admintabbar") as! TabbarViewController
-//                self.navigationController?.present(AdminVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
-//            }
-//        }
+
     }
     
     func Checkstatus()
@@ -118,6 +110,11 @@ class ViewController: UIViewController {
             //ให้ ไปเริ่มที่หน้า  login
             let AdminVC = self.storyboard?.instantiateViewController(withIdentifier: "admintabbar") as! TabbarViewController
             self.navigationController?.present(AdminVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
+        }
+        else
+        {
+            let HomeVC = self.storyboard?.instantiateViewController(withIdentifier: "fristview") as! ViewController
+            self.navigationController?.present(HomeVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
         }
     }
     

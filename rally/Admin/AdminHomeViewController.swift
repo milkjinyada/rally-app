@@ -11,6 +11,8 @@ import Firebase
 
 class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
+    static var ChannelName:String = ""
+    
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var channelname: UILabel!
     @IBOutlet weak var username: UILabel!
@@ -75,6 +77,7 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
                 
                 self.username.text = strSenderDisplayName
                 self.channelname.text = strSenderChannelName
+                AdminHomeViewController.ChannelName = strSenderChannelName
             }
         })
         
