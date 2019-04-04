@@ -18,6 +18,10 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     @IBOutlet weak var groupnum: UILabel!
     @IBOutlet weak var timepermission: UILabel!
     
+    @IBAction func settingchannelbtn(_ sender: Any) {
+        let homeView = self.storyboard?.instantiateViewController(withIdentifier: "gamesetting") as! GameSettingViewController
+        self.present(homeView, animated: true, completion: nil)
+    }
     @IBAction func logout(_ sender: Any) {
         Const().logOut()
         if (Auth.auth().currentUser == nil)

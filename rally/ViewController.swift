@@ -51,7 +51,7 @@ class ViewController: UIViewController {
                 }
                 
                 self.status = Int(strSenderStatus)
-                //self.Checkstatus()
+                self.Checkstatus()
             }
         })
     }

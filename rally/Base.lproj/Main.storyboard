@@ -900,7 +900,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-1" translatesAutoresizingMaskIntoConstraints="NO" id="KUq-Ci-dB2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="364"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="386"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Channel Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yya-3S-P18">
@@ -973,7 +973,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HIc-DT-WDz">
-                                <rect key="frame" x="16" y="410" width="343" height="319"/>
+                                <rect key="frame" x="16" y="435" width="343" height="319"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1047,14 +1047,14 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Member list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-3k-nPT">
-                                <rect key="frame" x="146" y="379" width="82" height="24"/>
+                                <rect key="frame" x="146" y="403" width="82" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="22"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjy-8D-Xih">
-                                <rect key="frame" x="298" y="44" width="61" height="34"/>
+                                <rect key="frame" x="16" y="53" width="61" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
                                 <state key="normal" title="logout">
@@ -1062,6 +1062,34 @@
                                 </state>
                                 <connections>
                                     <action selector="logout:" destination="HBQ-e5-jEa" eventType="touchUpInside" id="vNf-qF-Ckk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYN-M1-gYj">
+                                <rect key="frame" x="335" y="58" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="editprofile"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn7-12-eVs">
+                                <rect key="frame" x="281" y="56" width="45" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="15"/>
+                                <state key="normal" title="QR CODE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Settingicon" translatesAutoresizingMaskIntoConstraints="NO" id="ViD-Kh-8LK">
+                                <rect key="frame" x="137" y="356" width="21" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3s-VG-zzM">
+                                <rect key="frame" x="161" y="348" width="75" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="15"/>
+                                <state key="normal" title="Setting Channel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingchannelbtn:" destination="HBQ-e5-jEa" eventType="touchUpInside" id="tQN-1r-Ew8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1080,7 +1108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZ9-vC-0bH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6858" y="27"/>
+            <point key="canvasLocation" x="6856.8000000000002" y="26.600985221674879"/>
         </scene>
         <!--Choose Game View Controller-->
         <scene sceneID="0Dh-BN-q1W">
@@ -2372,6 +2400,7 @@
         <image name="QuestionGame-color-fame" width="291" height="47"/>
         <image name="QuestionGame-fame-under-question" width="384" height="349"/>
         <image name="QuestionGame-time-icon" width="135" height="158"/>
+        <image name="Settingicon" width="11" height="11"/>
         <image name="WhiteCreateChannalbtn" width="305" height="47"/>
         <image name="award" width="20" height="20"/>
         <image name="axe" width="96" height="96"/>
@@ -2382,6 +2411,7 @@
         <image name="choosegamecell" width="312" height="107"/>
         <image name="display-1" width="74" height="74"/>
         <image name="edit" width="19" height="18"/>
+        <image name="editprofile" width="24" height="24"/>
         <image name="fame" width="384" height="280"/>
         <image name="finish-line" width="512" height="512"/>
         <image name="game-controller" width="20" height="20"/>
@@ -2409,7 +2439,7 @@
         <image name="whitefame" width="306" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OY4-8N-giN"/>
+        <segue reference="72e-t3-Nd2"/>
         <segue reference="8St-TK-qIK"/>
         <segue reference="ZME-hI-vVj"/>
         <segue reference="5IX-eY-HNN"/>
