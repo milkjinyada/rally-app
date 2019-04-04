@@ -30,8 +30,10 @@ class RegisterViewController: UIViewController {
         {
         case 0:
             sex = "man"
+            c = true
         case 1:
             sex = "woman"
+            c = true
         case UISegmentedControl.noSegment:
             c = true
         default:

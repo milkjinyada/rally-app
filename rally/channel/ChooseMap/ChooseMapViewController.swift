@@ -32,24 +32,19 @@ class ChooseMapViewController: UIViewController {
     @IBAction func didTapSelectLocationButton(_ sender: AnyObject) {
         let viewController = LocationPickerController(success: {
             [weak self] (coordinate: CLLocationCoordinate2D) -> Void in
-//            self?.locationLabel.text = "".appendingFormat("%.6f, %.6f",
-//                coordinate.latitude, coordinate.longitude)
-            
+
             var lat : String
             var long : String
             lat = "".appendingFormat("%.8f", coordinate.latitude)
             long = "".appendingFormat("%.8f", coordinate.longitude)
+            
             print(lat)
             print(long)
-            
-            //self!.saveFIRData()
-            
+  
+            //SAVE ตำแหน่งขึ้น Firebase
             let dict = ["name": "Kivy", "lat": lat,"long": long] as [String: Any]
             self?.ref.child("Location").childByAutoId().setValue(dict)
-           
 
-            
-            
             })
         let navigationController = UINavigationController(rootViewController: viewController)
         self.present(navigationController, animated: true, completion: nil)

@@ -29,30 +29,15 @@ public typealias successClosure = (CLLocationCoordinate2D) -> Void
 public typealias failureClosure = (NSError) -> Void
 
 open class LocationPickerController: UIViewController, UITextViewDelegate  {
-    
-   
-    
-
 
     fileprivate var mapView: MKMapView!
     fileprivate var pointAnnotation: MKPointAnnotation!
     fileprivate var userTrackingButton: MKUserTrackingBarButtonItem!
-
     fileprivate let locationManager: CLLocationManager = CLLocationManager()
-
     fileprivate var success: successClosure?
     fileprivate var failure: failureClosure?
-
     fileprivate var isInitialized = false
 
-   
-    
-   
-    
-    
-    
-    
-    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -103,54 +88,8 @@ open class LocationPickerController: UIViewController, UITextViewDelegate  {
 
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
-        
-        //เปลี่ยนขนาดกล่อง textfirld
-//        let sampleTextField = UITextView(frame: CGRect(x: 20, y: 500, width: 200, height: 150))
-//        //sampleTextField.placeholder = "Enter text here"
-//        
-//        
-//        sampleTextField.font = UIFont.systemFont(ofSize: 15)
-//       // sampleTextField.borderStyle = UITextField.BorderStyle.roundedRect
-//        sampleTextField.autocorrectionType = UITextAutocorrectionType.no
-//        sampleTextField.keyboardType = UIKeyboardType.default
-//        sampleTextField.returnKeyType = UIReturnKeyType.done
-//       // sampleTextField.clearButtonMode = UITextField.ViewMode.whileEditing
-//      //  sampleTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-//        //sampleTextField.delegate = self as! UITextFieldDelegate
-//         self.view.addSubview(sampleTextField)
-        
-//        sampleTextField.text = "Placeholder for UITextView"
-//        sampleTextField.textColor = UIColor.lightGray
-//        sampleTextField.font = UIFont(name: "verdana", size: 13.0)
-//        sampleTextField.returnKeyType = .done
-//        sampleTextField.delegate = self
-//        
-//        sampleTextField.becomeFirstResponder()
-        
+ 
     }
-
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        if textView.text == "Placeholder for UITextView" {
-//            textView.text = ""
-//            textView.textColor = UIColor.black
-//            textView.font = UIFont(name: "verdana", size: 18.0)
-//        }
-//    }
-//
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        if text == "\n" {
-//            textView.resignFirstResponder()
-//        }
-//        return true
-//    }
-//
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        if textView.text == "" {
-//            textView.text = "Placeholder for UITextView"
-//            textView.textColor = UIColor.lightGray
-//            textView.font = UIFont(name: "verdana", size: 13.0)
-//        }
-//    }
     
     override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -214,18 +153,13 @@ extension LocationPickerController: CLLocationManagerDelegate {
         }
 
         self.locationManager.stopUpdatingLocation()
-
         let centerCoordinate = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude)
-        
-
         let span = MKCoordinateSpan.init(latitudeDelta: 0.005, longitudeDelta: 0.005)
         let region = MKCoordinateRegion(center: centerCoordinate, span: span)
         self.mapView.setRegion(region, animated: true)
-
         self.pointAnnotation = MKPointAnnotation()
         self.pointAnnotation.coordinate = newLocation.coordinate
         self.mapView.addAnnotation(self.pointAnnotation)
-
         self.isInitialized = true
     }
     

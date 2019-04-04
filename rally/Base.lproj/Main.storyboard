@@ -1149,10 +1149,10 @@
                                 <state key="normal" image="button-white"/>
                                 <connections>
                                     <action selector="savegamebtn:" destination="23g-Fv-zxS" eventType="touchUpInside" id="nny-5k-E1U"/>
-                                    <segue destination="9Jl-OE-Oay" kind="show" identifier="savegame" id="rQu-eQ-dmY"/>
+                                    <segue destination="nUr-cm-PcU" kind="show" id="aqs-BN-FWT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVh-Yf-RcQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVh-Yf-RcQ">
                                 <rect key="frame" x="167" y="714" width="39" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="25"/>
@@ -2212,6 +2212,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-2" translatesAutoresizingMaskIntoConstraints="NO" id="D9L-nw-iaK">
+                                <rect key="frame" x="0.0" y="-2" width="375" height="814"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q39-Df-LRh">
                                 <rect key="frame" x="67.666666666666686" y="124" width="240" height="0.0"/>
                                 <constraints>
@@ -2244,7 +2248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwP-H1-voR" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4241" y="-672"/>
+            <point key="canvasLocation" x="4240.8000000000002" y="-672.41379310344826"/>
         </scene>
         <!--Pic Scrolling View Controller-->
         <scene sceneID="2j7-lu-vRN">
@@ -2407,9 +2411,9 @@
         <image name="whitefame" width="306" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="72e-t3-Nd2"/>
         <segue reference="SYg-34-ZKe"/>
         <segue reference="CP3-ug-JWW"/>
-        <segue reference="rQu-eQ-dmY"/>
         <segue reference="wYd-R9-Ue6"/>
     </inferredMetricsTieBreakers>
 </document>
