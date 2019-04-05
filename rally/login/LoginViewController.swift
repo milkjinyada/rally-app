@@ -58,8 +58,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         else
         {
             self.lbStatus.text="Signed in Succeed"
-            self.dismiss(animated: true, completion: nil) //ทำให้ login เสร็จแล้วมันจะปิดหน้านั้นแล้วเข้าหน้าแรกแทน
-            
+          
+            self.getUserEmail()
+            self.databaseRelease() //ให้มันเคลียค่าทิ้งสะก่อน
+            self.databaseInit()
+            //self.dismiss(animated: true, completion: nil) //ทำให้ login เสร็จแล้วมันจะปิดหน้านั้นแล้วเข้าหน้าแรกแทน
+
         }
        })
     }
@@ -67,6 +71,93 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBAction func btnForgotPass(_ sender: Any) {
     }
     @IBAction func btnRegister(_ sender: Any) {
+    }
+    
+    var status:Int!
+    
+    //ดึงข้อมูลจาก firebase
+    var databaseRef:DatabaseReference! //กำหนด ref
+    private var _databaseHandle:DatabaseHandle! = nil //กำหนด  handle
+    
+    func databaseInit()
+    {
+        databaseRef = Database.database().reference().child("Member").child(ViewController.userEmail!) //ดึง ref
+        databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let snapshot = snapshot.value as? [String:AnyObject]
+            {
+                //เอาค่าจาก firbase มาใส่ไว้ในตัวแปร
+                
+                var strSenderStatus = 0
+                if let strTemp = snapshot["status"] as? Int
+                {
+                    strSenderStatus = strTemp
+                }
+                else
+                {
+                    strSenderStatus = 0
+                }
+                
+                self.status = Int(strSenderStatus)
+                print(self.status)
+                self.Checkstatus()
+                
+            }
+        })
+    }
+    
+    //เวลาออกให้ เคลีย database handle ออกสะ
+    func databaseRelease()
+    {
+        if (_databaseHandle != nil) //คือการการอินนิเชียวแล้ว เราก็จะไป release
+        {
+            self.databaseRef.child("Member").removeObserver(withHandle: _databaseHandle)
+            _databaseHandle = nil //จะได้รู้ว่าตอนนี้ยังไม่ init
+        }
+    }
+    
+    deinit {
+        databaseRelease()
+    }
+    
+    func Checkstatus()
+    {
+        print(status)
+        if status! == 1{
+            //ให้ ไปเริ่มที่หน้า  login
+            let AdminVC = self.storyboard?.instantiateViewController(withIdentifier: "admintabbar") as! TabbarViewController
+            self.present(AdminVC, animated: true, completion: nil)
+            //self.navigationController?.present(AdminVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
+        }
+        else
+        {
+            let UserVC = self.storyboard?.instantiateViewController(withIdentifier: "fristview") as! ViewController
+            self.present(UserVC, animated: true, completion: nil)
+            //self.navigationController?.present(HomeVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
+        }
+    }
+    
+    func getUserEmail()
+    {
+        let AuthEmail = Auth.auth().currentUser?.email //ดึง email ที่ login  อยู่ปัจจุบัน
+        if AuthEmail != nil //ต้องมีค่า
+        {
+            ViewController.userEmail = AuthEmail
+            ViewController.userEmail = replaceSpacialCharacter(inputStr:ViewController.userEmail)
+        }
+    }
+    
+    
+    func replaceSpacialCharacter(inputStr:String) -> String{
+        var outputStr = inputStr
+        
+        outputStr = outputStr.replacingOccurrences(of: ".", with: "dot")
+        outputStr = outputStr.replacingOccurrences(of: "#", with: "sharp")
+        outputStr = outputStr.replacingOccurrences(of: "$", with: "dollar")
+        outputStr = outputStr.replacingOccurrences(of: "[", with: "stasign")
+        outputStr = outputStr.replacingOccurrences(of: "}", with: "endsign")
+        
+        return outputStr
     }
 
     override func viewDidLoad() {
@@ -76,7 +167,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         txtPassword.delegate=self
        
     }
- 
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

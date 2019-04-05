@@ -21,7 +21,7 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     @IBOutlet weak var timepermission: UILabel!
     
     @IBAction func settingchannelbtn(_ sender: Any) {
-        let homeView = self.storyboard?.instantiateViewController(withIdentifier: "gamesetting") as! GameSettingViewController
+        let homeView = self.storyboard?.instantiateViewController(withIdentifier: "settingschannel") as! SettingsChannelViewController
         self.present(homeView, animated: true, completion: nil)
     }
     @IBAction func logout(_ sender: Any) {
@@ -39,6 +39,7 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     var users = [User]()
     var num = [Int]()
     var userEmail:String! = "" //ไว้เก็บบัญชีผู้ใช้
+
     
 //ดึงข้อมูลจาก firebase
     
@@ -173,7 +174,9 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     
 //ดึงข้อมูล Member มาใส่ใน tableview
     func fetchUser() {
+        
         Database.database().reference().child("Member").observe(.childAdded, with: { (snapshot) in
+                        
             if let dictionary = snapshot.value as? [String: Any]{
                 let user = User()
                 user.name = dictionary["name"] as? String
@@ -181,9 +184,10 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
                 user.sex = dictionary["sex"] as? String
                 user.join = dictionary["join"] as? String
                 user.status = dictionary["status"] as? Int
+                user.Channel = dictionary["Channel"] as? String
            
-                //เช็ค status ว่าเป็น ผู้ใช้หรือ admin ถ้าเป็น ผู้ใช้ ถึงเพิ่มชื่อเข้าไปใน tb
-                if user.status == 0 {
+                //เช็คว่า member ไหนเป็น สมาชิกของห้องนี้บ้าง ถึงค่อยเพิ่มชื่อเข้าไปใน tb
+                if user.Channel == (AdminHomeViewController.ChannelName) {
                     self.users.append(user)
                     DispatchQueue.main.async {
                         self.Num()
@@ -206,11 +210,8 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchUser()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         getUserEmail()
+        fetchUser()
     }
     
     func getUserEmail()

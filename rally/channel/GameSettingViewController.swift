@@ -33,6 +33,10 @@ class GameSettingViewController: UIViewController, UITableViewDelegate, UITableV
         // let SettingItemRef = self.MemberRef.child("\(self.userEmail!)/channeldata/game")
         // SettingItemRef.setValue(GameSettingViewController.listgame)//ส่งขึ้น firebase
         
+        //เปลื่ยน status user
+        let StatusItemRef = self.MemberRef.child("\(CreateChanelViewController.USERNAME)/status")
+        StatusItemRef.setValue(1)//ส่งขึ้น firebase
+        
     }
     var gamenum:Int!
     

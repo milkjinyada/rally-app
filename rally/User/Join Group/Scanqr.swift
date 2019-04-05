@@ -116,8 +116,18 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
                                     }))
                                     alert.addAction(UIAlertAction(title: "Join Channel", style: .default, handler: { (nil) in
                                         
-                                        //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า Nextpage
-                                        //(withIdentifier: "next") ใส่ตรง StorybordID ของหน้าที่ต้องการให้เด้งไปนะจ๊ะ
+                                        //เก็บ ชื่อห้องที่เข้าร่วม ขึ้น firebase
+                                        
+                                        var MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
+                                       
+                                            let SettingData: Dictionary<String,AnyObject> =
+                                                ["Channel" : snapname as AnyObject]
+                                            
+                                            let SettingItemRef = MemberRef.child("\(ViewController.userEmail!)")
+                                        SettingItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+                                        
+                                        
+                                        //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า UserHome
                                         let homeView = self.storyboard?.instantiateViewController(withIdentifier: "usertabber") as! UserTabberViewController
                                         self.present(homeView, animated: true, completion: nil)
                                         

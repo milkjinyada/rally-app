@@ -19,4 +19,5 @@ class User: NSObject {
     var grouping:String?
     var mission:Int?
     var time:Int?
+    var Channel:String?
 }
