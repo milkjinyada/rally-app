@@ -129,14 +129,67 @@ class ARHacheGameViewController: UIViewController, ARSCNViewDelegate, SCNPhysics
     }
     
     // MARK: - game over
-    
+    var realscore : Int = 0 //คะแนนที่เกิดจากการตัดให้เต็ม 10 คะแนน
     func gameOver(){
-        //store the score in UserDefaults
+
         let defaults = UserDefaults.standard
-        defaults.set(score, forKey: "score")
+                let GameS = defaults.value(forKey: "score")
+                let score = GameS as! Int //รับค่าคะแนนในเกมมาจากหน้า viewcontroller
         
-        //go back to the Home View Controller
-        self.dismiss(animated: true, completion: nil)
+                //let S = GameS as! Int!
+        
+                //เอาคะแนนในเกมมาคิด ทุกๆ 10 คะแนน= 1 คะแนน
+                if (score > 0 && score <= 9) {
+                    realscore = 0
+                }
+                else if (score >= 10 && score <= 19) {
+                    realscore = 1
+                }
+                else if (score >= 20 && score <= 29) {
+                    realscore = 2
+                }
+                else if (score >= 30 && score <= 39) {
+                    realscore = 3
+                }
+                else if (score >= 40 && score <= 49) {
+                    realscore = 4
+                }
+                else if (score >= 50 && score <= 59) {
+                    realscore = 5
+                }
+                else if (score >= 60 && score <= 69) {
+                    realscore = 6
+                }
+                else if (score >= 70 && score <= 79) {
+                    realscore = 7
+                }
+                else if (score >= 80 && score <= 89) {
+                    realscore = 8
+                }
+                else if (score >= 90 && score <= 100) {
+                    realscore = 9
+                }
+                else {
+                    realscore = 10
+                }
+        
+                let alert = UIAlertController(title: "Success", message: "You got score = \(String(score)) คะแนน (ทุก 10 คะแนนคิดเป็น 1 คะแนน) = \(realscore) คะแนน" , preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
+        
+        
+                    //เมื่อกดปุ่มเอลิทจะเอาคะแนนที่ถูกหารแล้วเข้า firebase
+                    let Name_ = self.realscore
+                    let post : [String: AnyObject] = ["Score" : Name_ as AnyObject]
+                    let databaseRef = Database.database().reference()
+                    databaseRef.child("ARScore").childByAutoId().setValue(post) //หัวข้อชื่อ Posts
+        
+        
+                    //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า Nextpage
+                    //(withIdentifier: "next") ใส่ตรง StorybordID ของหน้าที่ต้องการให้เด้งไปนะจ๊ะ
+                    let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
+                    self.present(homeView, animated: true, completion: nil)
+                }))
+                present(alert, animated: true, completion: nil)
     }
     
     // MARK: - missiles & targets
@@ -298,30 +351,14 @@ class ARHacheGameViewController: UIViewController, ARSCNViewDelegate, SCNPhysics
                 self.scoreLabel.text = String(self.score)
             }
             
-//            playSound(sound: "explosion", format: "wav")
-//            let  explosion = SCNParticleSystem(named: "Explode", inDirectory: nil)
-//            contact.nodeB.addParticleSystem(explosion!)
+
         }
     }
     
     // MARK: - sounds
     
     var player: AVAudioPlayer?
-    
-//    func playSound(sound : String, format: String) {
-//        guard let url = Bundle.main.url(forResource: sound, withExtension: format) else { return }
-//        do {
-//            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-//            try AVAudioSession.sharedInstance().setActive(true)
-//
-//            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-//
-//            guard let player = player else { return }
-//            player.play()
-//        } catch let error {
-//            print(error.localizedDescription)
-//        }
-//    }
+
     
     func playBackgroundMusic(){
         let audioNode = SCNNode()

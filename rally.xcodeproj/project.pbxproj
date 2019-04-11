@@ -11,6 +11,7 @@
 		3600649B21E12EFE005FD39C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3600649921E12EFE005FD39C /* GoogleService-Info.plist */; };
 		3600649C21E12EFE005FD39C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3600649921E12EFE005FD39C /* GoogleService-Info.plist */; };
 		361B447E225662D9009AFC09 /* CreateQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B447D225662D9009AFC09 /* CreateQR.swift */; };
+		361B44802257E7DE009AFC09 /* UserHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B447F2257E7DE009AFC09 /* UserHomeTableViewCell.swift */; };
 		3623BFF6224CB13900A57F58 /* StickHeroGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF1224CB13800A57F58 /* StickHeroGameScene.swift */; };
 		3623BFF7224CB13900A57F58 /* nextrun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF2224CB13800A57F58 /* nextrun.swift */; };
 		3623BFF8224CB13900A57F58 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF3224CB13900A57F58 /* GameViewController.swift */; };
@@ -107,6 +108,7 @@
 		332D9422826449797B768FA4 /* Pods_rallyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rallyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3600649921E12EFE005FD39C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		361B447D225662D9009AFC09 /* CreateQR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateQR.swift; sourceTree = "<group>"; };
+		361B447F2257E7DE009AFC09 /* UserHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeTableViewCell.swift; sourceTree = "<group>"; };
 		3623BFF1224CB13800A57F58 /* StickHeroGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickHeroGameScene.swift; sourceTree = "<group>"; };
 		3623BFF2224CB13800A57F58 /* nextrun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nextrun.swift; sourceTree = "<group>"; };
 		3623BFF3224CB13900A57F58 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				3669C57222363A2E001A06B8 /* Join Group */,
 				3669C579223657F7001A06B8 /* UserHomeViewController.swift */,
 				3669C57C223658E1001A06B8 /* UserTabberViewController.swift */,
+				361B447F2257E7DE009AFC09 /* UserHomeTableViewCell.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -793,6 +796,7 @@
 				36513C2221E14274001652FF /* ResetpassView.swift in Sources */,
 				36513C2421E1435E001652FF /* Const.swift in Sources */,
 				36C8028221F0DFD3009F6877 /* AdminHomeViewController.swift in Sources */,
+				361B44802257E7DE009AFC09 /* UserHomeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

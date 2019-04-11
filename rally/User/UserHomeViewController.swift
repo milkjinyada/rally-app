@@ -10,6 +10,14 @@ import UIKit
 
 class UserHomeViewController: UIViewController {
 
+    @IBOutlet weak var ChannelNamelb: UILabel!
+    @IBOutlet weak var GroupNamelb: UILabel!
+    @IBOutlet weak var Scorelb: UILabel!
+    @IBOutlet weak var Timelb: UILabel!
+    
+    @IBAction func Logoutbtn(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
