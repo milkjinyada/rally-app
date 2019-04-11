@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
-class UserHomeViewController: UIViewController {
+class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    static var Channelname:String = "admintest"
+    var User:String = ""
+    var Gamename = [String]()
+    var Users:String = "admintest@gmaildotcom"
+    var Mission:Int = 0
+    var num = [Int]()
 
+    @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var ChannelNamelb: UILabel!
     @IBOutlet weak var GroupNamelb: UILabel!
     @IBOutlet weak var Scorelb: UILabel!
@@ -18,21 +27,166 @@ class UserHomeViewController: UIViewController {
     @IBAction func Logoutbtn(_ sender: Any) {
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    func SetDetail() {
+        ChannelNamelb.text = UserHomeViewController.Channelname
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//ดึงข้อมูลจาก  Firebase
+    var databaseRef:DatabaseReference!
+    var MemberRef:DatabaseReference!
+    var GameRef:DatabaseReference!
+    private var _databaseHandle:DatabaseHandle! = nil //กำหนด  handle
+    
+    func databaseInit()
+    {
+        //ดึงข้อมูลของเจ้าของห้องนั่นๆ
+        databaseRef = Database.database().reference().child("Channel").child(UserHomeViewController.Channelname)
+        
+        databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let snapshot = snapshot.value as? [String:AnyObject]
+            {
+                //เอาค่าจาก firbase มาใส่ไว้ในตัวแปร
+               
+                var strSenderUser = ""
+                if let strTemp = snapshot["User"] as? String
+                {
+                    strSenderUser = strTemp
+                }
+                else
+                {
+                    strSenderUser = ""
+                }
+                
+               self.User = strSenderUser
+               self.loadmission()
+            
+            }
+        })
     }
-    */
+    
+    func loadmission() {
+        //เอาชื่อเจ้าของห้องไปดึงข้อมูลเกมของห้อง
+        
+        MemberRef = Database.database().reference().child("Member").child("\(User)/channeldata")
+        MemberRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let snapshot = snapshot.value as? [String:AnyObject]
+            {
+                //เอาค่าจาก firbase มาใส่ไว้ในตัวแปร
+                var strSenderMission = ""
+                if let strTemp = snapshot["Mission"] as? String
+                {
+                    strSenderMission = strTemp
+                }
+                else
+                {
+                    strSenderMission = ""
+                }
+                
+                self.Mission = Int(strSenderMission)!
+                self.loadgame()
+                
+            }
+        })
+    }
+    
+    func loadgame(){
+    //ดึงข้อมูลเกมตามจำนวนเกมของห้องนั้นๆ
+        Num()
+        for i in 0...self.Mission-1{
+        
+            GameRef = Database.database().reference().child("Member").child("\(Users)/channeldata").child("game").child("\(i)")
+            GameRef.observe(.value, with: { (snapshot) in
+            
+                if let snapshot = snapshot.value as? [String:AnyObject]
+                {
+                    var strSenderGame = ""
+                    if let strTemp = snapshot["gamename"] as? String
+                    {
+                        strSenderGame = strTemp
+                    }
+                    else
+                    {
+                        strSenderGame = ""
+                    }
+                    //เก็บรายชื่อเกมเข้า array
+                    self.Gamename.append(strSenderGame)
+                    //self.Gamename[i] = strSenderGame
+                    
+                    print(self.Gamename)
+                    DispatchQueue.main.async {
+                        self.tableview.reloadData()
+                    }
+                    
+                }
+            })
+           
+        }
+    }
+    
+    //เวลาออกให้ เคลีย database handle ออกสะ
+    func databaseRelease()
+    {
+        if (_databaseHandle != nil) //คือการการอินนิเชียวแล้ว เราก็จะไป release
+        {
+            self.databaseRef.child("Member").removeObserver(withHandle: _databaseHandle)
+            _databaseHandle = nil 
+        }
+    }
+    
+    deinit {
+        databaseRelease()
+    }
+    
+    func Num() {
+        
+        for i in 1...Mission
+        {
+            num.append(i)
+        }
+        
+    }
+    
+    
+//แสดงผลข้อมูลเกม
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return Gamename.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Usergame", for: indexPath) as! UserHomeTableViewCell
+        
+        let row = indexPath.row
+        cell.gamename.text = Gamename[row]
+        cell.gamenum.text = String(num[row])
+    
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 110.0;//Choose your custom row height
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       databaseRelease()
+       databaseInit()
+       SetDetail()
+
+    }
+    
+    
+
 
 }
