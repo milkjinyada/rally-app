@@ -1620,7 +1620,7 @@
         <!--Question Game View Controller-->
         <scene sceneID="ISw-aW-fVY">
             <objects>
-                <viewController id="Le5-6U-uZq" customClass="QuestionGameViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="questiongame" id="Le5-6U-uZq" customClass="QuestionGameViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="55h-1n-J5g"/>
                         <viewControllerLayoutGuide type="bottom" id="2ID-MH-AF3"/>
@@ -1812,10 +1812,10 @@
             </objects>
             <point key="canvasLocation" x="-722.39999999999998" y="1543.5960591133005"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Hache Game Home View Controller-->
         <scene sceneID="aUR-b5-b08">
             <objects>
-                <viewController id="0a3-vT-ND8" customClass="HomeViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ARHacheGame" id="0a3-vT-ND8" customClass="ARHacheGameHomeViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XgM-bj-oaV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1990,10 +1990,10 @@
             </objects>
             <point key="canvasLocation" x="108" y="776"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Run Game View Controller-->
         <scene sceneID="7Lc-xQ-7gy">
             <objects>
-                <viewController storyboardIdentifier="sent1" id="nrD-SA-ZGC" customClass="GameViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rungame" id="nrD-SA-ZGC" customClass="RunGameViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bgs-db-bBE"/>
                         <viewControllerLayoutGuide type="bottom" id="MkK-L9-sAV"/>
@@ -2012,7 +2012,7 @@
         <!--Math View Controller-->
         <scene sceneID="dk8-xC-Udc">
             <objects>
-                <viewController id="5bW-Yw-qqn" customClass="MathViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mathgame" id="5bW-Yw-qqn" customClass="MathViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7us-hv-NYl"/>
                         <viewControllerLayoutGuide type="bottom" id="pad-gv-9Ol"/>
@@ -2265,7 +2265,7 @@
         <!--Pic Scrolling View Controller-->
         <scene sceneID="2j7-lu-vRN">
             <objects>
-                <viewController storyboardIdentifier="Main" id="PBK-u8-O5f" customClass="PicScrollingViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="picscrollinggame" id="PBK-u8-O5f" customClass="PicScrollingViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="GDT-pt-HZj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2480,7 +2480,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="72e-t3-Nd2"/>
-        <segue reference="8St-TK-qIK"/>
+        <segue reference="CP3-ug-JWW"/>
         <segue reference="ZME-hI-vVj"/>
         <segue reference="wYd-R9-Ue6"/>
         <segue reference="exj-I1-0SE"/>

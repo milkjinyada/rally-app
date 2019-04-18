@@ -14,7 +14,7 @@
 		361B44802257E7DE009AFC09 /* UserHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B447F2257E7DE009AFC09 /* UserHomeTableViewCell.swift */; };
 		3623BFF6224CB13900A57F58 /* StickHeroGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF1224CB13800A57F58 /* StickHeroGameScene.swift */; };
 		3623BFF7224CB13900A57F58 /* nextrun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF2224CB13800A57F58 /* nextrun.swift */; };
-		3623BFF8224CB13900A57F58 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF3224CB13900A57F58 /* GameViewController.swift */; };
+		3623BFF8224CB13900A57F58 /* RunGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF3224CB13900A57F58 /* RunGameViewController.swift */; };
 		3623BFF9224CB13900A57F58 /* Defined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF4224CB13900A57F58 /* Defined.swift */; };
 		3623BFFA224CB13900A57F58 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF5224CB13900A57F58 /* Tools.swift */; };
 		3623C004224CB41800A57F58 /* fall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3623BFFC224CB41700A57F58 /* fall.wav */; };
@@ -37,7 +37,7 @@
 		368385912212B09100E6A561 /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683858F2212B09000E6A561 /* ScoreModel.swift */; };
 		368385942212B0E000E6A561 /* QuestionGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368385932212B0E000E6A561 /* QuestionGameViewController.swift */; };
 		368385982212B5DF00E6A561 /* ARHacheGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368385972212B5DF00E6A561 /* ARHacheGameViewController.swift */; };
-		3683859A2212B63200E6A561 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368385992212B63200E6A561 /* HomeViewController.swift */; };
+		3683859A2212B63200E6A561 /* ARHacheGameHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368385992212B63200E6A561 /* ARHacheGameHomeViewController.swift */; };
 		3683859C2212B78000E6A561 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 3683859B2212B78000E6A561 /* Sounds */; };
 		3683859E2212B7E500E6A561 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3683859D2212B7E500E6A561 /* art.scnassets */; };
 		368385A02212B93100E6A561 /* Particles in Resources */ = {isa = PBXBuildFile; fileRef = 3683859F2212B93100E6A561 /* Particles */; };
@@ -110,7 +110,7 @@
 		361B447F2257E7DE009AFC09 /* UserHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeTableViewCell.swift; sourceTree = "<group>"; };
 		3623BFF1224CB13800A57F58 /* StickHeroGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickHeroGameScene.swift; sourceTree = "<group>"; };
 		3623BFF2224CB13800A57F58 /* nextrun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nextrun.swift; sourceTree = "<group>"; };
-		3623BFF3224CB13900A57F58 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3623BFF3224CB13900A57F58 /* RunGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunGameViewController.swift; sourceTree = "<group>"; };
 		3623BFF4224CB13900A57F58 /* Defined.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defined.swift; sourceTree = "<group>"; };
 		3623BFF5224CB13900A57F58 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		3623BFFC224CB41700A57F58 /* fall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fall.wav; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		3683858F2212B09000E6A561 /* ScoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreModel.swift; sourceTree = "<group>"; };
 		368385932212B0E000E6A561 /* QuestionGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionGameViewController.swift; sourceTree = "<group>"; };
 		368385972212B5DF00E6A561 /* ARHacheGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARHacheGameViewController.swift; sourceTree = "<group>"; };
-		368385992212B63200E6A561 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		368385992212B63200E6A561 /* ARHacheGameHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARHacheGameHomeViewController.swift; sourceTree = "<group>"; };
 		3683859B2212B78000E6A561 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		3683859D2212B7E500E6A561 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		3683859F2212B93100E6A561 /* Particles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Particles; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 			children = (
 				3623BFFB224CB40600A57F58 /* Sound */,
 				3623BFF4224CB13900A57F58 /* Defined.swift */,
-				3623BFF3224CB13900A57F58 /* GameViewController.swift */,
+				3623BFF3224CB13900A57F58 /* RunGameViewController.swift */,
 				3623BFF2224CB13800A57F58 /* nextrun.swift */,
 				3623BFF1224CB13800A57F58 /* StickHeroGameScene.swift */,
 				3623BFF5224CB13900A57F58 /* Tools.swift */,
@@ -272,34 +272,34 @@
 		368385922212B09900E6A561 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				368385952212B53F00E6A561 /* questiongame */,
+				368385962212B55500E6A561 /* ARHacheGame */,
 				36C5E2682255D40A00A70881 /* Picture scrolling  */,
 				36A4749F224CB744003B2555 /* MATH */,
 				3623BFEE224CB08B00A57F58 /* RUN */,
-				368385962212B55500E6A561 /* AR */,
-				368385952212B53F00E6A561 /* Question */,
 			);
 			path = game;
 			sourceTree = "<group>";
 		};
-		368385952212B53F00E6A561 /* Question */ = {
+		368385952212B53F00E6A561 /* questiongame */ = {
 			isa = PBXGroup;
 			children = (
 				3683858E2212B09000E6A561 /* QuestionModel.swift */,
 				3683858F2212B09000E6A561 /* ScoreModel.swift */,
 				368385932212B0E000E6A561 /* QuestionGameViewController.swift */,
 			);
-			path = Question;
+			path = questiongame;
 			sourceTree = "<group>";
 		};
-		368385962212B55500E6A561 /* AR */ = {
+		368385962212B55500E6A561 /* ARHacheGame */ = {
 			isa = PBXGroup;
 			children = (
 				3683859F2212B93100E6A561 /* Particles */,
 				3683859B2212B78000E6A561 /* Sounds */,
 				368385972212B5DF00E6A561 /* ARHacheGameViewController.swift */,
-				368385992212B63200E6A561 /* HomeViewController.swift */,
+				368385992212B63200E6A561 /* ARHacheGameHomeViewController.swift */,
 			);
-			path = AR;
+			path = ARHacheGame;
 			sourceTree = "<group>";
 		};
 		36A4749F224CB744003B2555 /* MATH */ = {
@@ -767,9 +767,9 @@
 				368385982212B5DF00E6A561 /* ARHacheGameViewController.swift in Sources */,
 				36513C2121E14274001652FF /* RegisterViewController.swift in Sources */,
 				36A474AD224CC932003B2555 /* LocationPickerController.swift in Sources */,
-				3623BFF8224CB13900A57F58 /* GameViewController.swift in Sources */,
+				3623BFF8224CB13900A57F58 /* RunGameViewController.swift in Sources */,
 				3669C57422363A56001A06B8 /* Scanqr.swift in Sources */,
-				3683859A2212B63200E6A561 /* HomeViewController.swift in Sources */,
+				3683859A2212B63200E6A561 /* ARHacheGameHomeViewController.swift in Sources */,
 				362F2F3821F249BC00BCDE96 /* TabbarViewController.swift in Sources */,
 				3691E384222327D200B458A5 /* ChooseGameViewController.swift in Sources */,
 				36A474A4224CB790003B2555 /* MathViewController.swift in Sources */,
