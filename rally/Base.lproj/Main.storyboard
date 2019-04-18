@@ -328,7 +328,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dYm-42-14v" kind="show" id="cJt-Vy-FSe"/>
+                                    <segue destination="huv-DK-VYE" kind="show" id="exj-I1-0SE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -446,8 +446,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzl-2T-4Tg">
-                                <rect key="frame" x="40" y="144" width="25" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzl-2T-4Tg">
+                                <rect key="frame" x="48" y="144" width="9" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -468,7 +468,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ชื่อกลุ่ม" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHG-2X-cdL">
-                                <rect key="frame" x="167" y="208" width="41" height="20"/>
+                                <rect key="frame" x="127" y="208" width="121" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -488,7 +488,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ชื่อห้อง" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzT-2q-Uaj">
-                                <rect key="frame" x="165" y="54" width="45" height="22"/>
+                                <rect key="frame" x="84" y="54" width="204" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
                                 <color key="textColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -510,7 +510,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="listgamecell" rowHeight="115" id="Csl-uu-jxD" customClass="UserHomeTableViewCell" customModule="rally" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="gamecell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Usergame" rowHeight="115" id="Csl-uu-jxD" customClass="UserHomeTableViewCell" customModule="rally" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Csl-uu-jxD" id="Zr5-JI-2Jr">
@@ -545,11 +545,15 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="gamename" destination="uwT-Kk-K1F" id="fLB-Ys-bIL"/>
+                                            <outlet property="gamenum" destination="cmC-Lo-2Jj" id="zET-Bw-HY0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="2VI-rO-2cf" id="5RO-mS-vpc"/>
-                                    <outlet property="delegate" destination="2VI-rO-2cf" id="lfU-6E-1XE"/>
+                                    <outlet property="dataSource" destination="2VI-rO-2cf" id="3me-Lg-3J4"/>
+                                    <outlet property="delegate" destination="2VI-rO-2cf" id="EkG-NX-xHP"/>
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notification" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-V4-UfN">
@@ -566,6 +570,7 @@
                         <outlet property="GroupNamelb" destination="RHG-2X-cdL" id="aN2-Wo-EZD"/>
                         <outlet property="Scorelb" destination="Bzl-2T-4Tg" id="BEN-Rk-Yof"/>
                         <outlet property="Timelb" destination="mxw-KY-t7b" id="c7e-Ha-Zoh"/>
+                        <outlet property="tableview" destination="5DH-tv-ctF" id="GSO-1c-TAv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXJ-PF-HQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1889,6 +1894,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AR-Time" translatesAutoresizingMaskIntoConstraints="NO" id="d8r-jS-Pxe">
                                 <rect key="frame" x="18" y="34" width="60" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1897,6 +1903,28 @@
                                 <rect key="frame" x="34" y="64" width="28" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="21"/>
+=======
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxR-Z6-oj8">
+                                <rect key="frame" x="23" y="16" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.1529411765" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="XlR-y4-u4b"/>
+                                    <constraint firstAttribute="height" constant="60" id="Yzg-LG-zM6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.91764705879999997" green="0.67450980390000004" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5op-RK-smj">
+                                <rect key="frame" x="291" y="16" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.1529411765" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="UXj-Zc-bmP"/>
+                                    <constraint firstAttribute="width" constant="60" id="ayQ-l5-omL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.91764705879999997" green="0.67450980390000004" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+>>>>>>> 28394fe9bd17502480c2d606fd9b635b3d42f455
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHj-kx-iQG">
@@ -2227,7 +2255,7 @@
         <!--Choose Map View Controller-->
         <scene sceneID="L0G-n1-UvU">
             <objects>
-                <viewController id="nUr-cm-PcU" customClass="ChooseMapViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseMap" id="nUr-cm-PcU" customClass="ChooseMapViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eIP-U4-0Jb"/>
                         <viewControllerLayoutGuide type="bottom" id="sJa-SV-Vrw"/>
@@ -2474,9 +2502,14 @@
         <image name="whitefame" width="306" height="52.666667938232422"/>
     </resources>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="72e-t3-Nd2"/>
+=======
+        <segue reference="OY4-8N-giN"/>
+>>>>>>> 28394fe9bd17502480c2d606fd9b635b3d42f455
         <segue reference="ZME-hI-vVj"/>
         <segue reference="8St-TK-qIK"/>
         <segue reference="wYd-R9-Ue6"/>
+        <segue reference="exj-I1-0SE"/>
     </inferredMetricsTieBreakers>
 </document>

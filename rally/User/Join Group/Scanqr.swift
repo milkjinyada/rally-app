@@ -81,7 +81,7 @@ class Scanqr: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 
 extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
@@ -105,7 +105,7 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
                                 if snapname == object!.stringValue!
                                     
                                 {
-                                    
+                                    UserHomeViewController.Channelname = snapname
                                     let alert = UIAlertController(title: "Success", message: "Now you can join channel name \(snapname) . Do you want to join channel" , preferredStyle: .alert)
                                     
                                     alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (nil) in

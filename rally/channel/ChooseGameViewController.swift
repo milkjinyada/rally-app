@@ -47,7 +47,7 @@ class ChooseGameViewController: UIViewController, UIPickerViewDataSource, UIPick
             
             //SAVE ข้อมูลเกมขึ้น Firebase
             let dict = ["gamename":"\(gamename)","lat": lat,"long": long] as [String: Any]
-            self?.ref.child("\(ViewController.userEmail!)/channeldata/game/เกมที่:\(GameSettingViewController.n)").setValue(dict)
+            self?.ref.child("\(ViewController.userEmail!)/channeldata/game/\(GameSettingViewController.n)").setValue(dict)
             
             
         })
