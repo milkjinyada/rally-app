@@ -26,7 +26,6 @@
 		3623C00A224CB41900A57F58 /* kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3623C002224CB41800A57F58 /* kick.wav */; };
 		3623C00B224CB41900A57F58 /* victory.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3623C003224CB41800A57F58 /* victory.wav */; };
 		362F2F3821F249BC00BCDE96 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362F2F3721F249BC00BCDE96 /* TabbarViewController.swift */; };
-		362F2F3921F256BA00BCDE96 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36F678E921DDEBAC0009977A /* Info.plist */; };
 		36513C1E21E14256001652FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C1D21E14256001652FF /* LoginViewController.swift */; };
 		36513C2121E14274001652FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C1F21E14273001652FF /* RegisterViewController.swift */; };
 		36513C2221E14274001652FF /* ResetpassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C2021E14274001652FF /* ResetpassView.swift */; };
@@ -585,7 +584,6 @@
 				3623C009224CB41900A57F58 /* highScore.wav in Resources */,
 				3600649A21E12EFE005FD39C /* GoogleService-Info.plist in Resources */,
 				3623C00A224CB41900A57F58 /* kick.wav in Resources */,
-				362F2F3921F256BA00BCDE96 /* Info.plist in Resources */,
 				36F6791321DDF9A80009977A /* DB ADMAN X ULTRALI.TTF in Resources */,
 				36F6791021DDF9A80009977A /* DB ADMAN X BD.TTF in Resources */,
 				36F678E021DDEBAB0009977A /* Main.storyboard in Resources */,
@@ -974,13 +972,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = rally/rally.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 34R9TYV63H;
+				DEVELOPMENT_TEAM = KYJ8354YG7;
 				INFOPLIST_FILE = rally/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = swu.rally;
+				PRODUCT_BUNDLE_IDENTIFIER = swu.ral;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -994,13 +992,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = rally/rally.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 34R9TYV63H;
+				DEVELOPMENT_TEAM = KYJ8354YG7;
 				INFOPLIST_FILE = rally/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = swu.rally;
+				PRODUCT_BUNDLE_IDENTIFIER = swu.ral;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
