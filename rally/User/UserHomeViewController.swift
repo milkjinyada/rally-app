@@ -180,7 +180,25 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let currentCell = tableView.cellForRow(at: indexPath)! as! UserHomeTableViewCell
         valueToPass = currentCell.gamename.text!
         
-        performSegue(withIdentifier: "passcontent", sender: valueToPass)
+        switch valueToPass {
+        case "เกมถามตอบ":
+            let GameVC = self.storyboard?.instantiateViewController(withIdentifier: "questiongame") as! QuestionGameViewController
+            self.present(GameVC, animated: true, completion: nil)
+        case "เกมสลับภาพ":
+            let GameVC = self.storyboard?.instantiateViewController(withIdentifier: "picscrollinggame") as! PicScrollingViewController
+            self.present(GameVC, animated: true, completion: nil)
+        case "เกมปาขวาน":
+            let GameVC = self.storyboard?.instantiateViewController(withIdentifier: "ARHacheGame") as! ARHacheGameHomeViewController
+            self.present(GameVC, animated: true, completion: nil)
+        case "เกมเดินให้ดี":
+            let GameVC = self.storyboard?.instantiateViewController(withIdentifier: "rungame") as! RunGameViewController
+            self.present(GameVC, animated: true, completion: nil)
+        case "เกมบวกเลข":
+            let GameVC = self.storyboard?.instantiateViewController(withIdentifier: "mathgame") as! MathViewController
+            self.present(GameVC, animated: true, completion: nil)
+        default:
+            print("error")
+        }
         
     }
     
