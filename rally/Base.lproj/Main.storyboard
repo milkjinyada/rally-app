@@ -328,7 +328,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="huv-DK-VYE" kind="show" id="2hv-uX-M3u"/>
+                                    <segue destination="huv-DK-VYE" kind="show" id="exj-I1-0SE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -468,7 +468,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ชื่อกลุ่ม" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHG-2X-cdL">
-                                <rect key="frame" x="167" y="208" width="41" height="20"/>
+                                <rect key="frame" x="127" y="208" width="121" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2504,9 +2504,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="OY4-8N-giN"/>
-        <segue reference="8St-TK-qIK"/>
         <segue reference="ZME-hI-vVj"/>
+        <segue reference="8St-TK-qIK"/>
         <segue reference="wYd-R9-Ue6"/>
-        <segue reference="2hv-uX-M3u"/>
+        <segue reference="exj-I1-0SE"/>
     </inferredMetricsTieBreakers>
 </document>

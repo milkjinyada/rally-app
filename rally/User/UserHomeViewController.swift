@@ -172,6 +172,18 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return cell
     }
     
+    var valueToPass:String!
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let indexPath = tableView.indexPathForSelectedRow!
+        let currentCell = tableView.cellForRow(at: indexPath)! as! UserHomeTableViewCell
+        valueToPass = currentCell.gamename.text
+        
+        performSegue(withIdentifier: "passcontent", sender: valueToPass)
+        
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 110.0;//Choose your custom row height

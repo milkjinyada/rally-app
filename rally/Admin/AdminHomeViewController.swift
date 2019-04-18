@@ -24,6 +24,7 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
         let homeView = self.storyboard?.instantiateViewController(withIdentifier: "settingschannel") as! SettingsChannelViewController
         self.present(homeView, animated: true, completion: nil)
     }
+    
     @IBAction func logout(_ sender: Any) {
         Const().logOut()
         if (Auth.auth().currentUser == nil)
