@@ -178,7 +178,7 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         let indexPath = tableView.indexPathForSelectedRow!
         let currentCell = tableView.cellForRow(at: indexPath)! as! UserHomeTableViewCell
-        valueToPass = currentCell.gamename.text
+        valueToPass = currentCell.gamename.text!
         
         performSegue(withIdentifier: "passcontent", sender: valueToPass)
         
