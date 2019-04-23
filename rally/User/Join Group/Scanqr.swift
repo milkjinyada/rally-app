@@ -118,13 +118,46 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
                                         
                                         //เก็บ ชื่อห้องที่เข้าร่วม ขึ้น firebase
                                         
-                                        var MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
-                                       
-                                            let SettingData: Dictionary<String,AnyObject> =
-                                                ["Channel" : snapname as AnyObject]
-                                            
-                                            let SettingItemRef = MemberRef.child("\(ViewController.userEmail!)")
-                                        SettingItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+                                        let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
+                                        
+                                        let SettingData: Dictionary<String,AnyObject> =
+                                            ["Channel" : snapname as AnyObject]
+                                        
+                                        
+                                        
+                                        let ScoreItemRef = MemberRef.child("\(ViewController.userEmail!)")
+                                        ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+                                        
+                                        
+                                        let RankRef  = Database.database().reference(withPath: "Ranking")
+                                        RankRef.observe(.value, with:{ (snapshot: DataSnapshot) in
+                                            for snap in snapshot.children {
+                                                var snapnameRank = (snap as! DataSnapshot).key
+                                                
+                                                
+                                                //เช็คว่าค่าที่สแกนได้กับค่าใน DB ตรงกันไหม ถ้าตรงก็ไปหน้าถัดไป
+                                                if snapnameRank == object!.stringValue!
+                                                    
+                                                {
+                                                    
+                                                    //เก็บ ชื่อห้องที่เข้าร่วม ขึ้น firebase
+                                                    let MemberRef : DatabaseReference! = Database.database().reference().child("Ranking").child("\(snapnameRank)")
+                                                    
+                                                    let ScoreData: Dictionary<String,AnyObject> =
+                                                        [   "name" : ViewController.UsernameUser as AnyObject,
+                                                            "game1" : Int(0) as AnyObject,
+                                                            "game2" : Int(0) as AnyObject,
+                                                            "game3": Int(0) as AnyObject,
+                                                            "game4": Int(0) as AnyObject,
+                                                            "game5": Int(0) as AnyObject
+                                                    ]
+                                                    
+                                                    let ScoreItemRef = MemberRef.child("User").child("ชื่อกลุ่ม")
+                                                    ScoreItemRef.setValue(ScoreData)//ส่งขึ้น firebase
+                                                    
+                                                }
+                                                
+                                            }})
                                         
                                         
                                         //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า UserHome

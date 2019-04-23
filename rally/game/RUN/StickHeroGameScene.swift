@@ -618,11 +618,14 @@ private extension StickHeroGameScene {
             let alert = UIAlertController(title: "Congrats", message: "You got score = \(realScore) คะแนน (ทุก 5 คะแนนคิดเป็น 1 คะแนน) = \(realScore2) คะแนน", preferredStyle: UIAlertController.Style.alert)
              alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
                 
-                //เมื่อกดปุ่มเอลิทจะเอาคะแนนเข้า firebase
-                let Name_ = self.realScore2
-                let post : [String: AnyObject] = ["Score" : Name_ as AnyObject]
-                let databaseRef = Database.database().reference()
-                databaseRef.child("RunScore").childByAutoId().setValue(post) //หัวข้อชื่อ Posts
+                let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
+                
+                let SettingData: Dictionary<String,AnyObject> =
+                    ["Run" : Int(self.realScore2) as AnyObject]
+                //////แก้
+                //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
+                let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)").child("User/ชื่อกลุ่ม")
+                ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
                 
                 //name: "Main" = มาจากชื่อของ Main.storyboard //withIdentifier: "gamerun" ใส่ไว้ตรง StorybordID ของหน้าที่ต้องการให้เด้งไป
                 let mainScreenVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController

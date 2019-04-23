@@ -25,6 +25,15 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet weak var Timelb: UILabel!
     
     @IBAction func Logoutbtn(_ sender: Any) {
+        Const().logOut()
+        
+        if (Auth.auth().currentUser == nil)
+        {
+            //ให้ ไปเริ่มที่หน้า  login
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginID") as! LoginViewController
+            
+            self.present(loginVC, animated: true, completion: nil)
+        }
     }
     
     func SetDetail() {

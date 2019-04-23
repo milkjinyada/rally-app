@@ -13,6 +13,7 @@ class ViewController: UIViewController {
  
     @IBOutlet weak var UserName: UILabel!
    
+    static var UsernameUser:String! = "" //เก็บ Username ผู้ใช้
     static var userEmail:String! = "" //ไว้เก็บบัญชีผู้ใช้
     var status:Int!
     
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
                 }
                 
                 self.UserName.text = strSenderDisplayName
+                ViewController.UsernameUser = strSenderDisplayName
                
                 var strSenderStatus = 0
                 if let strTemp = snapshot["status"] as? Int
@@ -79,8 +81,7 @@ class ViewController: UIViewController {
         {
             //ให้ ไปเริ่มที่หน้า  login
             let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginID") as! LoginViewController
-            
-            //self.navigationController?.present(loginVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back
+
             self.present(loginVC, animated: true, completion: nil)
         }
     }

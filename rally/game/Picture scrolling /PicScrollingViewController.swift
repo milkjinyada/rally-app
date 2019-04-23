@@ -283,9 +283,14 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
         //alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
             
-            let dict = ["name": "Kivy", "Score": scoreUpload] as [String: Any]
-            self.ref.child("PicScrollingscore").childByAutoId().setValue(dict)
-
+            let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
+            
+            let SettingData: Dictionary<String,AnyObject> =
+                ["Picture" : Int(scoreUpload) as AnyObject]
+            //////แก้
+            //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
+            let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)").child("User/ชื่อกลุ่ม")
+            ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
 
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             
@@ -304,8 +309,14 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
         //alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
             
-            let dict = ["name": "Kivy", "Score": scoreUpload] as [String: Any]
-            self.ref.child("PicScrollingscore").childByAutoId().setValue(dict)
+            let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
+            
+            let SettingData: Dictionary<String,AnyObject> =
+                ["Picture" : Int(scoreUpload) as AnyObject]
+            //////แก้
+            //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
+            let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)").child("User/ชื่อกลุ่ม")
+            ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
             
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             
@@ -322,8 +333,14 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
         //alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
             
-            let dict = ["name": "Kivy", "Score": scoreUpload] as [String: Any]
-            self.ref.child("PicScrollingscore").childByAutoId().setValue(dict)
+            let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
+            
+            let SettingData: Dictionary<String,AnyObject> =
+                ["Picture" : Int(scoreUpload) as AnyObject]
+            //////แก้
+            //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
+            let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)").child("User/ชื่อกลุ่ม")
+            ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
             
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             

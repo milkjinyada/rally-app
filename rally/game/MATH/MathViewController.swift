@@ -270,8 +270,14 @@ class MathViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
             
-            let ref = Database.database().reference().child("ScoreMath")
-            ref.childByAutoId().setValue(["name": "Kivy", "score": scoreUploadMath])
+            let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
+            
+            let SettingData: Dictionary<String,AnyObject> =
+                ["Math" : Int(scoreUploadMath) as AnyObject]
+            //////แก้
+            //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
+            let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)").child("User/ชื่อกลุ่ม")
+            ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
             
             //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า Nextpage
             //(withIdentifier: "next") ใส่ตรง StorybordID ของหน้าที่ต้องการให้เด้งไปนะจ๊ะ

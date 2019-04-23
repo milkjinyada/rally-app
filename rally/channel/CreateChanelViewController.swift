@@ -58,6 +58,15 @@ class CreateChanelViewController: UIViewController {
             ChannelItemRef.setValue(ChannelData)//ส่งขึ้น firebase
             let MemberItemRef = self.MemberRef.child("\(self.username)/channelname")
             MemberItemRef.setValue(channelName)//ส่งขึ้น firebase
+            
+            let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
+            
+            let SettingData: Dictionary<String,AnyObject> =
+                ["Channel" : channelName as AnyObject]
+            
+            let ScoreItemRef = MemberRef.child(channelName!)
+            ScoreItemRef.setValue(SettingData)//ส่งขึ้น firebase
+            
             let Settingchannel = self.storyboard?.instantiateViewController(withIdentifier: "settingschannel") as! SettingsChannelViewController
             self.present(Settingchannel, animated: true, completion: nil)
             //self.navigationController?.present(Settingchannel, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ

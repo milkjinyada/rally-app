@@ -132,9 +132,9 @@ class ARHacheGameViewController: UIViewController, ARSCNViewDelegate, SCNPhysics
     var realscore : Int = 0 //คะแนนที่เกิดจากการตัดให้เต็ม 10 คะแนน
     func gameOver(){
 
-        let defaults = UserDefaults.standard
-                let GameS = defaults.value(forKey: "score")
-                let score = GameS as! Int //รับค่าคะแนนในเกมมาจากหน้า viewcontroller
+//        let defaults = UserDefaults.standard
+//                let GameS = defaults.value(forKey: "score")
+//                let score = GameS as! Int //รับค่าคะแนนในเกมมาจากหน้า viewcontroller
         
                 //let S = GameS as! Int!
         
@@ -175,14 +175,23 @@ class ARHacheGameViewController: UIViewController, ARSCNViewDelegate, SCNPhysics
         
                 let alert = UIAlertController(title: "Success", message: "You got score = \(String(score)) คะแนน (ทุก 10 คะแนนคิดเป็น 1 คะแนน) = \(realscore) คะแนน" , preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
+                    
+                    let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
+                    
+                    let SettingData: Dictionary<String,AnyObject> =
+                        ["AR" : Int(self.realscore) as AnyObject]
+                    //////แก้
+                    //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
+                    let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)").child("User/ชื่อกลุ่ม")
+                    ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
         
         
-                    //เมื่อกดปุ่มเอลิทจะเอาคะแนนที่ถูกหารแล้วเข้า firebase
-                    let Name_ = self.realscore
-                    let post : [String: AnyObject] = ["Score" : Name_ as AnyObject]
-                    let databaseRef = Database.database().reference()
-                    databaseRef.child("ARScore").childByAutoId().setValue(post) //หัวข้อชื่อ Posts
-        
+//                    //เมื่อกดปุ่มเอลิทจะเอาคะแนนที่ถูกหารแล้วเข้า firebase
+//                    let Name_ = self.realscore
+//                    let post : [String: AnyObject] = ["Score" : Name_ as AnyObject]
+//                    let databaseRef = Database.database().reference()
+//                    databaseRef.child("ARScore").childByAutoId().setValue(post) //หัวข้อชื่อ Posts
+//
         
                     //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า Nextpage
                     //(withIdentifier: "next") ใส่ตรง StorybordID ของหน้าที่ต้องการให้เด้งไปนะจ๊ะ
