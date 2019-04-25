@@ -161,15 +161,15 @@ class QuestionGameViewController: UIViewController {
             
             let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
             
-            let SettingData: Dictionary<String,AnyObject> =
-                ["Question" : Int(self.score.s2) as AnyObject]
+            print("คะแนนที่ได้เกมตอบคำถามคือ >> \(Int(self.score.s2))")
+            let SettingData: Dictionary<String,AnyObject> = ["Question" : Int(self.score.s2) as AnyObject]
+            
             //////แก้
             //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
-            let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)").child("User/ชื่อกลุ่ม")
+            let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
+           
             ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
-            
-            //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า Nextpage
-            //(withIdentifier: "next") ใส่ตรง StorybordID ของหน้าที่ต้องการให้เด้งไปนะจ๊ะ
+
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             self.present(homeView, animated: true, completion: nil)
         }))

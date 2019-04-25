@@ -140,11 +140,11 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
                                                     
                                                     let ScoreData: Dictionary<String,AnyObject> =
                                                         [   "name" : ViewController.UsernameUser as AnyObject,
-                                                            "game1" : Int(0) as AnyObject,
-                                                            "game2" : Int(0) as AnyObject,
-                                                            "game3": Int(0) as AnyObject,
-                                                            "game4": Int(0) as AnyObject,
-                                                            "game5": Int(0) as AnyObject
+                                                            "AR" : Int(0) as AnyObject,
+                                                            "Math" : Int(0) as AnyObject,
+                                                            "Picture": Int(0) as AnyObject,
+                                                            "Question": Int(0) as AnyObject,
+                                                            "Run": Int(0) as AnyObject
                                                         ]
                                                     
                                                         ScoreItemRef.setValue(ScoreData)//ส่งขึ้น firebase

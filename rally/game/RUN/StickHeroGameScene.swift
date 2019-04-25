@@ -624,8 +624,7 @@ private extension StickHeroGameScene {
                     ["Run" : Int(self.realScore2) as AnyObject]
                 //////แก้
                 //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
-                let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)").child("User/ชื่อกลุ่ม")
-                ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+                let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
                 
                 //name: "Main" = มาจากชื่อของ Main.storyboard //withIdentifier: "gamerun" ใส่ไว้ตรง StorybordID ของหน้าที่ต้องการให้เด้งไป
                 let mainScreenVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController

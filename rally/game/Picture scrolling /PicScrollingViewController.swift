@@ -289,8 +289,7 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
                 ["Picture" : Int(scoreUpload) as AnyObject]
             //////แก้
             //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
-            let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)").child("User/ชื่อกลุ่ม")
-            ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+            let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
 
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             
@@ -315,8 +314,7 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
                 ["Picture" : Int(scoreUpload) as AnyObject]
             //////แก้
             //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
-            let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)").child("User/ชื่อกลุ่ม")
-            ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+           let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
             
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             
@@ -339,8 +337,7 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
                 ["Picture" : Int(scoreUpload) as AnyObject]
             //////แก้
             //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
-            let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)").child("User/ชื่อกลุ่ม")
-            ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+            let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
             
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             
