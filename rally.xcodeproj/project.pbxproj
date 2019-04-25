@@ -26,6 +26,20 @@
 		3623C00A224CB41900A57F58 /* kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3623C002224CB41800A57F58 /* kick.wav */; };
 		3623C00B224CB41900A57F58 /* victory.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3623C003224CB41800A57F58 /* victory.wav */; };
 		362F2F3821F249BC00BCDE96 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362F2F3721F249BC00BCDE96 /* TabbarViewController.swift */; };
+		3644F337226F276F0038E123 /* Namegroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F334226F276E0038E123 /* Namegroup.swift */; };
+		3644F338226F276F0038E123 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F335226F276F0038E123 /* GroupsTableViewController.swift */; };
+		3644F339226F276F0038E123 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F336226F276F0038E123 /* GroupController.swift */; };
+		3644F346226F285B0038E123 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F33D226F285A0038E123 /* CoreDataStack.swift */; };
+		3644F347226F285B0038E123 /* Member+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F33E226F285A0038E123 /* Member+Convenience.swift */; };
+		3644F348226F285B0038E123 /* Member+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F33F226F285A0038E123 /* Member+CoreDataClass.swift */; };
+		3644F349226F285B0038E123 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F340226F285A0038E123 /* Group+CoreDataProperties.swift */; };
+		3644F34A226F285B0038E123 /* Group+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F341226F285A0038E123 /* Group+Convenience.swift */; };
+		3644F34B226F285B0038E123 /* Group.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3644F342226F285B0038E123 /* Group.xcdatamodeld */; };
+		3644F34C226F285B0038E123 /* Member+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F344226F285B0038E123 /* Member+CoreDataProperties.swift */; };
+		3644F34D226F285B0038E123 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F345226F285B0038E123 /* Group+CoreDataClass.swift */; };
+		3644F3522270EDA80038E123 /* ViewcontrollerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F34F2270EDA80038E123 /* ViewcontrollerScore.swift */; };
+		3644F3532270EDA80038E123 /* RankScoree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F3502270EDA80038E123 /* RankScoree.swift */; };
+		3644F3542270EDA80038E123 /* TableViewCellScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F3512270EDA80038E123 /* TableViewCellScore.swift */; };
 		36513C1E21E14256001652FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C1D21E14256001652FF /* LoginViewController.swift */; };
 		36513C2121E14274001652FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C1F21E14273001652FF /* RegisterViewController.swift */; };
 		36513C2221E14274001652FF /* ResetpassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C2021E14274001652FF /* ResetpassView.swift */; };
@@ -122,6 +136,20 @@
 		3623C002224CB41800A57F58 /* kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kick.wav; sourceTree = "<group>"; };
 		3623C003224CB41800A57F58 /* victory.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = victory.wav; sourceTree = "<group>"; };
 		362F2F3721F249BC00BCDE96 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		3644F334226F276E0038E123 /* Namegroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Namegroup.swift; sourceTree = "<group>"; };
+		3644F335226F276F0038E123 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		3644F336226F276F0038E123 /* GroupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
+		3644F33D226F285A0038E123 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		3644F33E226F285A0038E123 /* Member+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Member+Convenience.swift"; sourceTree = "<group>"; };
+		3644F33F226F285A0038E123 /* Member+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Member+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3644F340226F285A0038E123 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3644F341226F285A0038E123 /* Group+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Group+Convenience.swift"; sourceTree = "<group>"; };
+		3644F343226F285B0038E123 /* Group.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Group.xcdatamodel; sourceTree = "<group>"; };
+		3644F344226F285B0038E123 /* Member+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Member+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3644F345226F285B0038E123 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3644F34F2270EDA80038E123 /* ViewcontrollerScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewcontrollerScore.swift; sourceTree = "<group>"; };
+		3644F3502270EDA80038E123 /* RankScoree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankScoree.swift; sourceTree = "<group>"; };
+		3644F3512270EDA80038E123 /* TableViewCellScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellScore.swift; sourceTree = "<group>"; };
 		36513C1D21E14256001652FF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		36513C1F21E14273001652FF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		36513C2021E14274001652FF /* ResetpassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetpassView.swift; sourceTree = "<group>"; };
@@ -240,6 +268,42 @@
 			path = Sound;
 			sourceTree = "<group>";
 		};
+		3644F333226F272A0038E123 /* Grouping */ = {
+			isa = PBXGroup;
+			children = (
+				3644F33C226F28410038E123 /* Model+coredata */,
+				3644F336226F276F0038E123 /* GroupController.swift */,
+				3644F335226F276F0038E123 /* GroupsTableViewController.swift */,
+				3644F334226F276E0038E123 /* Namegroup.swift */,
+			);
+			path = Grouping;
+			sourceTree = "<group>";
+		};
+		3644F33C226F28410038E123 /* Model+coredata */ = {
+			isa = PBXGroup;
+			children = (
+				3644F33D226F285A0038E123 /* CoreDataStack.swift */,
+				3644F342226F285B0038E123 /* Group.xcdatamodeld */,
+				3644F341226F285A0038E123 /* Group+Convenience.swift */,
+				3644F345226F285B0038E123 /* Group+CoreDataClass.swift */,
+				3644F340226F285A0038E123 /* Group+CoreDataProperties.swift */,
+				3644F33E226F285A0038E123 /* Member+Convenience.swift */,
+				3644F33F226F285A0038E123 /* Member+CoreDataClass.swift */,
+				3644F344226F285B0038E123 /* Member+CoreDataProperties.swift */,
+			);
+			path = "Model+coredata";
+			sourceTree = "<group>";
+		};
+		3644F34E2270ED8B0038E123 /* ranking */ = {
+			isa = PBXGroup;
+			children = (
+				3644F3502270EDA80038E123 /* RankScoree.swift */,
+				3644F3512270EDA80038E123 /* TableViewCellScore.swift */,
+				3644F34F2270EDA80038E123 /* ViewcontrollerScore.swift */,
+			);
+			path = ranking;
+			sourceTree = "<group>";
+		};
 		36513C1C21E14245001652FF /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				3669C57222363A2E001A06B8 /* Join Group */,
+				36F678DC21DDEBAB0009977A /* ViewController.swift */,
 				3669C579223657F7001A06B8 /* UserHomeViewController.swift */,
 				3669C57C223658E1001A06B8 /* UserTabberViewController.swift */,
 				361B447F2257E7DE009AFC09 /* UserHomeTableViewCell.swift */,
@@ -383,10 +448,11 @@
 			children = (
 				36C8028621F1053A009F6877 /* User.swift */,
 				36C8027D21EB566B009F6877 /* rally.entitlements */,
-				36F678DC21DDEBAB0009977A /* ViewController.swift */,
 				3669C57B223657FF001A06B8 /* User */,
 				36C8028321F0DFDF009F6877 /* Admin */,
 				36C8028021F0A6C6009F6877 /* channel */,
+				3644F333226F272A0038E123 /* Grouping */,
+				3644F34E2270ED8B0038E123 /* ranking */,
 				36513C1C21E14245001652FF /* login */,
 				368385922212B09900E6A561 /* game */,
 				36F6790B21DDF98A0009977A /* font */,
@@ -760,24 +826,32 @@
 			files = (
 				361B447E225662D9009AFC09 /* CreateQR.swift in Sources */,
 				368385912212B09100E6A561 /* ScoreModel.swift in Sources */,
+				3644F338226F276F0038E123 /* GroupsTableViewController.swift in Sources */,
 				3669C57D223658E1001A06B8 /* UserTabberViewController.swift in Sources */,
 				36C8028521F0E8BE009F6877 /* tbMemberCell.swift in Sources */,
+				3644F347226F285B0038E123 /* Member+Convenience.swift in Sources */,
 				36513C1E21E14256001652FF /* LoginViewController.swift in Sources */,
 				3669C57A223657F7001A06B8 /* UserHomeViewController.swift in Sources */,
 				368385982212B5DF00E6A561 /* ARHacheGameViewController.swift in Sources */,
 				36513C2121E14274001652FF /* RegisterViewController.swift in Sources */,
 				36A474AD224CC932003B2555 /* LocationPickerController.swift in Sources */,
 				3623BFF8224CB13900A57F58 /* RunGameViewController.swift in Sources */,
+				3644F337226F276F0038E123 /* Namegroup.swift in Sources */,
 				3669C57422363A56001A06B8 /* Scanqr.swift in Sources */,
 				3683859A2212B63200E6A561 /* ARHacheGameHomeViewController.swift in Sources */,
 				362F2F3821F249BC00BCDE96 /* TabbarViewController.swift in Sources */,
 				3691E384222327D200B458A5 /* ChooseGameViewController.swift in Sources */,
+				3644F3522270EDA80038E123 /* ViewcontrollerScore.swift in Sources */,
+				3644F346226F285B0038E123 /* CoreDataStack.swift in Sources */,
 				36A474A4224CB790003B2555 /* MathViewController.swift in Sources */,
 				36C8027F21F0A6B2009F6877 /* SettingsChannelViewController.swift in Sources */,
 				36C8027C21E51CEF009F6877 /* CreateChanelViewController.swift in Sources */,
+				3644F349226F285B0038E123 /* Group+CoreDataProperties.swift in Sources */,
 				36F678E321DDEBAB0009977A /* rally.xcdatamodeld in Sources */,
 				3623BFF7224CB13900A57F58 /* nextrun.swift in Sources */,
+				3644F34C226F285B0038E123 /* Member+CoreDataProperties.swift in Sources */,
 				3623BFF6224CB13900A57F58 /* StickHeroGameScene.swift in Sources */,
+				3644F348226F285B0038E123 /* Member+CoreDataClass.swift in Sources */,
 				368385942212B0E000E6A561 /* QuestionGameViewController.swift in Sources */,
 				368385A222132C9900E6A561 /* GameSettingViewController.swift in Sources */,
 				368385AA22132E4500E6A561 /* GameSettingCell.swift in Sources */,
@@ -788,13 +862,19 @@
 				36A474A6224CB790003B2555 /* FIRData.swift in Sources */,
 				3623BFF9224CB13900A57F58 /* Defined.swift in Sources */,
 				36F678DD21DDEBAB0009977A /* ViewController.swift in Sources */,
+				3644F34D226F285B0038E123 /* Group+CoreDataClass.swift in Sources */,
 				36F678DB21DDEBAB0009977A /* AppDelegate.swift in Sources */,
+				3644F3532270EDA80038E123 /* RankScoree.swift in Sources */,
+				3644F339226F276F0038E123 /* GroupController.swift in Sources */,
 				3623BFFA224CB13900A57F58 /* Tools.swift in Sources */,
 				36C8028721F1053A009F6877 /* User.swift in Sources */,
 				36513C2221E14274001652FF /* ResetpassView.swift in Sources */,
+				3644F34A226F285B0038E123 /* Group+Convenience.swift in Sources */,
 				36513C2421E1435E001652FF /* Const.swift in Sources */,
 				36C8028221F0DFD3009F6877 /* AdminHomeViewController.swift in Sources */,
+				3644F3542270EDA80038E123 /* TableViewCellScore.swift in Sources */,
 				361B44802257E7DE009AFC09 /* UserHomeTableViewCell.swift in Sources */,
+				3644F34B226F285B0038E123 /* Group.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1135,6 +1215,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		3644F342226F285B0038E123 /* Group.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3644F343226F285B0038E123 /* Group.xcdatamodel */,
+			);
+			currentVersion = 3644F343226F285B0038E123 /* Group.xcdatamodel */;
+			path = Group.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		36F678E121DDEBAB0009977A /* rally.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

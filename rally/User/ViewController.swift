@@ -15,6 +15,7 @@ class ViewController: UIViewController {
    
     static var UsernameUser:String! = "" //เก็บ Username ผู้ใช้
     static var userEmail:String! = "" //ไว้เก็บบัญชีผู้ใช้
+    static var Groupname:String =  ""
     var status:Int!
     
 //ดึงข้อมูลจาก firebase
@@ -54,6 +55,21 @@ class ViewController: UIViewController {
                 
                 self.status = Int(strSenderStatus)
                 self.Checkstatus()
+                
+             
+                    var group = ""
+                    if let strTemp = snapshot["group"] as? String
+                    {
+                        group = strTemp
+                    }
+                    else
+                    {
+                        group = ""
+                    }
+                    
+                    ViewController.Groupname = group
+                    
+            
             }
         })
     }

@@ -107,6 +107,7 @@ class RegisterViewController: UIViewController {
             var status = 0
             var join = "no"
             let name = regisName.text
+            var group = "no"
             
 
 //Auth เอาไว้เช็คว่า email นี้เคยมีคนสมัครรึยัง
@@ -122,7 +123,7 @@ class RegisterViewController: UIViewController {
                     var MemberEmail = email
                     MemberEmail = replaceSpacialCharacter(inputStr:email!)
                     self.ref = Database.database().reference(withPath: "Member")
-                    let memberData = member(name: name!, email: email!, status: status, join:join, sex:self.sex)
+                    let memberData = member(name: name!, email: MemberEmail!, status: status, join:join, sex:self.sex, group: group)
                     let memberItemRef = self.ref.child(MemberEmail!) //เอาไว้แยกข้อมูลของแต่ละ user ผ่านอีเมล ถ้าไม่มีตัวนี้ข้อมูลของทุกคนจะรวมกันหมดเลย
                     memberItemRef.setValue(memberData.toAnyObject())
                 

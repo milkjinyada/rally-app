@@ -328,7 +328,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="huv-DK-VYE" kind="show" id="exj-I1-0SE"/>
+                                    <segue destination="dYm-42-14v" kind="show" id="7X0-wo-Ste"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -409,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tv3-64-1NK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3798" y="776"/>
+            <point key="canvasLocation" x="3050" y="776"/>
         </scene>
         <!--Game-->
         <scene sceneID="6EM-GM-g65">
@@ -591,7 +591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iu5-7V-PO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3066" y="776"/>
+            <point key="canvasLocation" x="2324" y="776"/>
         </scene>
         <!--ตั้งค่า-->
         <scene sceneID="sb1-aI-W8y">
@@ -609,23 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ks-XO-lJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4527" y="776"/>
-        </scene>
-        <!--ลำดับคะแนน-->
-        <scene sceneID="XE0-5D-fDb">
-            <objects>
-                <viewController id="s1l-Rg-a4I" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wkn-2g-AID">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Gj9-Ud-wvD"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="ลำดับคะแนน" image="award" id="zmP-wA-IcE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fZ1-g2-P5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2322" y="776"/>
+            <point key="canvasLocation" x="3774" y="776"/>
         </scene>
         <!--User Tabber View Controller-->
         <scene sceneID="HNP-q4-T75">
@@ -639,7 +623,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="2VI-rO-2cf" kind="relationship" relationship="viewControllers" id="Zp5-yI-iS5"/>
-                        <segue destination="s1l-Rg-a4I" kind="relationship" relationship="viewControllers" id="u2i-uU-JK2"/>
+                        <segue destination="ZDi-kP-Y8h" kind="relationship" relationship="viewControllers" id="ao8-os-ZqI"/>
                         <segue destination="zcf-sp-Ytd" kind="relationship" relationship="viewControllers" id="axM-rb-kAV"/>
                         <segue destination="gIl-sF-MD7" kind="relationship" relationship="viewControllers" id="bgd-5t-bBo"/>
                         <segue destination="mcL-zJ-Ehu" kind="relationship" relationship="viewControllers" id="uFD-d1-MuJ"/>
@@ -738,177 +722,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCf-Zf-ojk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8476" y="27"/>
-        </scene>
-        <!--Ranking-->
-        <scene sceneID="PyO-pG-FnA">
-            <objects>
-                <viewController id="JT2-56-Z45" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="igh-1H-7NC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-2" translatesAutoresizingMaskIntoConstraints="NO" id="nd8-pW-yGh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ranking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcj-jf-NKQ">
-                                <rect key="frame" x="16" y="61" width="343" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-userdisplay" translatesAutoresizingMaskIntoConstraints="NO" id="Alb-HW-KLg">
-                                <rect key="frame" x="96" y="132" width="183" height="109"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="display-1" translatesAutoresizingMaskIntoConstraints="NO" id="hYy-4T-zDC">
-                                <rect key="frame" x="142" y="148" width="88" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-userdisplay" translatesAutoresizingMaskIntoConstraints="NO" id="unx-U0-TYH">
-                                <rect key="frame" x="16" y="258" width="159" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="display-1" translatesAutoresizingMaskIntoConstraints="NO" id="UPn-fg-uHy">
-                                <rect key="frame" x="62" y="274" width="68" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-userdisplay" translatesAutoresizingMaskIntoConstraints="NO" id="ar5-pE-oaU">
-                                <rect key="frame" x="200" y="258" width="159" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="display-1" translatesAutoresizingMaskIntoConstraints="NO" id="Wag-th-RXg">
-                                <rect key="frame" x="246" y="274" width="68" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1st" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4No-RB-yJH">
-                                <rect key="frame" x="167" y="102" width="50" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trophy1" translatesAutoresizingMaskIntoConstraints="NO" id="ajD-iw-A13">
-                                <rect key="frame" x="157" y="102" width="18" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2nd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2k-zC-iv2">
-                                <rect key="frame" x="77" y="225" width="50" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trophy2" translatesAutoresizingMaskIntoConstraints="NO" id="wY8-0H-7zk">
-                                <rect key="frame" x="66" y="225" width="18" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3rd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzf-a2-bJk">
-                                <rect key="frame" x="261" y="225" width="50" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trophy3" translatesAutoresizingMaskIntoConstraints="NO" id="hrs-oG-vYf">
-                                <rect key="frame" x="250" y="225" width="18" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100 P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27P-Ag-zMW">
-                                <rect key="frame" x="160" y="249" width="54" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group : B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7p-Vq-epi">
-                                <rect key="frame" x="155" y="263" width="64" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="80 P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTv-K7-ql8">
-                                <rect key="frame" x="69" y="354" width="54" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group : C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVt-EU-T46">
-                                <rect key="frame" x="64" y="370" width="64" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60 P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMQ-To-XJv">
-                                <rect key="frame" x="253" y="354" width="54" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group : A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZC-h4-Izo">
-                                <rect key="frame" x="248" y="370" width="64" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yuo-VJ-X4N">
-                                <rect key="frame" x="16" y="419" width="343" height="298"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="57" id="721-PI-G0L">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="57"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="721-PI-G0L" id="ga2-5h-FMk">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="56.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnG-gN-oUd">
-                                                    <rect key="frame" x="22" y="21" width="22" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="display-1" translatesAutoresizingMaskIntoConstraints="NO" id="74v-Hs-yvt">
-                                                    <rect key="frame" x="56" y="11" width="39" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faV-iU-td9">
-                                                    <rect key="frame" x="115" y="21" width="125" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50 P" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNJ-RL-SCd">
-                                                    <rect key="frame" x="268" y="21" width="36" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="lNO-Gv-6rT"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Ranking" image="icon-rank" id="X1S-hy-Mgm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="egE-oK-PCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7687" y="27"/>
         </scene>
         <!--Admin Home View Controller-->
         <scene sceneID="lW2-LA-lnv">
@@ -1066,10 +879,9 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Member list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-3k-nPT">
-                                <rect key="frame" x="146" y="403" width="82" height="24"/>
+                                <rect key="frame" x="19" y="403" width="87" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="22"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="22"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjy-8D-Xih">
@@ -1114,6 +926,21 @@
                                     <action selector="settingchannelbtn:" destination="HBQ-e5-jEa" eventType="touchUpInside" id="tQN-1r-Ew8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a36-hd-DR7">
+                                <rect key="frame" x="302" y="400" width="54" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
+                                <state key="normal" title="Grouping">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RRX-3S-SZH" kind="show" id="0kP-Z7-dgG"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grouping_icon" translatesAutoresizingMaskIntoConstraints="NO" id="DkV-LL-D5g">
+                                <rect key="frame" x="274" y="400" width="22" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="7qO-ce-XTG"/>
@@ -1382,8 +1209,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="hTw-cq-EdZ" kind="relationship" relationship="viewControllers" id="dIb-YD-mvP"/>
-                        <segue destination="JT2-56-Z45" kind="relationship" relationship="viewControllers" id="lhA-bB-DJk"/>
                         <segue destination="twW-uA-wsv" kind="relationship" relationship="viewControllers" id="Wyr-Yh-555"/>
+                        <segue destination="ZDi-kP-Y8h" kind="relationship" relationship="viewControllers" id="tKU-rV-b6b"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRY-gh-wLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1526,8 +1353,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="XUj-IO-hcP">
+                                <rect key="frame" x="251" y="532" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.29411764709999999" green="0.47843137250000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="GroupStp:" destination="D5T-Zk-ihX" eventType="valueChanged" id="9Lb-i5-8Io"/>
+                                </connections>
+                            </stepper>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aeo-Fl-GFh">
-                                <rect key="frame" x="35" y="697" width="305" height="47"/>
+                                <rect key="frame" x="35" y="618" width="305" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1537,33 +1372,6 @@
                                     <segue destination="9Jl-OE-Oay" kind="show" identifier="gamesetting" id="72e-t3-Nd2"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VLw-k8-DMe">
-                                <rect key="frame" x="37" y="616" width="306" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Random"/>
-                                    <segment title="Custom"/>
-                                </segments>
-                                <color key="tintColor" red="0.79607843140000001" green="0.62352941179999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="GroupingSegment:" destination="D5T-Zk-ihX" eventType="valueChanged" id="ODc-sV-oZi"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="วิธีการจับกลุ่ม" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdK-c8-0j3">
-                                <rect key="frame" x="37" y="660" width="306" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="XUj-IO-hcP">
-                                <rect key="frame" x="251" y="532" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.29411764709999999" green="0.47843137250000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="GroupStp:" destination="D5T-Zk-ihX" eventType="valueChanged" id="9Lb-i5-8Io"/>
-                                </connections>
-                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Elg-lA-8q2"/>
@@ -1571,8 +1379,6 @@
                     <tabBarItem key="tabBarItem" title="settings" image="icon-settings" id="Wy7-ox-poH"/>
                     <connections>
                         <outlet property="channelname" destination="YH5-Qq-x5y" id="Ni4-nG-5pI"/>
-                        <outlet property="groupingseg" destination="VLw-k8-DMe" id="HqN-yk-m6e"/>
-                        <outlet property="groupingtxt" destination="rdK-c8-0j3" id="b3C-AD-EhF"/>
                         <outlet property="groupnum" destination="GPY-YB-NAV" id="9tq-Xx-5nI"/>
                         <outlet property="missionnum" destination="9qs-4b-mEx" id="xkS-r1-Ym9"/>
                         <outlet property="timenum" destination="ZUT-ah-qG0" id="xro-DB-HMB"/>
@@ -2409,6 +2215,318 @@
             </objects>
             <point key="canvasLocation" x="6856.8000000000002" y="-672.41379310344826"/>
         </scene>
+        <!--Groups Table View Controller-->
+        <scene sceneID="ekd-j3-faq">
+            <objects>
+                <tableViewController id="RRX-3S-SZH" customClass="GroupsTableViewController" customModule="Group_Randomizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="RyE-Sr-eUL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="dEb-hZ-GgA">
+                            <rect key="frame" x="0.0" y="117.33333333333337" width="375" height="241"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(Group Size)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXt-qh-aKT">
+                                    <rect key="frame" x="179" y="-21" width="187.33333333333337" height="112.66666666666667"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89Q-gE-TmU">
+                                    <rect key="frame" x="65" y="72" width="245" height="43"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Randomize Groups" backgroundImage="button-blue">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="randomizeGroupsTapped:" destination="RRX-3S-SZH" eventType="touchUpInside" id="hwg-BJ-rw5"/>
+                                    </connections>
+                                </button>
+                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="egP-vl-68s">
+                                    <rect key="frame" x="48" y="21" width="94" height="28.999999999999993"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="groupSizeStepperValueChanged:" destination="RRX-3S-SZH" eventType="valueChanged" id="gFs-Hw-YbX"/>
+                                    </connections>
+                                </stepper>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1de-W8-Cef">
+                                    <rect key="frame" x="60" y="133" width="254" height="47"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                    <state key="normal" title="SAVE" backgroundImage="button-white">
+                                        <color key="titleColor" red="0.29411764709999999" green="0.47843137250000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="savegamebtn:" destination="23g-Fv-zxS" eventType="touchUpInside" id="KA0-17-9Dc"/>
+                                        <action selector="savegroupingbtn:" destination="RRX-3S-SZH" eventType="touchUpInside" id="Kz6-vO-e1E"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="memberNameCell" textLabel="TM7-7c-8Ij" style="IBUITableViewCellStyleDefault" id="QuQ-q6-ncP">
+                                <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QuQ-q6-ncP" id="rIL-I3-7dC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TM7-7c-8Ij">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RRX-3S-SZH" id="erS-9c-iBT"/>
+                            <outlet property="delegate" destination="RRX-3S-SZH" id="Sfi-96-diC"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="xRW-HY-xUb">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="5dT-5e-XCy">
+                            <rect key="frame" x="13" y="7" width="312" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="RRX-3S-SZH" id="api-Ky-4TO"/>
+                            </connections>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sZk-bK-cok">
+                            <connections>
+                                <action selector="addMemberTapped:" destination="RRX-3S-SZH" id="JxF-bu-ZK4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="groupSizeLabel" destination="cXt-qh-aKT" id="nWj-9o-bog"/>
+                        <outlet property="groupeSizeStepper" destination="egP-vl-68s" id="GtZ-qe-sJY"/>
+                        <outlet property="nameTextField" destination="5dT-5e-XCy" id="zQv-eA-dgu"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXC-RP-qz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6856.8000000000002" y="775.86206896551732"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nFD-iX-Mw9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jfe-ve-Jrw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LWf-bw-m5I">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RRX-3S-SZH" kind="relationship" relationship="rootViewController" id="5Vp-ND-dRr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4OV-En-An9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6002" y="776"/>
+        </scene>
+        <!--Ranking-->
+        <scene sceneID="tmd-vU-IZ2">
+            <objects>
+                <viewController id="ZDi-kP-Y8h" customClass="ViewcontrollerScore" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gB9-Dg-ab8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-2" translatesAutoresizingMaskIntoConstraints="NO" id="q3Q-GZ-GXu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ranking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0T-mc-NDE">
+                                <rect key="frame" x="16" y="61" width="343" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-userdisplay" translatesAutoresizingMaskIntoConstraints="NO" id="sIC-aT-JVt">
+                                <rect key="frame" x="96" y="132" width="183" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="display-1" translatesAutoresizingMaskIntoConstraints="NO" id="8kl-ME-XVB">
+                                <rect key="frame" x="142" y="148" width="88" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-userdisplay" translatesAutoresizingMaskIntoConstraints="NO" id="V2G-0d-gmO">
+                                <rect key="frame" x="16" y="258" width="159" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="display-1" translatesAutoresizingMaskIntoConstraints="NO" id="5fZ-hg-WW2">
+                                <rect key="frame" x="62" y="274" width="68" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-userdisplay" translatesAutoresizingMaskIntoConstraints="NO" id="7we-DF-6C2">
+                                <rect key="frame" x="200" y="258" width="159" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="display-1" translatesAutoresizingMaskIntoConstraints="NO" id="NhD-KD-NrB">
+                                <rect key="frame" x="246" y="274" width="68" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1st" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wc-ct-AH9">
+                                <rect key="frame" x="167" y="102" width="50" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trophy1" translatesAutoresizingMaskIntoConstraints="NO" id="K9Z-Ap-xLM">
+                                <rect key="frame" x="157" y="102" width="18" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2nd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRO-43-gkk">
+                                <rect key="frame" x="77" y="225" width="50" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trophy2" translatesAutoresizingMaskIntoConstraints="NO" id="t0P-bI-Mac">
+                                <rect key="frame" x="66" y="225" width="18" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3rd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtW-t5-jHM">
+                                <rect key="frame" x="261" y="225" width="50" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trophy3" translatesAutoresizingMaskIntoConstraints="NO" id="1EK-4t-sDJ">
+                                <rect key="frame" x="250" y="225" width="18" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100 P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRt-Nn-vgw">
+                                <rect key="frame" x="160" y="249" width="54" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group : B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09a-Zg-vOl">
+                                <rect key="frame" x="155" y="263" width="64" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="80 P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jmv-o3-GdJ">
+                                <rect key="frame" x="69" y="354" width="54" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group : C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5r1-eg-BlN">
+                                <rect key="frame" x="64" y="370" width="64" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60 P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8c-bw-Fzp">
+                                <rect key="frame" x="253" y="354" width="54" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group : A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYO-6P-mfa">
+                                <rect key="frame" x="248" y="370" width="64" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-2r-ZSb">
+                                <rect key="frame" x="16" y="419" width="343" height="298"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" rowHeight="57" id="kpV-Fj-iRv" customClass="TableViewCellScore" customModule="rally" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kpV-Fj-iRv" id="vPh-K8-jAS">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="56.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZi-Lw-XA0">
+                                                    <rect key="frame" x="22" y="21" width="22" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="display-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xad-Kn-QBV">
+                                                    <rect key="frame" x="56" y="11" width="39" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjQ-f8-BRS">
+                                                    <rect key="frame" x="115" y="21" width="125" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50 P" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVn-FZ-p4M">
+                                                    <rect key="frame" x="268" y="21" width="36" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="NumberFourtoN" destination="cZi-Lw-XA0" id="3Mz-q9-QZT"/>
+                                            <outlet property="nameLabel" destination="fjQ-f8-BRS" id="1fO-nX-NOT"/>
+                                            <outlet property="scoreLabel" destination="eVn-FZ-p4M" id="Ae6-Ha-PKG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZDi-kP-Y8h" id="30t-NP-T14"/>
+                                    <outlet property="delegate" destination="ZDi-kP-Y8h" id="mM1-kY-yPr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="udL-YN-h6Y"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Ranking" image="icon-rank" id="Gmf-UH-qv6"/>
+                    <connections>
+                        <outlet property="firstName" destination="09a-Zg-vOl" id="yZ1-hi-0fa"/>
+                        <outlet property="firstScore" destination="QRt-Nn-vgw" id="lNE-XP-bPR"/>
+                        <outlet property="secondName" destination="5r1-eg-BlN" id="M4n-3M-Tb1"/>
+                        <outlet property="secondScore" destination="Jmv-o3-GdJ" id="w9k-jN-f1I"/>
+                        <outlet property="tableView" destination="Gca-2r-ZSb" id="8fK-o4-MDR"/>
+                        <outlet property="thirdName" destination="nYO-6P-mfa" id="NNc-O8-9Tg"/>
+                        <outlet property="thirdScore" destination="h8c-bw-Fzp" id="q9O-D0-dNU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6wK-2w-itq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7670" y="27"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AR-Time" width="135" height="158"/>
@@ -2433,10 +2551,10 @@
         <image name="Settingicon" width="11" height="11"/>
         <image name="WhiteCreateChannalbtn" width="305" height="47"/>
         <image name="ans-math" width="367" height="65"/>
-        <image name="award" width="20" height="20"/>
         <image name="axe" width="96" height="96"/>
         <image name="bell" width="20" height="20"/>
         <image name="btn-Quiz" width="300" height="52"/>
+        <image name="button-blue" width="305" height="47"/>
         <image name="button-white" width="305" height="47"/>
         <image name="car" width="512" height="512"/>
         <image name="chat-2" width="20" height="20"/>
@@ -2449,6 +2567,7 @@
         <image name="finish-line" width="512" height="512"/>
         <image name="game-controller" width="20" height="20"/>
         <image name="group" width="40" height="40"/>
+        <image name="grouping_icon" width="23" height="23"/>
         <image name="icon-chat" width="48" height="49"/>
         <image name="icon-memberlist" width="48" height="49"/>
         <image name="icon-rank" width="48" height="49"/>
@@ -2480,9 +2599,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="72e-t3-Nd2"/>
-        <segue reference="CP3-ug-JWW"/>
         <segue reference="ZME-hI-vVj"/>
+        <segue reference="CP3-ug-JWW"/>
+        <segue reference="ao8-os-ZqI"/>
+        <segue reference="0kP-Z7-dgG"/>
         <segue reference="wYd-R9-Ue6"/>
-        <segue reference="exj-I1-0SE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -20,4 +20,5 @@ class User: NSObject {
     var mission:Int?
     var time:Int?
     var Channel:String?
+    var email:String?
 }

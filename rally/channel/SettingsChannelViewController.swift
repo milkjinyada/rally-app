@@ -37,22 +37,6 @@ class SettingsChannelViewController: UIViewController {
         group = String(Int(sender.value))
     }
     
-    @IBOutlet weak var groupingtxt: UILabel!
-    @IBOutlet weak var groupingseg: UISegmentedControl!
-    @IBAction func GroupingSegment(_ sender: UISegmentedControl) {
-        
-        switch groupingseg.selectedSegmentIndex
-        {
-        case 0:
-            groupingtxt.text = "จับแบบ Random"
-            grouping = "Random"
-        case 1:
-            groupingtxt.text = "จับแบบ Custom"
-            grouping = "Custom"
-        default:
-            break
-        }
-    }
 
 //เก็บ Rally Setting ขึ้น firebase
     
@@ -64,8 +48,7 @@ class SettingsChannelViewController: UIViewController {
                 "Mission" : self.mission as AnyObject,
                 "Time": self.time as AnyObject,
                 "Group": self.group as AnyObject,
-                "Grouping": self.grouping as AnyObject
-        ]
+            ]
         
         let SettingItemRef = self.MemberRef.child("\(self.userEmail!)/channeldata")
         SettingItemRef.setValue(SettingData)//ส่งขึ้น firebase 

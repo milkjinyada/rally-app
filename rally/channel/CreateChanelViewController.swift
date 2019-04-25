@@ -48,24 +48,27 @@ class CreateChanelViewController: UIViewController {
             })
             self.lbChannelName.text = "ใช้ชื่อนี้ได้"
             self.ChannelName.backgroundColor = UIColor.white
+            
             //ถ้าชื่อห้องไม่ซ้ำ เก็บชื่อห้องไปยัง DB
             let ChannelData: Dictionary<String,AnyObject> = //จะใส่อะไรไปใน firebase ให้ใส่ในนี้ เป็นแบบ dic
                 [
                     "User" : self.username as AnyObject,
                     "ChannelName": channelName as AnyObject
                 ]
-            let ChannelItemRef = self.ChannelRef.child(channelName!) //เอาไว้แยกข้อมูลของแต่ละ user ผ่านอีเมล ถ้าไม่มีตัวนี้ข้อมูลของทุกคนจะรวมกันหมดเลย
+            let ChannelItemRef = self.ChannelRef.child(channelName!)
             ChannelItemRef.setValue(ChannelData)//ส่งขึ้น firebase
+            
+            //อัพเดตชื่อห้องของผู้ดูแล
             let MemberItemRef = self.MemberRef.child("\(self.username)/channelname")
             MemberItemRef.setValue(channelName)//ส่งขึ้น firebase
             
+            //สร้าง Ranking
             let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
-            
             let SettingData: Dictionary<String,AnyObject> =
                 ["Channel" : channelName as AnyObject]
-            
             let ScoreItemRef = MemberRef.child(channelName!)
             ScoreItemRef.setValue(SettingData)//ส่งขึ้น firebase
+            
             
             let Settingchannel = self.storyboard?.instantiateViewController(withIdentifier: "settingschannel") as! SettingsChannelViewController
             self.present(Settingchannel, animated: true, completion: nil)

@@ -55,11 +55,12 @@ class member{
     var status: Int = 0
     var join: String!
     var sex:String!
-    let key: String
+    let group: String!
+   
     var conpleted: Bool!
     let ref: DatabaseReference!
-    init(name: String, email: String, status:Int, join: String, sex:String, key: String = "") {
-        self.key = key
+    init(name: String, email: String, status:Int, join: String, sex:String, group:String) {
+        self.group = group
         self.name = name
         self.email = email
         self.status = status
@@ -70,14 +71,15 @@ class member{
     }
     //ไว้ใช้เวลาอยากจะเรียกข้อมูลจาก firebase มาโชว์ว่าอยากจะโชว์อะไรบ้าง
     init(snapshot: DataSnapshot) {
-        key = snapshot.key
         let snapshotValue = snapshot.value as! [String: AnyObject]
         name = snapshotValue["name"] as! String
         email = snapshotValue["email"] as! String
         status = snapshotValue["status"] as! Int
         join = snapshotValue["join"] as! String
         sex = snapshotValue["sex"] as! String
+        group = snapshotValue["group"] as! String
         ref = snapshot.ref
+        
     }
     //อยากจะเอาข้อมูลอะไรไปเก็บใน firebase ก็ใช้ตัวนี้
     func toAnyObject() -> Any {
@@ -86,7 +88,8 @@ class member{
             "email": email,
             "status": status,
             "join": join,
-            "sex": sex
+            "sex": sex,
+            "group": group
         ]
     }
 }

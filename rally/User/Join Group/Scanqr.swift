@@ -132,16 +132,11 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
                                         let RankRef  = Database.database().reference(withPath: "Ranking")
                                         RankRef.observe(.value, with:{ (snapshot: DataSnapshot) in
                                             for snap in snapshot.children {
-                                                var snapnameRank = (snap as! DataSnapshot).key
+                                                var room = (snap as! DataSnapshot).key
                                                 
-                                                
-                                                //เช็คว่าค่าที่สแกนได้กับค่าใน DB ตรงกันไหม ถ้าตรงก็ไปหน้าถัดไป
-                                                if snapnameRank == object!.stringValue!
-                                                    
+                                                if room == object!.stringValue!
                                                 {
-                                                    
-                                                    //เก็บ ชื่อห้องที่เข้าร่วม ขึ้น firebase
-                                                    let MemberRef : DatabaseReference! = Database.database().reference().child("Ranking").child("\(snapnameRank)")
+                                                    let ScoreItemRef : DatabaseReference! = Database.database().reference().child("Ranking").child(room).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
                                                     
                                                     let ScoreData: Dictionary<String,AnyObject> =
                                                         [   "name" : ViewController.UsernameUser as AnyObject,
@@ -150,10 +145,9 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
                                                             "game3": Int(0) as AnyObject,
                                                             "game4": Int(0) as AnyObject,
                                                             "game5": Int(0) as AnyObject
-                                                    ]
+                                                        ]
                                                     
-                                                    let ScoreItemRef = MemberRef.child("User").child("ชื่อกลุ่ม")
-                                                    ScoreItemRef.setValue(ScoreData)//ส่งขึ้น firebase
+                                                        ScoreItemRef.setValue(ScoreData)//ส่งขึ้น firebase
                                                     
                                                 }
                                                 

@@ -12,9 +12,9 @@ import Firebase
 class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     static var Channelname:String = "admintest"
-    var User:String = ""
+    static var Username:String = ""
     var Gamename = [String]()
-    var Users:String = "admintest@gmaildotcom"
+    //var Users:String = "admintest@gmaildotcom"
     var Mission:Int = 0
     var num = [Int]()
 
@@ -37,7 +37,7 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func SetDetail() {
-        ChannelNamelb.text = UserHomeViewController.Channelname
+        ChannelNamelb.text = "ชื่อห้อง: \(UserHomeViewController.Channelname)"
     }
     
 //ดึงข้อมูลจาก  Firebase
@@ -67,17 +67,40 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     strSenderUser = ""
                 }
                 
-               self.User = strSenderUser
+               UserHomeViewController.Username = strSenderUser
                self.loadmission()
             
             }
         })
+        
+        databaseRef = Database.database().reference().child("Member").child(ViewController.userEmail!) //ดึง ref
+        databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let snapshot = snapshot.value as? [String:AnyObject]
+            {
+                //เอาค่าจาก firbase มาใส่ไว้ในตัวแปร
+                var group = ""
+                if let strTemp = snapshot["group"] as? String
+                {
+                    group = strTemp
+                }
+                else
+                {
+                    group = ""
+                }
+                
+                //UserHomeViewController.Groupname = group
+                self.GroupNamelb.text = "ชื่อกลุ่ม : \(group)"
+                
+            }
+        })
+        
     }
     
     func loadmission() {
         //เอาชื่อเจ้าของห้องไปดึงข้อมูลเกมของห้อง
         
-        MemberRef = Database.database().reference().child("Member").child("\(User)/channeldata")
+        MemberRef = Database.database().reference().child("Member").child("\( UserHomeViewController.Username)/channeldata")
         MemberRef.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let snapshot = snapshot.value as? [String:AnyObject]
@@ -105,7 +128,7 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         Num()
         for i in 0...self.Mission-1{
         
-            GameRef = Database.database().reference().child("Member").child("\(Users)/channeldata").child("game").child("\(i)")
+            GameRef = Database.database().reference().child("Member").child("\(UserHomeViewController.Username)/channeldata").child("game").child("\(i)")
             GameRef.observe(.value, with: { (snapshot) in
             
                 if let snapshot = snapshot.value as? [String:AnyObject]

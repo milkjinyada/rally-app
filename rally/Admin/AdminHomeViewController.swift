@@ -11,7 +11,8 @@ import Firebase
 
 class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
-    static var ChannelName:String = ""
+    static var ChannelName:String = "" //ชื่อห้อง
+    static var userEmail:String! = "" //อีเมลเจ้าของห้อง
     
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var channelname: UILabel!
@@ -39,10 +40,10 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     var MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
     var users = [User]()
     var num = [Int]()
-    var userEmail:String! = "" //ไว้เก็บบัญชีผู้ใช้
+   
 
     
-//ดึงข้อมูลจาก firebase
+//ดึงข้อมูล Chanel จาก firebase
     
     //กำหนด ref
     var databaseRef:DatabaseReference!
@@ -51,7 +52,7 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     
     func databaseInit()
     {
-        databaseRef = Database.database().reference().child("Member").child(userEmail!)
+        databaseRef = Database.database().reference().child("Member").child(AdminHomeViewController.userEmail!)
         databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let snapshot = snapshot.value as? [String:AnyObject]
@@ -83,7 +84,7 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
             }
         })
         
-        channeldataRef = Database.database().reference().child("Member").child("\(self.userEmail!)/channeldata")
+        channeldataRef = Database.database().reference().child("Member").child("\(AdminHomeViewController.userEmail!)/channeldata")
         channeldataRef.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let snapshot = snapshot.value as? [String:AnyObject]
@@ -214,14 +215,18 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
         getUserEmail()
         fetchUser()
     }
+    override func viewWillAppear(_ animated: Bool) {
+         users.removeAll()
+         fetchUser()
+    }
     
     func getUserEmail()
     {
         let AuthEmail = Auth.auth().currentUser?.email //ดึง email ที่ login  อยู่ปัจจุบัน
         if AuthEmail != nil //ต้องมีค่า
         {
-            userEmail = AuthEmail
-            userEmail = replaceSpacialCharacter(inputStr:userEmail)
+            AdminHomeViewController.userEmail = AuthEmail
+            AdminHomeViewController.userEmail = replaceSpacialCharacter(inputStr:AdminHomeViewController.userEmail)
             
             databaseRelease() //ให้มันเคลียค่าทิ้งสะก่อน
             databaseInit()

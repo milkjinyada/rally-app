@@ -39,13 +39,6 @@ class CreateQR: UIViewController {
         imageqr.image = image
         
     
-}
-
-
-
-    
-    
-    
-    
+    }
     
 }
