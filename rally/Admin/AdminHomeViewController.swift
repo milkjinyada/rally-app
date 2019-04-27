@@ -85,7 +85,7 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
         })
         
         channeldataRef = Database.database().reference().child("Member").child("\(AdminHomeViewController.userEmail!)/channeldata")
-        channeldataRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        channeldataRef.observe(DataEventType.value, with: { (snapshot) in
             
             if let snapshot = snapshot.value as? [String:AnyObject]
             {
@@ -176,35 +176,40 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     
 //ดึงข้อมูล Member มาใส่ใน tableview
     func fetchUser() {
-        
-        Database.database().reference().child("Member").observe(.childAdded, with: { (snapshot) in
-                        
-            if let dictionary = snapshot.value as? [String: Any]{
-                let user = User()
-                user.name = dictionary["name"] as? String
-                user.group = dictionary["group"] as? String
-                user.sex = dictionary["sex"] as? String
-                user.join = dictionary["join"] as? String
-                user.status = dictionary["status"] as? Int
-                user.Channel = dictionary["Channel"] as? String
-           
-                //เช็คว่า member ไหนเป็น สมาชิกของห้องนี้บ้าง ถึงค่อยเพิ่มชื่อเข้าไปใน tb
-                if user.Channel == (AdminHomeViewController.ChannelName) {
-                    self.users.append(user)
+            MemberRef.observe(DataEventType.value, with: {(snapshot) in
+            self.users.removeAll()
+                if let snapShort = snapshot.children.allObjects as? [DataSnapshot]{
+                    for snap in snapShort{
+                        if let dictionary = snap.value as? [String: AnyObject]{
+                        let user = User()
+                            user.name = dictionary["name"] as? String
+                            user.group = dictionary["group"] as? String
+                            user.sex = dictionary["sex"] as? String
+                            user.join = dictionary["join"] as? String
+                            user.status = dictionary["status"] as? Int
+                            user.Channel = dictionary["Channel"] as? String
+                            
+                            //เช็คว่า member ไหนเป็น สมาชิกของห้องนี้บ้าง ถึงค่อยเพิ่มชื่อเข้าไปใน tb
+                            if user.Channel == (AdminHomeViewController.ChannelName) {
+                                self.users.append(user)
+                               
+                            }
+                        }
+                    }
                     DispatchQueue.main.async {
+                        self.num.removeAll()
                         self.Num()
                         self.tableview.reloadData()
                     }
                 }
-                
-            }
-        })
+            })
     }
     
     func Num() {
     
         for i in 1...users.count
         {
+            print(users.count)
             num.append(i)
         }
         
@@ -214,10 +219,6 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
         super.viewDidLoad()
         getUserEmail()
         fetchUser()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-         users.removeAll()
-         fetchUser()
     }
     
     func getUserEmail()

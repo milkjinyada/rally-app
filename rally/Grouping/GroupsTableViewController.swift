@@ -22,6 +22,7 @@ class GroupsTableViewController: UITableViewController {
     var MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
     var groupnum:Int = 0
     var membernum:Int = 0
+    var israndom:Bool = false
     
     //var Memberlist = [Int:[Int:String]]()
     var Memberlist = [[String]](repeating: [String](repeating: "0", count: 1), count: 1)
@@ -80,20 +81,22 @@ class GroupsTableViewController: UITableViewController {
                     //Memberlist[indexPath.section] = [indexPath.row:member.name]
                     Memberlist[indexPath.section][indexPath.row] = member.name
                
-                    //update ชื่อกลุ่มของสมาชิก
-                        Database.database().reference().child("Member").observe(.childAdded, with: { (snapshot) in
-                            
+                    if israndom == true{
+                        //update ชื่อกลุ่มของสมาชิก
+                        Database.database().reference().child("Member").observeSingleEvent(of: .value, with: { (snapshot) in
                             if let dictionary = snapshot.value as? [String: Any]{
                                 let user = User()
                                 user.email = dictionary["email"] as? String
                                 user.name = dictionary["name"] as? String
                                 
-                                if user.name == (member.name) {
+                                if user.name == (member.name)  {
                                     Database.database().reference().child("Member").child(user.email ?? "").updateChildValues(["group": String(indexPath.section+1)])
-
+                                    self.israndom = false
                                 }
                             }
                         })
+                    }
+                   
                     
                 }
         
@@ -111,7 +114,7 @@ class GroupsTableViewController: UITableViewController {
     
     //กด Random กลุ่ม
     @IBAction func randomizeGroupsTapped(_ sender: UIButton) {
-        
+        israndom = true
         groupController.randomizeGroups()
         tableView.reloadData()
     }

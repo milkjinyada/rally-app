@@ -281,7 +281,7 @@ class MathViewController: UIViewController {
             let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
             let SettingData: Dictionary<String,AnyObject> =
                 ["Math" : Int(scoreUploadMath) as AnyObject]
-            let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
+            let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.userEmail)
                 ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
             
             //กลับไปหน้า  Home

@@ -124,7 +124,7 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
                         ["Run" : Int(self.realScore2) as AnyObject]
 
 
-                    let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
+                    let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.userEmail)
                     ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
                     
                    

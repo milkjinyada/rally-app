@@ -32,7 +32,7 @@ class Scanqr: UIViewController {
     func AddMemberInRanking(roomname:String) {
        
         let RankRef  = Database.database().reference(withPath: "Ranking")
-        RankRef.observe(.value, with:{ (snapshot: DataSnapshot) in
+        RankRef.observeSingleEvent(of: .value, with:{ (snapshot: DataSnapshot) in
             for snap in snapshot.children {
                 var room = (snap as! DataSnapshot).key
                 
@@ -50,33 +50,16 @@ class Scanqr: UIViewController {
                             "Run": Int(0) as AnyObject
                         ]
                     
-                    let rankinggroup : DatabaseReference! = Database.database().reference().child("Ranking").child(room).child("Group")
-                    
-                    rankinggroup.observe(.value, with: { (snapshot: DataSnapshot) in
-                        for snap in snapshot.children{
-                            var user = (snap as! DataSnapshot).key
-                            
-                            if user == ViewController.userEmail{
-                                return
-                            }
-                            
-                        }
-                        ScoreItem.setValue(ScoreData)//ส่งขึ้น firebase
-                        
-                        //เปลื่ยนสถานะของ User เป็น 2 = เข้าร่วมกิจกรรมแล้ว
-                        let StatusItemRef = self.MemberRef.child("\(ViewController.userEmail!)/status")
-                        StatusItemRef.setValue(2)//ส่งขึ้น firebase
-                    })
-                    
-                   
-                    
-                }
-                
-            }})
+                    ScoreItem.setValue(ScoreData)//ส่งขึ้น firebase
 
+                    //เปลื่ยนสถานะของ User เป็น 2 = เข้าร่วมกิจกรรมแล้ว
+                    let StatusItemRef = self.MemberRef.child("\(ViewController.userEmail!)/status")
+                        StatusItemRef.setValue(2)//ส่งขึ้น firebase
+                }
+            }
+        })
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -165,21 +148,28 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
                                     alert.addAction(UIAlertAction(title: "Join Channel", style: .default, handler: { (nil) in
                                         
                                         //เก็บ ชื่อห้องที่เข้าร่วม ขึ้น firebase
-                                        
                                         let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
-                                        
                                         let SettingData: Dictionary<String,AnyObject> =
                                             ["Channel" : snapname as AnyObject]
-                                        
-                                        
                                         let ScoreItemRef = MemberRef.child("\(ViewController.userEmail!)")
                                         ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
                                         
+                                        //สร้าง Rank
                                         self.AddMemberInRanking(roomname: snapname)
+                                        
+                                        //เปลื่ยนสถานะ  Join
+                                        let JoinItemRef = self.MemberRef.child(ViewController.userEmail!)
+                                        let JoinData: Dictionary<String,AnyObject> =
+                                            ["join" : "yes" as AnyObject]
+                                        JoinItemRef.updateChildValues(JoinData)
+                                        
+                                        
                                         
                                         //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า UserHome
                                         let homeView = self.storyboard?.instantiateViewController(withIdentifier: "usertabber") as! UserTabberViewController
                                         self.present(homeView, animated: true, completion: nil)
+                                        
+                                        
                                         
                                     }))
                                     
