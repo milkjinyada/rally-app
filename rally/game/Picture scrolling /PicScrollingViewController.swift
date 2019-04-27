@@ -283,17 +283,16 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
         //alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
             
+            //////ส่งคะแนนเกมขึ้น firebase
             let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
             
             let SettingData: Dictionary<String,AnyObject> =
                 ["Picture" : Int(scoreUpload) as AnyObject]
-            //////แก้
-            //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
             let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
               ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
             
+            //กลับไปหน้า  Home
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
-            
             self.present(homeView, animated: true, completion: nil)
             
         }))
@@ -309,16 +308,15 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
         //alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
             
+            //////ส่งคะแนนเกมขึ้น firebase
             let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
-            
             let SettingData: Dictionary<String,AnyObject> =
                 ["Picture" : Int(scoreUpload) as AnyObject]
-            //////แก้
-            //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
-           let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
+            let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
                ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
-            let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             
+            //กลับไปหน้า Home
+            let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             self.present(homeView, animated: true, completion: nil)
         }))
         
@@ -332,17 +330,15 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
         //alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
             
+            //////ส่งคะแนนเกมขึ้น firebase
             let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
-            
             let SettingData: Dictionary<String,AnyObject> =
                 ["Picture" : Int(scoreUpload) as AnyObject]
-            //////แก้
-            //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
             let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
                 ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
             
+            //กลับไปหน้า Home
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
-            
             self.present(homeView, animated: true, completion: nil)
         }))
         

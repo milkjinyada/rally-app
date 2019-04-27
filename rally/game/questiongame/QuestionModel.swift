@@ -1,9 +1,9 @@
 //
-//  QuestionModel.swift
-//  QuizApp
+//  QuestionGameViewController.swift
+//  rally
 //
-//  Created by Samuel Yanez on 10/12/17.
-//  Copyright © 2017 Samuel Yanez. All rights reserved.
+//  Created by Jinyada on 12/2/62.
+//  Copyright © พ.ศ. 2562 Jinyada. All rights reserved.
 //
 
 import GameKit

@@ -152,11 +152,17 @@ class MathViewController: UIViewController {
         ansField.text = ""
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MathViewController.timeswitch), userInfo: nil, repeats: true)
     }
+    
+    func buttonTapped(){
+        ansField.resignFirstResponder()
+    }
 
     @IBAction func submit(_ sender: AnyObject) {
         question.isHidden = true
         ansField.isHidden = true
         submitButton.isHidden = true
+        buttonTapped()
+        
         if Int(ansField.text!) == answer {
             RightOrWrong.isHidden = false
             NextProblem.isHidden = false
@@ -242,6 +248,7 @@ class MathViewController: UIViewController {
             submitButton.isHidden = true
             RightOrWrong.isHidden = false
             NextProblem.isHidden = false
+            buttonTapped()
             RightOrWrong.text = "Time's Up!"
             scoremath = scoremath + pointspproblem
             //score.text = "\(scoremath)"
@@ -257,7 +264,7 @@ class MathViewController: UIViewController {
             NextProblem.isHidden = false
             RightOrWrong.text = "You Win! :D :D :D"
             NextProblem.setTitle("Play Again", for: UIControl.State())
-            //NextgameMath()
+            NextgameMath()
         }
     }
     
@@ -270,19 +277,17 @@ class MathViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
             
+            //////ส่งคะแนนเกมขึ้น firebase
             let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
-            
             let SettingData: Dictionary<String,AnyObject> =
                 ["Math" : Int(scoreUploadMath) as AnyObject]
-            //////แก้
-            //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
             let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
                 ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
             
-            //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า Nextpage
-            //(withIdentifier: "next") ใส่ตรง StorybordID ของหน้าที่ต้องการให้เด้งไปนะจ๊ะ
+            //กลับไปหน้า  Home
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             self.present(homeView, animated: true, completion: nil)
+            
         }))
         present(alert, animated: true, completion: nil)
     }

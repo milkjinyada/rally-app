@@ -30,13 +30,9 @@ class QuestionGameViewController: UIViewController {
     
     //จำนวนคำถาม
     let numberOfQuestionPerRound = 10
-    var currentQuestion: Question? = nil
-    
+    var currentQuestion: Question? = nil    
     var gameStartSound: SystemSoundID = 0
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         displayQuestion()
@@ -52,8 +48,6 @@ class QuestionGameViewController: UIViewController {
     
     func displayQuestion() {
         currentQuestion = questions.getRandomQuestion()
-        
-        
         
         if let question = currentQuestion {
             let choices = question.getChoices()
@@ -156,15 +150,13 @@ class QuestionGameViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
             
+            //////ส่งคะแนนเกมขึ้น firebase
             let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
             let SettingData: Dictionary<String,AnyObject> = ["Question" : Int(self.score.s2) as AnyObject]
-            
-            //////แก้
-            //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
-            let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
+                let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
             ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
 
-
+            //////กลับไปหน้า  Home
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             self.present(homeView, animated: true, completion: nil)
         

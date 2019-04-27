@@ -1,9 +1,9 @@
 //
-//  ScoreModel.swift
-//  QuizApp
+//  QuestionGameViewController.swift
+//  rally
 //
-//  Created by Samuel Yanez on 10/12/17.
-//  Copyright © 2017 Samuel Yanez. All rights reserved.
+//  Created by Jinyada on 12/2/62.
+//  Copyright © พ.ศ. 2562 Jinyada. All rights reserved.
 //
 
 import UIKit
@@ -16,13 +16,9 @@ class ScoreModel  {
     
         fileprivate var correctAnswers: Int = 0
         fileprivate var incorrectAnswers: Int = 0
-    
-    
+        
     var s2:String="" //ประกาศเป็นสตริงเอาค่าเข้าไฟล์เบสแบบสตริง
 
-  
-    //var lastscore:String=""
-    
     func reset() {
         correctAnswers = 0
         incorrectAnswers = 0
@@ -43,8 +39,7 @@ class ScoreModel  {
         
     }
     
-   
-  
+    
     func getScore() -> String {
         let percentaile = Double(correctAnswers) / Double(getQuestionsAsked())
 
@@ -64,21 +59,7 @@ class ScoreModel  {
         else {
              return "Score = \(correctAnswers)"
         }
-  
     }
-    
-
-//ส่งค่าข้ามหน้าโดยใช้สาย ให้สายชื่อpassData
-//    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.identifier == "passData" {
-//            let score1 = segue.destination as! File
-//            score1.lastscore = String(correctAnswers)
-//
-//        }
-//    }
-    
-    
 }
 
 
