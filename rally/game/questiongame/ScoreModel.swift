@@ -57,12 +57,9 @@ class ScoreModel  {
 
         if (percentaile > 0.75) {
             return "Score = \(correctAnswers)"
-            
-            
         }
         else if (percentaile > 0.5) {
             return "Score = \(correctAnswers)"
-
         }
         else {
              return "Score = \(correctAnswers)"

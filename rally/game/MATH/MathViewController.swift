@@ -277,6 +277,7 @@ class MathViewController: UIViewController {
             //////แก้
             //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
             let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
+                ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
             
             //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า Nextpage
             //(withIdentifier: "next") ใส่ตรง StorybordID ของหน้าที่ต้องการให้เด้งไปนะจ๊ะ

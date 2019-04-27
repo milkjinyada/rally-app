@@ -23,11 +23,56 @@ internal extension Scanqr{
 
 class Scanqr: UIViewController {
     
-    
     @IBOutlet weak var square: UIImageView!
     var video = AVCaptureVideoPreviewLayer()
-    
     private let supportCode = [AVMetadataObject.ObjectType.qr]
+    
+
+
+    func AddMemberInRanking(roomname:String) {
+       
+        let RankRef  = Database.database().reference(withPath: "Ranking")
+        RankRef.observe(.value, with:{ (snapshot: DataSnapshot) in
+            for snap in snapshot.children {
+                var room = (snap as! DataSnapshot).key
+                
+                if room == roomname
+                {
+                    
+                    let ScoreItem : DatabaseReference! = Database.database().reference().child("Ranking").child(room).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
+                    
+                    let ScoreData: Dictionary<String,AnyObject> =
+                        [   "name" : ViewController.UsernameUser as AnyObject,
+                            "AR" : Int(0) as AnyObject,
+                            "Math" : Int(0) as AnyObject,
+                            "Picture": Int(0) as AnyObject,
+                            "Question": Int(0) as AnyObject,
+                            "Run": Int(0) as AnyObject
+                    ]
+                    
+                    let rankinggroup : DatabaseReference! = Database.database().reference().child("Ranking").child(room).child("Group").child(ViewController.Groupname)
+                    rankinggroup.observe(.value, with: { (snapshot: DataSnapshot) in
+                        for snap in snapshot.children{
+                            var user = (snap as! DataSnapshot).key
+                            
+                            if user == ViewController.userEmail{
+                                return
+                            }
+                            else{
+                                 ScoreItem.setValue(ScoreData)//ส่งขึ้น firebase
+                            }
+                            
+                        }
+                    })
+                    
+                   
+                    
+                }
+                
+            }})
+
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,35 +169,10 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
                                             ["Channel" : snapname as AnyObject]
                                         
                                         
-                                        
                                         let ScoreItemRef = MemberRef.child("\(ViewController.userEmail!)")
                                         ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
                                         
-                                        
-                                        let RankRef  = Database.database().reference(withPath: "Ranking")
-                                        RankRef.observe(.value, with:{ (snapshot: DataSnapshot) in
-                                            for snap in snapshot.children {
-                                                var room = (snap as! DataSnapshot).key
-                                                
-                                                if room == object!.stringValue!
-                                                {
-                                                    let ScoreItemRef : DatabaseReference! = Database.database().reference().child("Ranking").child(room).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
-                                                    
-                                                    let ScoreData: Dictionary<String,AnyObject> =
-                                                        [   "name" : ViewController.UsernameUser as AnyObject,
-                                                            "AR" : Int(0) as AnyObject,
-                                                            "Math" : Int(0) as AnyObject,
-                                                            "Picture": Int(0) as AnyObject,
-                                                            "Question": Int(0) as AnyObject,
-                                                            "Run": Int(0) as AnyObject
-                                                        ]
-                                                    
-                                                        ScoreItemRef.setValue(ScoreData)//ส่งขึ้น firebase
-                                                    
-                                                }
-                                                
-                                            }})
-                                        
+                                        self.AddMemberInRanking(roomname: snapname)
                                         
                                         //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า UserHome
                                         let homeView = self.storyboard?.instantiateViewController(withIdentifier: "usertabber") as! UserTabberViewController

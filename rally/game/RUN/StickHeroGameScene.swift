@@ -1,20 +1,18 @@
-//
-//  StickHeroGameScene.swift
-//  Stick-Hero
-//
-//  Created by 顾枫 on 15/6/19.
-//  Copyright © 2015年 koofrank. All rights reserved.
-//
+
 
 import SpriteKit
 import UIKit
 import Firebase
 
-class StickHeroGameScene: SKScene, SKPhysicsContactDelegate  {
+class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
     struct GAP {
         static let XGAP:CGFloat = 20
         static let YGAP:CGFloat = 4
     }
+    
+
+    var viewController : UIViewController!
+    var vc: RunGameViewController!
 
     var gameOver = false {
         willSet {
@@ -51,7 +49,6 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate  {
             let scoreBand = childNode(withName: StickHeroGameSceneChildName.ScoreName.rawValue) as? SKLabelNode
             scoreBand?.text = "\(newValue)"
             scoreBand?.run(SKAction.sequence([SKAction.scale(to: 1.5, duration: 0.1), SKAction.scale(to: 1, duration: 0.1)]))
-
             
             if (newValue == 1) {
                 let tip = childNode(withName: StickHeroGameSceneChildName.TipName.rawValue) as? SKLabelNode
@@ -60,18 +57,12 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate  {
         }
     }
     
-    
     var lifelReal:Int = 4 {
         willSet {
             let life = childNode(withName: StickHeroGameSceneChildName.life.rawValue) as? SKLabelNode
             life?.text = "Life Stock \(newValue)"
             life?.run(SKAction.sequence([SKAction.scale(to: 1.5, duration: 0.1), SKAction.scale(to: 1, duration: 0.1)]))
-        
-            
-//            if (newValue == 1) {
-//                let tip = childNode(withName: StickHeroGameSceneChildName.TipName.rawValue) as? SKLabelNode
-//                tip?.run(SKAction.fadeAlpha(to: 0, duration: 0.4))
-//            }
+
         }
     }
     
@@ -114,19 +105,39 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate  {
             
 
             if lifelReal > 0 {
-            if (retry.name == StickHeroGameSceneChildName.RetryButtonName.rawValue) {
-                retry.run(SKAction.sequence([SKAction.setTexture(SKTexture(imageNamed: "button_retry_down"), resize: false), SKAction.wait(forDuration: 0.3)]), completion: {[unowned self] () -> Void in
-                    //กดปุ่มแล้งรีสตาทใหม่ทุกอย่าง
+                if (retry.name == StickHeroGameSceneChildName.RetryButtonName.rawValue) {
+                    retry.run(SKAction.sequence([SKAction.setTexture(SKTexture(imageNamed: "button_retry_down"), resize: false), SKAction.wait(forDuration: 0.3)]), completion: {[unowned self] () -> Void in
                     
-                    
+                        //กดปุ่มแล้งรีสตาทใหม่ทุกอย่าง
+
                     self.restart()
                     
-                })
+                    })
+                }
             }
+            else{
+                let alert = UIAlertController(title: "Congrats", message: "You got score = \(realScore) คะแนน (ทุก 5 คะแนนคิดเป็น 1 คะแนน) = \(realScore2) คะแนน", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
+
+                    let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
+                    let SettingData: Dictionary<String,AnyObject> =
+                        ["Run" : Int(self.realScore2) as AnyObject]
+
+
+                    let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
+                    ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+                    
+                   
+                    //self.viewController.dismiss(animated: true, completion: nil)
+                    let homeView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "usertabber") as! UserTabberViewController
+                    self.viewController.present(homeView, animated: true, completion: nil)
+
+                }))
+
+                self.viewController.present(alert, animated: true, completion: nil)
+                //เรียกแสดงผล Alert
             }
-           
-            
-         
+
             return
         }
         
@@ -200,13 +211,10 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate  {
         
         score = realScore
         
-//        //ส่งค่าคะแนน realScore
+        //ส่งค่าคะแนน realScore
         let defaults = UserDefaults.standard
         defaults.set(realScore, forKey: "realScore")
-//go back to the Home View Controller
-        //self.dismiss(animated: true, completion: nil)
         
-
         nextLeftStartX = 0
         removeAllChildren()
         start()
@@ -246,40 +254,6 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate  {
             realScore = realScore+1
             print(realScore)
   
-        }
- 
-        if (realScore > 0 && realScore <= 4) {
-            realScore2 = 0
-        }
-        else if (realScore >= 5 && realScore <= 9) {
-            realScore2 = 1
-        }
-        else if (realScore >= 10 && realScore <= 14) {
-            realScore2 = 2
-        }
-        else if (realScore >= 15 && realScore <= 19) {
-            realScore2 = 3
-        }
-        else if (realScore >= 20 && realScore <= 24) {
-            realScore2 = 4
-        }
-        else if (realScore >= 25 && realScore <= 29) {
-            realScore2 = 5
-        }
-        else if (realScore >= 30 && realScore <= 34) {
-            realScore2 = 6
-        }
-        else if (realScore >= 35 && realScore <= 39) {
-            realScore2 = 7
-        }
-        else if (realScore >= 40 && realScore <= 44) {
-            realScore2 = 8
-        }
-        else if (realScore >= 45 && realScore <= 49) {
-            realScore2 = 9
-        }
-        else{
-            realScore2 = 10
         }
         
     }
@@ -336,6 +310,40 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate  {
             
             self.realScore = self.realScore+1
             print(self.realScore)
+            
+            if (self.realScore > 0 && self.realScore <= 4) {
+                self.realScore2 = 0
+            }
+            else if (self.realScore >= 5 && self.realScore <= 9) {
+                self.realScore2 = 1
+            }
+            else if (self.realScore >= 10 && self.realScore <= 14) {
+                self.realScore2 = 2
+            }
+            else if (self.realScore >= 15 && self.realScore <= 19) {
+                self.realScore2 = 3
+            }
+            else if (self.realScore >= 20 && self.realScore <= 24) {
+                self.realScore2 = 4
+            }
+            else if (self.realScore >= 25 && self.realScore <= 29) {
+                self.realScore2 = 5
+            }
+            else if (self.realScore >= 30 && self.realScore <= 34) {
+                self.realScore2 = 6
+            }
+            else if (self.realScore >= 35 && self.realScore <= 39) {
+                self.realScore2 = 7
+            }
+            else if (self.realScore >= 40 && self.realScore <= 44) {
+                self.realScore2 = 8
+            }
+            else if (self.realScore >= 45 && self.realScore <= 49) {
+                self.realScore2 = 9
+            }
+            else{
+                self.realScore2 = 10
+            }
             
             hero.run(SKAction.playSoundFileNamed(StickHeroGameSceneEffectAudioName.VictoryAudioName.rawValue, waitForCompletion: false))
             hero.removeAction(forKey: StickHeroGameSceneActionKey.WalkAction.rawValue)
@@ -402,17 +410,8 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate  {
         fatalError("init(coder:) has not been implemented")
     }
     
+
     
-//    func showAlert()  {
-//        let okAction = UIAlertAction(title: "ok", style: .default){ (result) in
-//        }
-//        GameViewController.shared.showAlert(on: self, title: "Go", message: "next page", preferredStyle: ,alert, actions: [okAction], animated: true, delay: 3.0){
-//        }
-//    }
-    
-    
-    
- 
 }
 
 //MARK: - load node
@@ -613,29 +612,13 @@ private extension StickHeroGameScene {
         highScore.horizontalAlignmentMode = .center
         highScore.setScale(0)
         node.addChild(highScore)
-
-            
-            let alert = UIAlertController(title: "Congrats", message: "You got score = \(realScore) คะแนน (ทุก 5 คะแนนคิดเป็น 1 คะแนน) = \(realScore2) คะแนน", preferredStyle: UIAlertController.Style.alert)
-             alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
-                
-                let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
-                
-                let SettingData: Dictionary<String,AnyObject> =
-                    ["Run" : Int(self.realScore2) as AnyObject]
-                //////แก้
-                //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
-                let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
-                
-                //name: "Main" = มาจากชื่อของ Main.storyboard //withIdentifier: "gamerun" ใส่ไว้ตรง StorybordID ของหน้าที่ต้องการให้เด้งไป
-                let mainScreenVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
-                self.view?.window?.rootViewController?.present(mainScreenVC, animated: true, completion: nil) //เรียกใช้การเปลี่ยนหน้าถ้ากด next
-
-            }))
-             self.view?.window?.rootViewController?.present(alert, animated: true, completion: nil) //เรียกแสดงผล Alert
-            
-            
+                    
         }
-        lifelReal = lifelReal-1  
+        
+        lifelReal = lifelReal-1
+        
     }
+    
+    
 }
 

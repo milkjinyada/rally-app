@@ -146,9 +146,7 @@ class QuestionGameViewController: UIViewController {
         secondChoiceButton.isHidden = true
         thirdChoiceButton.isHidden = true
         fourthChoiceButton.isHidden = true
-        
-        
-        
+     
     }
     
     //เล่นเกมเสร็จขึ้นแจ้งเตือนให้กลับไปหน้าสแกนเริ่มเกมต่อไป
@@ -158,29 +156,26 @@ class QuestionGameViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (nil) in
             
-            
             let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
-            
-            print("คะแนนที่ได้เกมตอบคำถามคือ >> \(Int(self.score.s2))")
             let SettingData: Dictionary<String,AnyObject> = ["Question" : Int(self.score.s2) as AnyObject]
             
             //////แก้
             //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
             let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
-           
             ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+
 
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             self.present(homeView, animated: true, completion: nil)
+        
         }))
         present(alert, animated: true, completion: nil)
     }
     
-    //
+  
     /////////////////  /////////////////  /////////////////  /////////////////
     //ตัวจับเวลา
     // MARK: - timer
-    
     //to store how many sceonds the game is played for
     var seconds = 60 //เวลา
     

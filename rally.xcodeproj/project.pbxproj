@@ -13,7 +13,6 @@
 		361B447E225662D9009AFC09 /* CreateQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B447D225662D9009AFC09 /* CreateQR.swift */; };
 		361B44802257E7DE009AFC09 /* UserHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B447F2257E7DE009AFC09 /* UserHomeTableViewCell.swift */; };
 		3623BFF6224CB13900A57F58 /* StickHeroGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF1224CB13800A57F58 /* StickHeroGameScene.swift */; };
-		3623BFF7224CB13900A57F58 /* nextrun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF2224CB13800A57F58 /* nextrun.swift */; };
 		3623BFF8224CB13900A57F58 /* RunGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF3224CB13900A57F58 /* RunGameViewController.swift */; };
 		3623BFF9224CB13900A57F58 /* Defined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF4224CB13900A57F58 /* Defined.swift */; };
 		3623BFFA224CB13900A57F58 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF5224CB13900A57F58 /* Tools.swift */; };
@@ -123,7 +122,6 @@
 		361B447D225662D9009AFC09 /* CreateQR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateQR.swift; sourceTree = "<group>"; };
 		361B447F2257E7DE009AFC09 /* UserHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeTableViewCell.swift; sourceTree = "<group>"; };
 		3623BFF1224CB13800A57F58 /* StickHeroGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickHeroGameScene.swift; sourceTree = "<group>"; };
-		3623BFF2224CB13800A57F58 /* nextrun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nextrun.swift; sourceTree = "<group>"; };
 		3623BFF3224CB13900A57F58 /* RunGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunGameViewController.swift; sourceTree = "<group>"; };
 		3623BFF4224CB13900A57F58 /* Defined.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defined.swift; sourceTree = "<group>"; };
 		3623BFF5224CB13900A57F58 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 				3623BFFB224CB40600A57F58 /* Sound */,
 				3623BFF4224CB13900A57F58 /* Defined.swift */,
 				3623BFF3224CB13900A57F58 /* RunGameViewController.swift */,
-				3623BFF2224CB13800A57F58 /* nextrun.swift */,
 				3623BFF1224CB13800A57F58 /* StickHeroGameScene.swift */,
 				3623BFF5224CB13900A57F58 /* Tools.swift */,
 			);
@@ -848,7 +845,6 @@
 				36C8027C21E51CEF009F6877 /* CreateChanelViewController.swift in Sources */,
 				3644F349226F285B0038E123 /* Group+CoreDataProperties.swift in Sources */,
 				36F678E321DDEBAB0009977A /* rally.xcdatamodeld in Sources */,
-				3623BFF7224CB13900A57F58 /* nextrun.swift in Sources */,
 				3644F34C226F285B0038E123 /* Member+CoreDataProperties.swift in Sources */,
 				3623BFF6224CB13900A57F58 /* StickHeroGameScene.swift in Sources */,
 				3644F348226F285B0038E123 /* Member+CoreDataClass.swift in Sources */,

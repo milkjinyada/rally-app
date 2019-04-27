@@ -9,14 +9,17 @@
 import UIKit
 import SpriteKit
 import AVFoundation
+import Firebase
 
 class RunGameViewController: UIViewController {
     var musicPlayer:AVAudioPlayer!
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let scene = StickHeroGameScene(size:CGSize(width: DefinedScreenWidth, height: DefinedScreenHeight))
+        
         
         // Configure the view.
         let skView = self.view as! SKView
@@ -29,6 +32,7 @@ class RunGameViewController: UIViewController {
         /* Set the scale mode to scale to fit the window */
         scene.scaleMode = .aspectFill
         
+        scene.viewController = self
         skView.presentScene(scene)
         
     }
@@ -66,6 +70,14 @@ class RunGameViewController: UIViewController {
 
     override var prefersStatusBarHidden : Bool {
         return true
+    }
+   
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)  ///< Don't for get this BTW!
+        
+        if let player = self.musicPlayer {
+            player.stop()
+        }
     }
     
 

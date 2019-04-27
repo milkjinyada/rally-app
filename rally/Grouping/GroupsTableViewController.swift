@@ -31,6 +31,7 @@ class GroupsTableViewController: UITableViewController {
     // เก็บรายชื่อกลุ่มขึ้น firebase
         let SettingGroupRef = self.MemberRef.child("\(AdminHomeViewController.userEmail!)/Grouplist")
         SettingGroupRef.setValue(Memberlist)//ส่งขึ้น firebase
+
         
         let AdminVC = self.storyboard?.instantiateViewController(withIdentifier: "admintabbar") as! TabbarViewController
         self.present(AdminVC, animated: true, completion: nil)
@@ -92,7 +93,8 @@ class GroupsTableViewController: UITableViewController {
 
                                 }
                             }
-                        })   
+                        })
+                    
                 }
         
         return cell

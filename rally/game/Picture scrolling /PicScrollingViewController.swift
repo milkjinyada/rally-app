@@ -290,7 +290,8 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
             //////แก้
             //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
             let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
-
+              ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+            
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             
             self.present(homeView, animated: true, completion: nil)
@@ -315,7 +316,7 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
             //////แก้
             //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
            let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
-            
+               ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             
             self.present(homeView, animated: true, completion: nil)
@@ -338,6 +339,7 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
             //////แก้
             //let ScoreItemRef = MemberRef.child("\(UserHomeViewController.Channelname)/\(ViewController.userEmail!)") << Real
             let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
+                ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
             
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
             
@@ -593,13 +595,13 @@ class PicScrollingViewController: UIViewController, UIImagePickerControllerDeleg
     
     //decrements seconds by 1, updates the timerLabel and calls gameOver if seconds is 0
     @objc func updateTimer() {
-        if seconds == 300 {
-            timer.invalidate()
-            
-            //gameOverr()
-        }
-            
-        else if seconds == 40 {
+//        if seconds == 300 {
+//            timer.invalidate()
+//
+//            //gameOverr()
+//        }
+        
+        if seconds == 40 {
             seconds += 1
             time4.text = "\(seconds)"
             scoree -= 1
