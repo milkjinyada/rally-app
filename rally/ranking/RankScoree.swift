@@ -12,12 +12,12 @@ import UIKit
 
 
 class RankScoree {
-        
-    var name: String?
+    
+    var Groupname: String?
     var gameSum: Int
-    init(name: String, gameSum: Int) {
-        self.name = name
-        self.gameSum = gameSum    
+    init(Groupname: String, gameSum: Int) {
+        self.Groupname = Groupname
+        self.gameSum = gameSum
     }
-
+    
 }

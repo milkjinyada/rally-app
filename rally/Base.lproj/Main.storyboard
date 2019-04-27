@@ -623,7 +623,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="2VI-rO-2cf" kind="relationship" relationship="viewControllers" id="Zp5-yI-iS5"/>
-                        <segue destination="ZDi-kP-Y8h" kind="relationship" relationship="viewControllers" id="ao8-os-ZqI"/>
                         <segue destination="zcf-sp-Ytd" kind="relationship" relationship="viewControllers" id="axM-rb-kAV"/>
                         <segue destination="gIl-sF-MD7" kind="relationship" relationship="viewControllers" id="bgd-5t-bBo"/>
                         <segue destination="mcL-zJ-Ehu" kind="relationship" relationship="viewControllers" id="uFD-d1-MuJ"/>
@@ -2599,9 +2598,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="72e-t3-Nd2"/>
-        <segue reference="ZME-hI-vVj"/>
         <segue reference="CP3-ug-JWW"/>
-        <segue reference="ao8-os-ZqI"/>
+        <segue reference="ZME-hI-vVj"/>
         <segue reference="0kP-Z7-dgG"/>
         <segue reference="wYd-R9-Ue6"/>
     </inferredMetricsTieBreakers>

@@ -16,10 +16,10 @@ class TableViewCellScore: UITableViewCell {
     @IBOutlet var scoreLabel: UILabel!
     
     var  RankScore: RankScoree?{
-                
+        
         didSet{
             
-            nameLabel.text =  RankScore?.name
+            nameLabel.text =  RankScore?.Groupname
             scoreLabel.text = String(describing: RankScore!.gameSum)
         }
     }
@@ -28,11 +28,11 @@ class TableViewCellScore: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

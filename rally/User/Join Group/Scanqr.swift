@@ -39,10 +39,10 @@ class Scanqr: UIViewController {
                 if room == roomname
                 {
                     
-                    let ScoreItem : DatabaseReference! = Database.database().reference().child("Ranking").child(room).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
+                    let ScoreItem : DatabaseReference! = Database.database().reference().child("Ranking").child(room).child("Group").child(ViewController.userEmail)
                     
                     let ScoreData: Dictionary<String,AnyObject> =
-                        [   "name" : ViewController.UsernameUser as AnyObject,
+                        [   "Groupname" : ViewController.Groupname as AnyObject,
                             "AR" : Int(0) as AnyObject,
                             "Math" : Int(0) as AnyObject,
                             "Picture": Int(0) as AnyObject,
@@ -50,7 +50,7 @@ class Scanqr: UIViewController {
                             "Run": Int(0) as AnyObject
                         ]
                     
-                    let rankinggroup : DatabaseReference! = Database.database().reference().child("Ranking").child(room).child("Group").child(ViewController.Groupname)
+                    let rankinggroup : DatabaseReference! = Database.database().reference().child("Ranking").child(room).child("Group")
                     
                     rankinggroup.observe(.value, with: { (snapshot: DataSnapshot) in
                         for snap in snapshot.children{

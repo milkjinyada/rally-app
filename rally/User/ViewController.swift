@@ -102,15 +102,11 @@ class ViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        getUserEmail()
-     
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getUserEmail()
+       
         
         //เช็คว่ามีการ login ไหมถ้าไม่มีในไปเริ่มที่หน้า login ก่อน
         if (Auth.auth().currentUser == nil) //ไม่มีการ login
@@ -130,7 +126,7 @@ class ViewController: UIViewController {
     // สถานะ =  2 ไปหน้า MemberHome
     func Checkstatus()
     {
-        print(status)
+        print("สถานะคือ\(status!)")
         //ให้ไปหน้า admin
         if status! == 1{
             
@@ -146,9 +142,9 @@ class ViewController: UIViewController {
             //ให้ไปหน้าแรก
         else
         {
-            let UserVC = self.storyboard?.instantiateViewController(withIdentifier: "fristview") as! ViewController
-            self.present(UserVC, animated: true, completion: nil)
+            return
         }
+        
     }
     
 
