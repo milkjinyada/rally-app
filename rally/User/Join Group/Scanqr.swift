@@ -26,7 +26,7 @@ class Scanqr: UIViewController {
     @IBOutlet weak var square: UIImageView!
     var video = AVCaptureVideoPreviewLayer()
     private let supportCode = [AVMetadataObject.ObjectType.qr]
-    
+    var MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
 
 
     func AddMemberInRanking(roomname:String) {
@@ -48,9 +48,10 @@ class Scanqr: UIViewController {
                             "Picture": Int(0) as AnyObject,
                             "Question": Int(0) as AnyObject,
                             "Run": Int(0) as AnyObject
-                    ]
+                        ]
                     
                     let rankinggroup : DatabaseReference! = Database.database().reference().child("Ranking").child(room).child("Group").child(ViewController.Groupname)
+                    
                     rankinggroup.observe(.value, with: { (snapshot: DataSnapshot) in
                         for snap in snapshot.children{
                             var user = (snap as! DataSnapshot).key
@@ -58,11 +59,13 @@ class Scanqr: UIViewController {
                             if user == ViewController.userEmail{
                                 return
                             }
-                            else{
-                                 ScoreItem.setValue(ScoreData)//ส่งขึ้น firebase
-                            }
                             
                         }
+                        ScoreItem.setValue(ScoreData)//ส่งขึ้น firebase
+                        
+                        //เปลื่ยนสถานะของ User เป็น 2 = เข้าร่วมกิจกรรมแล้ว
+                        let StatusItemRef = self.MemberRef.child("\(ViewController.userEmail!)/status")
+                        StatusItemRef.setValue(2)//ส่งขึ้น firebase
                     })
                     
                    

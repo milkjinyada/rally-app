@@ -40,7 +40,7 @@ class ViewController: UIViewController {
                     strSenderDisplayName = ""
                 }
                 
-                self.UserName.text = strSenderDisplayName
+                self.UserName?.text = strSenderDisplayName
                 ViewController.UsernameUser = strSenderDisplayName
                
                 var strSenderStatus = 0
@@ -125,19 +125,29 @@ class ViewController: UIViewController {
 
     }
     
+    //เช็คสถานะถ้าเป็น 0 คือเข้ามาครั้งแรกให้ไปที่หน้าแรก
+    // แต่ถ้าสถานะเป็น 1 จะเข้าไปหน้าห้อง admin
+    // สถานะ =  2 ไปหน้า MemberHome
     func Checkstatus()
     {
-
         print(status)
-        if status == 1{
-            //ให้ ไปเริ่มที่หน้า  login
+        //ให้ไปหน้า admin
+        if status! == 1{
+            
             let AdminVC = self.storyboard?.instantiateViewController(withIdentifier: "admintabbar") as! TabbarViewController
-            self.navigationController?.present(AdminVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
+            self.present(AdminVC, animated: true, completion: nil)
+            
         }
+            
+        else if status! == 2{
+            let MemberVc = self.storyboard?.instantiateViewController(withIdentifier: "usertabber") as! UserTabberViewController
+            self.present(MemberVc, animated: true, completion: nil)
+        }
+            //ให้ไปหน้าแรก
         else
         {
-            let HomeVC = self.storyboard?.instantiateViewController(withIdentifier: "fristview") as! ViewController
-            self.navigationController?.present(HomeVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
+            let UserVC = self.storyboard?.instantiateViewController(withIdentifier: "fristview") as! ViewController
+            self.present(UserVC, animated: true, completion: nil)
         }
     }
     

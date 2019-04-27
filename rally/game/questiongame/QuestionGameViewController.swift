@@ -154,10 +154,11 @@ class QuestionGameViewController: UIViewController {
             let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Ranking")
             let SettingData: Dictionary<String,AnyObject> = ["Question" : Int(self.score.s2) as AnyObject]
                 let ScoreItemRef = MemberRef.child(UserHomeViewController.Channelname).child("Group").child(ViewController.Groupname).child(ViewController.userEmail)
+           
             ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
 
-            //////กลับไปหน้า  Home
-            let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
+            //กลับไปหน้า Home
+            let homeView = self.storyboard?.instantiateViewController(withIdentifier: "usertabber") as! UserTabberViewController
             self.present(homeView, animated: true, completion: nil)
         
         }))

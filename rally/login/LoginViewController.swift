@@ -120,23 +120,28 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         databaseRelease()
     }
   
-    //เช็คสถานะถ้าเป็น 0 คือยังไม่เคยสร้างห้องเลยจะเข้าสู่หน้าแรกง แต่ถ้าสถานะเป็น 1 จะเข้าไปหน้าห้อง admin
+    //เช็คสถานะถ้าเป็น 0 คือเข้ามาครั้งแรกให้ไปที่หน้าแรก
+    // แต่ถ้าสถานะเป็น 1 จะเข้าไปหน้าห้อง admin
+    // สถานะ =  2 ไปหน้า MemberHome
     func Checkstatus()
     {
         print(status)
         //ให้ไปหน้า admin
         if status! == 1{
-           
             let AdminVC = self.storyboard?.instantiateViewController(withIdentifier: "admintabbar") as! TabbarViewController
             self.present(AdminVC, animated: true, completion: nil)
           
+        }
+            
+        else if status! == 2{
+            let MemberVc = self.storyboard?.instantiateViewController(withIdentifier: "usertabber") as! UserTabberViewController
+            self.present(MemberVc, animated: true, completion: nil)
         }
         //ให้ไปหน้าแรก
         else
         {
             let UserVC = self.storyboard?.instantiateViewController(withIdentifier: "fristview") as! ViewController
             self.present(UserVC, animated: true, completion: nil)
-            //self.navigationController?.present(HomeVC, animated: true, completion: nil) //แบบนี้จะไม่มีหน้า back กลับ
         }
     }
     

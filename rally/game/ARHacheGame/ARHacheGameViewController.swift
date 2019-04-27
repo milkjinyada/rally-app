@@ -184,7 +184,7 @@ class ARHacheGameViewController: UIViewController, ARSCNViewDelegate, SCNPhysics
                     ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
         
                 //กลับไปหน้า Home
-                let homeView = self.storyboard?.instantiateViewController(withIdentifier: "userhomeview") as! UserHomeViewController
+                    let homeView = self.storyboard?.instantiateViewController(withIdentifier: "usertabber") as! UserTabberViewController
                     self.present(homeView, animated: true, completion: nil)
                 }))
                 present(alert, animated: true, completion: nil)
