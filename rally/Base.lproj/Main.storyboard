@@ -706,17 +706,17 @@
             </objects>
             <point key="canvasLocation" x="1789.5999999999999" y="26.600985221674879"/>
         </scene>
-        <!--Chat-->
+        <!--Map-->
         <scene sceneID="Ym7-Y3-G7L">
             <objects>
-                <viewController id="twW-uA-wsv" sceneMemberID="viewController">
+                <viewController id="twW-uA-wsv" customClass="GameLocationViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wlD-6O-BIE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OJ7-aX-KJ1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Chat" image="icon-chat" id="Gcv-1p-wAm"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="icon-map" id="Gcv-1p-wAm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCf-Zf-ojk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2580,7 +2580,7 @@
         <image name="game-controller" width="20" height="20"/>
         <image name="group" width="40" height="40"/>
         <image name="grouping_icon" width="23" height="23"/>
-        <image name="icon-chat" width="48" height="49"/>
+        <image name="icon-map" width="20" height="20"/>
         <image name="icon-memberlist" width="48" height="49"/>
         <image name="icon-rank" width="48" height="49"/>
         <image name="icon-settings" width="48" height="49"/>
@@ -2611,9 +2611,9 @@
         <image name="whitefame" width="306" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CP3-ug-JWW"/>
         <segue reference="72e-t3-Nd2"/>
         <segue reference="ZME-hI-vVj"/>
+        <segue reference="CP3-ug-JWW"/>
         <segue reference="0kP-Z7-dgG"/>
         <segue reference="wYd-R9-Ue6"/>
     </inferredMetricsTieBreakers>

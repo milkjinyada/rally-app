@@ -6,6 +6,8 @@ target 'rally' do
   use_frameworks!
 
   # Pods for rally
+
+pod 'SRAttractionsMap'
 pod 'Firebase/Core'
 pod 'Firebase/Firestore'
 pod 'Firebase/Database'

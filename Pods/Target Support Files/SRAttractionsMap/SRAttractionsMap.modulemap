@@ -1,0 +1,6 @@
+framework module SRAttractionsMap {
+  umbrella header "SRAttractionsMap-umbrella.h"
+
+  export *
+  module * { export * }
+}

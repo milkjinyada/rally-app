@@ -95,6 +95,15 @@
 		36F6791921DDF9A80009977A /* DB ADMAN X LI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 36F6790F21DDF9A80009977A /* DB ADMAN X LI.TTF */; };
 		36F6791A21DDF9A80009977A /* DB ADMAN X LI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 36F6790F21DDF9A80009977A /* DB ADMAN X LI.TTF */; };
 		36F6791B21DDF9A80009977A /* DB ADMAN X LI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 36F6790F21DDF9A80009977A /* DB ADMAN X LI.TTF */; };
+		36FF8CFC2275A5450069250C /* GameLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF8CFB2275A5450069250C /* GameLocationViewController.swift */; };
+		36FF8D002275A68C0069250C /* SRAttractionsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF8CFF2275A68C0069250C /* SRAttractionsMapViewController.swift */; };
+		36FF8D052275A69C0069250C /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36FF8D012275A69C0069250C /* close_icon.png */; };
+		36FF8D062275A69C0069250C /* SRCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36FF8D022275A69C0069250C /* SRCalloutView.xib */; };
+		36FF8D072275A69C0069250C /* SRTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF8D032275A69C0069250C /* SRTriangleView.swift */; };
+		36FF8D082275A69C0069250C /* SRCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF8D042275A69C0069250C /* SRCalloutView.swift */; };
+		36FF8D0D2275A6BB0069250C /* SRAttraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF8D0A2275A6BB0069250C /* SRAttraction.swift */; };
+		36FF8D0E2275A6BB0069250C /* annotation_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36FF8D0B2275A6BB0069250C /* annotation_icon.png */; };
+		36FF8D0F2275A6BB0069250C /* SRAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF8D0C2275A6BB0069250C /* SRAnnotationView.swift */; };
 		786D7542FFADBB3739987CC4 /* Pods_rally.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9564E427A84B321813A1079 /* Pods_rally.framework */; };
 		817D40AF993A82FF21F3A470 /* Pods_rallyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332D9422826449797B768FA4 /* Pods_rallyTests.framework */; };
 		E77032042382DA83CE5E1A48 /* Pods_rallyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC47A60AD1C03F2F243BB99A /* Pods_rallyUITests.framework */; };
@@ -116,6 +125,19 @@
 			remoteInfo = rally;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3655CB882275B4F0004E7316 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		332D9422826449797B768FA4 /* Pods_rallyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rallyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +224,15 @@
 		36F6790D21DDF9A80009977A /* DB ADMAN X ULTRALI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DB ADMAN X ULTRALI.TTF"; sourceTree = "<group>"; };
 		36F6790E21DDF9A80009977A /* DB ADMAN X.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DB ADMAN X.TTF"; sourceTree = "<group>"; };
 		36F6790F21DDF9A80009977A /* DB ADMAN X LI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DB ADMAN X LI.TTF"; sourceTree = "<group>"; };
+		36FF8CFB2275A5450069250C /* GameLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameLocationViewController.swift; path = rally/Admin/GameLocation/GameLocationViewController.swift; sourceTree = SOURCE_ROOT; };
+		36FF8CFF2275A68C0069250C /* SRAttractionsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAttractionsMapViewController.swift; sourceTree = "<group>"; };
+		36FF8D012275A69C0069250C /* close_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_icon.png; sourceTree = "<group>"; };
+		36FF8D022275A69C0069250C /* SRCalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRCalloutView.xib; sourceTree = "<group>"; };
+		36FF8D032275A69C0069250C /* SRTriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRTriangleView.swift; sourceTree = "<group>"; };
+		36FF8D042275A69C0069250C /* SRCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRCalloutView.swift; sourceTree = "<group>"; };
+		36FF8D0A2275A6BB0069250C /* SRAttraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAttraction.swift; sourceTree = "<group>"; };
+		36FF8D0B2275A6BB0069250C /* annotation_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = annotation_icon.png; sourceTree = "<group>"; };
+		36FF8D0C2275A6BB0069250C /* SRAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAnnotationView.swift; sourceTree = "<group>"; };
 		46D5A54C36BF53D92125D623 /* Pods-rally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rally.release.xcconfig"; path = "Pods/Target Support Files/Pods-rally/Pods-rally.release.xcconfig"; sourceTree = "<group>"; };
 		64D1C3E11E03631B596EE867 /* Pods-rallyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rallyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rallyUITests/Pods-rallyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		74A4E7F1C69C68E797E0268C /* Pods-rallyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rallyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rallyTests/Pods-rallyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -425,6 +456,7 @@
 				362F2F3721F249BC00BCDE96 /* TabbarViewController.swift */,
 				36C8028121F0DFD3009F6877 /* AdminHomeViewController.swift */,
 				36C8028421F0E8BE009F6877 /* tbMemberCell.swift */,
+				36FF8CFD2275A6340069250C /* GameLocation */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -507,6 +539,38 @@
 			path = font;
 			sourceTree = "<group>";
 		};
+		36FF8CFD2275A6340069250C /* GameLocation */ = {
+			isa = PBXGroup;
+			children = (
+				36FF8CFF2275A68C0069250C /* SRAttractionsMapViewController.swift */,
+				36FF8CFB2275A5450069250C /* GameLocationViewController.swift */,
+				36FF8D092275A6A10069250C /* Annotation View */,
+				36FF8CFE2275A6480069250C /* Callout View */,
+			);
+			path = GameLocation;
+			sourceTree = "<group>";
+		};
+		36FF8CFE2275A6480069250C /* Callout View */ = {
+			isa = PBXGroup;
+			children = (
+				36FF8D012275A69C0069250C /* close_icon.png */,
+				36FF8D042275A69C0069250C /* SRCalloutView.swift */,
+				36FF8D022275A69C0069250C /* SRCalloutView.xib */,
+				36FF8D032275A69C0069250C /* SRTriangleView.swift */,
+			);
+			path = "Callout View";
+			sourceTree = "<group>";
+		};
+		36FF8D092275A6A10069250C /* Annotation View */ = {
+			isa = PBXGroup;
+			children = (
+				36FF8D0B2275A6BB0069250C /* annotation_icon.png */,
+				36FF8D0C2275A6BB0069250C /* SRAnnotationView.swift */,
+				36FF8D0A2275A6BB0069250C /* SRAttraction.swift */,
+			);
+			path = "Annotation View";
+			sourceTree = "<group>";
+		};
 		65981BDBDC41B22588949715 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,7 +606,7 @@
 				36F678D421DDEBAB0009977A /* Frameworks */,
 				36F678D521DDEBAB0009977A /* Resources */,
 				ADF513AC8F9CB142262A075B /* [CP] Embed Pods Frameworks */,
-				D3C61B8950AFDE8C7D2D2840 /* [CP] Copy Pods Resources */,
+				3655CB882275B4F0004E7316 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -651,6 +715,8 @@
 				3623C006224CB41800A57F58 /* dead.wav in Resources */,
 				3683859E2212B7E500E6A561 /* art.scnassets in Resources */,
 				3623C007224CB41900A57F58 /* bg_country.mp3 in Resources */,
+				36FF8D0E2275A6BB0069250C /* annotation_icon.png in Resources */,
+				36FF8D052275A69C0069250C /* close_icon.png in Resources */,
 				3623C008224CB41900A57F58 /* touch_mid.wav in Resources */,
 				36C5E2702255D58100A70881 /* Scrambled JpeggsUITests in Resources */,
 				36F678E821DDEBAC0009977A /* LaunchScreen.storyboard in Resources */,
@@ -666,6 +732,7 @@
 				36C5E26C2255D54F00A70881 /* IMG_9125.JPG in Resources */,
 				36F6791921DDF9A80009977A /* DB ADMAN X LI.TTF in Resources */,
 				3691E37C222283E200B458A5 /* ChooseGameView.xib in Resources */,
+				36FF8D062275A69C0069250C /* SRCalloutView.xib in Resources */,
 				3623C004224CB41800A57F58 /* fall.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -774,11 +841,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rally/Pods-rally-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SRAttractionsMap/SRAttractionsMap.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -788,11 +856,12 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SRAttractionsMap.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -801,28 +870,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rally/Pods-rally-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D3C61B8950AFDE8C7D2D2840 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-rally/Pods-rally-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rally/Pods-rally-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -839,9 +886,12 @@
 				36C8028521F0E8BE009F6877 /* tbMemberCell.swift in Sources */,
 				3644F347226F285B0038E123 /* Member+Convenience.swift in Sources */,
 				36513C1E21E14256001652FF /* LoginViewController.swift in Sources */,
+				36FF8D002275A68C0069250C /* SRAttractionsMapViewController.swift in Sources */,
 				3669C57A223657F7001A06B8 /* UserHomeViewController.swift in Sources */,
 				368385982212B5DF00E6A561 /* ARHacheGameViewController.swift in Sources */,
 				36513C2121E14274001652FF /* RegisterViewController.swift in Sources */,
+				36FF8CFC2275A5450069250C /* GameLocationViewController.swift in Sources */,
+				36FF8D0F2275A6BB0069250C /* SRAnnotationView.swift in Sources */,
 				36A474AD224CC932003B2555 /* LocationPickerController.swift in Sources */,
 				3623BFF8224CB13900A57F58 /* RunGameViewController.swift in Sources */,
 				3644F337226F276F0038E123 /* Namegroup.swift in Sources */,
@@ -849,6 +899,7 @@
 				3683859A2212B63200E6A561 /* ARHacheGameHomeViewController.swift in Sources */,
 				362F2F3821F249BC00BCDE96 /* TabbarViewController.swift in Sources */,
 				3691E384222327D200B458A5 /* ChooseGameViewController.swift in Sources */,
+				36FF8D072275A69C0069250C /* SRTriangleView.swift in Sources */,
 				3644F3522270EDA80038E123 /* ViewcontrollerScore.swift in Sources */,
 				3644F346226F285B0038E123 /* CoreDataStack.swift in Sources */,
 				36A474A4224CB790003B2555 /* MathViewController.swift in Sources */,
@@ -864,6 +915,7 @@
 				368385AA22132E4500E6A561 /* GameSettingCell.swift in Sources */,
 				36C5E26A2255D53D00A70881 /* PicScrollingViewController.swift in Sources */,
 				36A474A7224CB790003B2555 /* OptionsViewController.swift in Sources */,
+				36FF8D0D2275A6BB0069250C /* SRAttraction.swift in Sources */,
 				368385902212B09100E6A561 /* QuestionModel.swift in Sources */,
 				3644F357227587550038E123 /* TimerManager.swift in Sources */,
 				36A474AC224CC932003B2555 /* ChooseMapViewController.swift in Sources */,
@@ -874,6 +926,7 @@
 				36F678DB21DDEBAB0009977A /* AppDelegate.swift in Sources */,
 				3644F3532270EDA80038E123 /* RankScoree.swift in Sources */,
 				3644F339226F276F0038E123 /* GroupController.swift in Sources */,
+				36FF8D082275A69C0069250C /* SRCalloutView.swift in Sources */,
 				3623BFFA224CB13900A57F58 /* Tools.swift in Sources */,
 				36C8028721F1053A009F6877 /* User.swift in Sources */,
 				36513C2221E14274001652FF /* ResetpassView.swift in Sources */,
