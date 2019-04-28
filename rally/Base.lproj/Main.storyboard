@@ -745,10 +745,6 @@
                                 <rect key="frame" x="96" y="90" width="183" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="display-1" translatesAutoresizingMaskIntoConstraints="NO" id="VsR-Kv-eaf">
-                                <rect key="frame" x="143" y="106" width="88" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHj-hM-Gml">
                                 <rect key="frame" x="16" y="206" width="343" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -940,15 +936,32 @@
                                 <rect key="frame" x="274" y="400" width="22" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61u-5W-Gjq">
+                                <rect key="frame" x="150" y="107" width="74" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="startbtn"/>
+                                <connections>
+                                    <action selector="StartTimeBtn:" destination="HBQ-e5-jEa" eventType="touchUpInside" id="6Vf-KB-U7A"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR6-fJ-mzR">
+                                <rect key="frame" x="154" y="134" width="67" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="7qO-ce-XTG"/>
                     </view>
                     <navigationItem key="navigationItem" id="dye-Yu-l4M"/>
                     <connections>
+                        <outlet property="Timerlb" destination="TR6-fJ-mzR" id="hh1-N8-MF2"/>
                         <outlet property="channelname" destination="Yya-3S-P18" id="kXZ-rB-kye"/>
                         <outlet property="groupnum" destination="lDg-7k-sOM" id="dbC-m3-JFz"/>
                         <outlet property="missionnum" destination="3a4-1O-JbV" id="khT-22-34C"/>
+                        <outlet property="starttimebtn" destination="61u-5W-Gjq" id="zIF-PR-QNr"/>
                         <outlet property="tableview" destination="HIc-DT-WDz" id="vCY-wh-m3e"/>
                         <outlet property="timepermission" destination="Siq-FL-tMb" id="CLd-me-w5l"/>
                         <outlet property="username" destination="EHj-hM-Gml" id="rwp-a4-mur"/>
@@ -2217,7 +2230,7 @@
         <!--Groups Table View Controller-->
         <scene sceneID="ekd-j3-faq">
             <objects>
-                <tableViewController id="RRX-3S-SZH" customClass="GroupsTableViewController" customModule="Group_Randomizer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="RRX-3S-SZH" customClass="GroupsTableViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="RyE-Sr-eUL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2586,6 +2599,7 @@
         <image name="settings" width="20" height="20"/>
         <image name="sign up btn" width="156" height="63"/>
         <image name="sq" width="1333" height="1333"/>
+        <image name="startbtn" width="74" height="74"/>
         <image name="target" width="100" height="100"/>
         <image name="textF-math-Ans" width="349" height="52"/>
         <image name="textfield" width="345" height="63"/>
@@ -2597,8 +2611,8 @@
         <image name="whitefame" width="306" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="72e-t3-Nd2"/>
         <segue reference="CP3-ug-JWW"/>
+        <segue reference="72e-t3-Nd2"/>
         <segue reference="ZME-hI-vVj"/>
         <segue reference="0kP-Z7-dgG"/>
         <segue reference="wYd-R9-Ue6"/>

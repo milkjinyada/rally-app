@@ -39,6 +39,7 @@
 		3644F3522270EDA80038E123 /* ViewcontrollerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F34F2270EDA80038E123 /* ViewcontrollerScore.swift */; };
 		3644F3532270EDA80038E123 /* RankScoree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F3502270EDA80038E123 /* RankScoree.swift */; };
 		3644F3542270EDA80038E123 /* TableViewCellScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F3512270EDA80038E123 /* TableViewCellScore.swift */; };
+		3644F357227587550038E123 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F356227587550038E123 /* TimerManager.swift */; };
 		36513C1E21E14256001652FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C1D21E14256001652FF /* LoginViewController.swift */; };
 		36513C2121E14274001652FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C1F21E14273001652FF /* RegisterViewController.swift */; };
 		36513C2221E14274001652FF /* ResetpassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36513C2021E14274001652FF /* ResetpassView.swift */; };
@@ -148,6 +149,7 @@
 		3644F34F2270EDA80038E123 /* ViewcontrollerScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewcontrollerScore.swift; sourceTree = "<group>"; };
 		3644F3502270EDA80038E123 /* RankScoree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankScoree.swift; sourceTree = "<group>"; };
 		3644F3512270EDA80038E123 /* TableViewCellScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellScore.swift; sourceTree = "<group>"; };
+		3644F356227587550038E123 /* TimerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		36513C1D21E14256001652FF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		36513C1F21E14273001652FF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		36513C2021E14274001652FF /* ResetpassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetpassView.swift; sourceTree = "<group>"; };
@@ -301,6 +303,14 @@
 			path = ranking;
 			sourceTree = "<group>";
 		};
+		3644F3552275873D0038E123 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				3644F356227587550038E123 /* TimerManager.swift */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
 		36513C1C21E14245001652FF /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,7 +404,7 @@
 			path = "Picture scrolling ";
 			sourceTree = "<group>";
 		};
-		36C8028021F0A6C6009F6877 /* channel */ = {
+		36C8028021F0A6C6009F6877 /* channelSetting */ = {
 			isa = PBXGroup;
 			children = (
 				36A474A9224CC914003B2555 /* ChooseMap */,
@@ -404,12 +414,13 @@
 				368385A122132C9900E6A561 /* GameSettingViewController.swift */,
 				368385A922132E4500E6A561 /* GameSettingCell.swift */,
 			);
-			path = channel;
+			path = channelSetting;
 			sourceTree = "<group>";
 		};
 		36C8028321F0DFDF009F6877 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				3644F3552275873D0038E123 /* Time */,
 				361B447D225662D9009AFC09 /* CreateQR.swift */,
 				362F2F3721F249BC00BCDE96 /* TabbarViewController.swift */,
 				36C8028121F0DFD3009F6877 /* AdminHomeViewController.swift */,
@@ -447,7 +458,7 @@
 				36C8027D21EB566B009F6877 /* rally.entitlements */,
 				3669C57B223657FF001A06B8 /* User */,
 				36C8028321F0DFDF009F6877 /* Admin */,
-				36C8028021F0A6C6009F6877 /* channel */,
+				36C8028021F0A6C6009F6877 /* channelSetting */,
 				3644F333226F272A0038E123 /* Grouping */,
 				3644F34E2270ED8B0038E123 /* ranking */,
 				36513C1C21E14245001652FF /* login */,
@@ -854,6 +865,7 @@
 				36C5E26A2255D53D00A70881 /* PicScrollingViewController.swift in Sources */,
 				36A474A7224CB790003B2555 /* OptionsViewController.swift in Sources */,
 				368385902212B09100E6A561 /* QuestionModel.swift in Sources */,
+				3644F357227587550038E123 /* TimerManager.swift in Sources */,
 				36A474AC224CC932003B2555 /* ChooseMapViewController.swift in Sources */,
 				36A474A6224CB790003B2555 /* FIRData.swift in Sources */,
 				3623BFF9224CB13900A57F58 /* Defined.swift in Sources */,

@@ -20,6 +20,29 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     @IBOutlet weak var missionnum: UILabel!
     @IBOutlet weak var groupnum: UILabel!
     @IBOutlet weak var timepermission: UILabel!
+    @IBOutlet weak var starttimebtn: UIButton!
+    var GameTime:Int = 0
+    var cnt:Int=1
+    @IBOutlet weak var Timerlb: UILabel!
+   
+    //จับเวลาเล่นเกมจากเวลาที่ admin ใส่
+    @IBAction func StartTimeBtn(_ sender: UIButton) {
+        cnt+=1
+        if cnt%2==0{
+            sender.setImage(UIImage(named: "Timebtn"), for: .normal)
+            TimerManager.start(withSeconds: Int(GameTime*60))
+            TimerManager.timeString = { time, ends in
+                if ends == false {
+                    self.Timerlb.text = time
+                }
+                else {
+                    // Perform here the task you want to do after timer finishes.
+                }
+            }
+        }else{
+            sender.setImage(UIImage(named: "startbtn"), for: .normal)
+        }
+    }
     
     @IBAction func settingchannelbtn(_ sender: Any) {
         let homeView = self.storyboard?.instantiateViewController(withIdentifier: "settingschannel") as! SettingsChannelViewController
@@ -122,6 +145,7 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
                 self.missionnum.text = strSenderMission
                 self.groupnum.text = strSenderGroup
                 self.timepermission.text = strSenderTime
+                self.GameTime = Int(strSenderTime) ?? 0
                 
             }
         })
@@ -209,7 +233,6 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     
         for i in 1...users.count
         {
-            print(users.count)
             num.append(i)
         }
         
