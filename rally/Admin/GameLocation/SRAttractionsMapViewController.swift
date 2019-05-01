@@ -110,6 +110,12 @@ open class SRAttractionsMapViewController: UIViewController {
             
         view.addSubview(mapView)
         mapView.frame = view.bounds
+// ขนาด Map
+//        let leftMargin:CGFloat = 10
+//        let topMargin:CGFloat = 60
+//        let mapWidth:CGFloat = view.frame.size.width-20
+//        let mapHeight:CGFloat = 300
+//        mapView.frame = CGRect(x: leftMargin, y: topMargin, width: mapWidth, height: mapHeight)
         mapView.showsUserLocation = true
         mapView.delegate = self
         mapView.addAnnotations(attractions)
@@ -143,7 +149,7 @@ open class SRAttractionsMapViewController: UIViewController {
             let first = attractions[0]
             let second = attractions[1]
             let radius: CLLocationDistance = first.location.distance(from: second.location) * zoomRadiusMultiplier
-            let region = MKCoordinateRegion(center: first.coordinate, latitudinalMeters: radius, longitudinalMeters: radius)
+            let region = MKCoordinateRegionMakeWithDistance(first.coordinate, radius, radius)
             mapView.setRegion(region, animated: true)
         case .allAttractions:
             mapView.showAnnotations(attractions, animated: true)
@@ -182,7 +188,7 @@ extension SRAttractionsMapViewController: CLLocationManagerDelegate {
             case .userAndFirstAttraction:
                 if let attraction = attractions.first {
                     let radius: CLLocationDistance = location.distance(from: attraction.location) * zoomRadiusMultiplier
-                    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: radius, longitudinalMeters: radius)
+                    let region = MKCoordinateRegionMakeWithDistance(location.coordinate, radius, radius)
                     mapView.setRegion(region, animated: true)
                 }
             case .userAndTheClosestLocation:
@@ -196,7 +202,7 @@ extension SRAttractionsMapViewController: CLLocationManagerDelegate {
                 
                 if closestDistance < closestDistanceThreshold {
                     let radius = closestDistance * zoomRadiusMultiplier
-                    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: radius, longitudinalMeters: radius)
+                    let region = MKCoordinateRegionMakeWithDistance(location.coordinate, radius, radius)
                     mapView.setRegion(region, animated: true)
                 } else {
                     displayMode = .allAttractions

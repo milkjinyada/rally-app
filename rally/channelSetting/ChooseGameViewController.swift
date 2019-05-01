@@ -14,7 +14,7 @@ import FirebaseDatabase
 class ChooseGameViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
    
     var gamenum:String = ""
-    var counter:Bool = false
+    static var counter:Bool = false
 
     
     var ref : DatabaseReference! = Database.database().reference(withPath: "Member")
@@ -31,43 +31,60 @@ class ChooseGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     @IBAction func chooselocationbtn(_ sender: Any) {
         
-        counter = true
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "NavigationMap") as! UINavigationController
+        self.present(viewController, animated: true, completion: nil)
         
-        var gamename: String = Gamenamelb.text!
-        let viewController = LocationPickerController(success: {
-            [weak self] (coordinate: CLLocationCoordinate2D) -> Void in
-            
-            var lat : String
-            var long : String
-            lat = "".appendingFormat("%.8f", coordinate.latitude)
-            long = "".appendingFormat("%.8f", coordinate.longitude)
-            
-            print(lat)
-            print(long)
-            
-            //SAVE ข้อมูลเกมขึ้น Firebase
-            let dict = ["gamename":"\(gamename)","lat": lat,"long": long] as [String: Any]
-            self?.ref.child("\(ViewController.userEmail!)/channeldata/game/\(GameSettingViewController.n)").setValue(dict)
-            
-            
-        })
-        let navigationController = UINavigationController(rootViewController: viewController)
-        self.present(navigationController, animated: true, completion: nil)
+//        counter = true
+//
+//        var gamename: String = Gamenamelb.text!
+//        var desgame: String = datail.text!
+//        let viewController = LocationPickerController(success: {
+//            [weak self] (coordinate: CLLocationCoordinate2D) -> Void in
+//
+//            var lat : String
+//            var long : String
+//            lat = "".appendingFormat("%.8f", coordinate.latitude)
+//            long = "".appendingFormat("%.8f", coordinate.longitude)
+//
+//            print(lat)
+//            print(long)
+//
+//            //SAVE ข้อมูลเกมขึ้น Firebase
+//            let dict = ["name":"\(gamename)","lat": lat,"long": long,"Description":"\(desgame)"] as [String: Any]
+//            self?.ref.child("\(ViewController.userEmail!)/channeldata/game/\(GameSettingViewController.n)").setValue(dict)
+//
+//
+//        })
+//        let navigationController = UINavigationController(rootViewController: viewController)
+//        self.present(navigationController, animated: true, completion: nil)
+        
+        
     }
     
     @IBAction func savegamebtn(_ sender: Any) {
         
-        if counter == false{
+        if ChooseGameViewController.counter == false{
             Alertlb.text = "กรุณาเลือกสถานที่สำหรับเกมนี้"
         }
         else
         {
             GameSettingViewController.listgame[GameSettingViewController.n] = (Gamenamelb.text!)
             GameSettingViewController.imgname[GameSettingViewController.n] = "covergame"
-            counter = false
+            ChooseGameViewController.counter = false
+            
+            var gamename: String = Gamenamelb.text!
+            // SAVE ข้อมูลเกมขึ้น Firebase
+            
+            let dict = ["gamename":"\(gamename)","latitude": AddGeofenceViewController.lat,"longitude":AddGeofenceViewController.long,"radius":AddGeofenceViewController.radiusString,"identifier":AddGeofenceViewController.identifierString,"note":AddGeofenceViewController.noteString,"eventType":AddGeofenceViewController.eventTypeString] as [String: Any]
+            self.ref.child("\(ViewController.userEmail!)/channeldata/game/\(GameSettingViewController.n)").setValue(dict)
+            //
+            
+            
             
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "gamesetting") as! GameSettingViewController
             self.present(homeView, animated: true, completion: nil)
+            
+            
         }
        
     }

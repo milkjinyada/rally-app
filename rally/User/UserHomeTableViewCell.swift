@@ -11,9 +11,9 @@ import UIKit
 class UserHomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var gamenum: UILabel!
-
     @IBOutlet weak var gamename: UILabel!
-
+    @IBOutlet weak var gameimg: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

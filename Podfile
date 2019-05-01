@@ -12,7 +12,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Firestore'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
-pod 'Firebase/Storage'
+pod 'Firebase/Storage','~>4.0' 
 pod 'Kingfisher', '~> 4.0'
 
   target 'rallyTests' do

@@ -103,7 +103,7 @@ class Scanqr: UIViewController {
         video.frame = view.alignmentRect(forFrame: CGRect(x: 0 , y: 10, width: screenSize.width, height: screenSize.height))
         view.layer.addSublayer(video)
         
-        self.view.bringSubviewToFront(square)
+        self.view.bringSubview(toFront: square)
         
         session.startRunning()
     }

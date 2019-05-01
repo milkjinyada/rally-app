@@ -21,4 +21,6 @@ class User: NSObject {
     var time:Int?
     var Channel:String?
     var email:String?
+    var username:String?
+    var photoURL:String?
 }

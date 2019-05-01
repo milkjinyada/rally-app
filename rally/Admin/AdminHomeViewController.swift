@@ -231,8 +231,9 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     
     func Num() {
     
-        for i in 1...users.count
+        for var i in 0...users.count
         {
+            i+=1
             num.append(i)
         }
         

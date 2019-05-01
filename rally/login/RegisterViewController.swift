@@ -6,6 +6,7 @@
 //  Copyright © พ.ศ. 2560 jinyada. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Firebase
 import FirebaseAuth
@@ -20,9 +21,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var lbpass: UILabel!
     @IBOutlet weak var lbConfrimpass: UILabel!
     @IBOutlet weak var lbSex: UILabel!
-    
+    @IBOutlet weak var profileImageView: UIImageView!
     var sex:String = ""
     var c:Bool = false
+    var imagePicker:UIImagePickerController!
+    var useremail:String=""
+    
+    
     @IBOutlet weak var SexSegment: UISegmentedControl!
     @IBAction func SEXsegment(_ sender: UISegmentedControl) {
         
@@ -34,8 +39,8 @@ class RegisterViewController: UIViewController {
         case 1:
             sex = "woman"
             c = true
-        case UISegmentedControl.noSegment:
-            c = true
+//        case UISegmentedControl.UISegmentedControlNoSegment:
+//            c = true
         default:
             break
         }
@@ -120,14 +125,16 @@ class RegisterViewController: UIViewController {
                 }
             //ถ้ายัง ก็ทำการสมัครและเก็บขึ้น DB
                 else{
+                    self.handleSignUp()
                     var MemberEmail = email
                     MemberEmail = replaceSpacialCharacter(inputStr:email!)
+                    self.useremail = MemberEmail!
                     self.ref = Database.database().reference(withPath: "Member")
                     let memberData = member(name: name!, email: MemberEmail!, status: status, join:join, sex:self.sex, group: group)
                     let memberItemRef = self.ref.child(MemberEmail!) //เอาไว้แยกข้อมูลของแต่ละ user ผ่านอีเมล ถ้าไม่มีตัวนี้ข้อมูลของทุกคนจะรวมกันหมดเลย
                     memberItemRef.setValue(memberData.toAnyObject())
-                
                     
+
                     let alert = UIAlertController(title: "Succeed", message: "Sign in Succeed", preferredStyle: .alert)
                     let resultAlert = UIAlertAction(title: "OK", style: .default, handler: { (alertAction) in
                         self.dismiss(animated: true, completion: nil)
@@ -140,6 +147,7 @@ class RegisterViewController: UIViewController {
                 }
             })
         }
+        
         
         //ใน firebase ไม่สามารถใช้อักขระพิเศษได้ในการตั้งชื่อ doc เลยต้องแปลง เพื่อจะใช้ อีเมลเป็นชื่อ doc
         func replaceSpacialCharacter(inputStr:String) -> String{
@@ -159,8 +167,22 @@ class RegisterViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
+        profileImageView.isUserInteractionEnabled = true
+        profileImageView.addGestureRecognizer(imageTap)
+        profileImageView.layer.cornerRadius = profileImageView.bounds.height / 2
+        profileImageView.clipsToBounds = true
+        //tapToChangeProfileButton.addTarget(self, action: #selector(openImagePicker), for: .touchUpInside)
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+    }
+    @objc func openImagePicker(_ sender:Any) {
+        // Open Image Picker
+        self.present(imagePicker, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -179,6 +201,95 @@ class RegisterViewController: UIViewController {
         
         return(true)
     }
-
     
+    //อัพโหลดรูปโปรไฟล์
+    @objc func handleSignUp() {
+        guard let username = regisEmail.text else { return }
+        guard let image = profileImageView.image else { return }
+        
+        // 1. Upload the profile image to Firebase Storage
+        self.uploadProfileImage(image) { url in
+            
+            if url != nil {
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = username
+                changeRequest?.photoURL = url
+                
+                changeRequest?.commitChanges { error in
+                    if error == nil {
+                        print("User display name changed!")
+                        
+                        self.saveProfile(username: username, profileImageURL: url!) { success in
+                            if success {
+                                print("success")
+                            }
+                        }
+                        
+                    } else {
+                        print("Error: \(error!.localizedDescription)")
+                    }
+                }
+            } else {
+                print("Error unable to upload profile image")
+            }
+            
+        }
+    }
+    
+    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
+        //guard let uid = Auth.auth().currentUser?.uid else { return }
+        let storageRef = Storage.storage().reference().child("user/\(useremail)")
+        
+        guard let imageData = UIImageJPEGRepresentation(image, 0.75) else { return }
+        
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if error == nil, metaData != nil {
+                if let url = metaData?.downloadURL()  {
+                    completion(url)
+                } else {
+                    completion(nil)
+                }
+                // success!
+            } else {
+                // failed
+                completion(nil)
+            }
+        }
+    }
+    
+    func saveProfile(username:String, profileImageURL:URL, completion: @escaping ((_ success:Bool)->())) {
+        // guard let uid = Auth.auth().currentUser?.uid else { return }
+        let databaseRef = Database.database().reference().child("users/profile/\(useremail)")
+        
+        let userObject = [
+            "username": username,
+            "photoURL": profileImageURL.absoluteString
+            ] as [String:Any]
+        
+        databaseRef.setValue(userObject) { error, ref in
+            completion(error == nil)
+        }
+    }
+
 }
+
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            self.profileImageView.image = pickedImage
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+}
+

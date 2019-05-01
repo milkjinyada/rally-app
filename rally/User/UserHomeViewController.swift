@@ -14,15 +14,16 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     static var Channelname:String = "admintest"
     static var Username:String = ""
     var Gamename = [String]()
-    //var Users:String = "admintest@gmaildotcom"
     var Mission:Int = 0
     var num = [Int]()
+    var PhotoURL : String = ""
 
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var ChannelNamelb: UILabel!
     @IBOutlet weak var GroupNamelb: UILabel!
     @IBOutlet weak var Scorelb: UILabel!
     @IBOutlet weak var Timelb: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
     
     @IBAction func Logoutbtn(_ sender: Any) {
         Const().logOut()
@@ -44,6 +45,7 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var databaseRef:DatabaseReference!
     var MemberRef:DatabaseReference!
     var GameRef:DatabaseReference!
+    var UserRef:DatabaseReference! 
     private var _databaseHandle:DatabaseHandle! = nil //กำหนด  handle
     
     func databaseInit()
@@ -95,6 +97,34 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }
         })
         
+        //ดึง URL มาใส่รูป profile
+        UserRef = Database.database().reference().child("users/profile/\(ViewController.userEmail!)")
+        UserRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let snapshot = snapshot.value as? [String:AnyObject]
+            {
+                //เอาค่าจาก firbase มาใส่ไว้ในตัวแปร
+                
+                var url = ""
+                
+                if let strTemp = snapshot["photoURL"] as? String
+                {
+                    url = strTemp
+                }
+                else
+                {
+                    url = ""
+                }
+                
+                self.PhotoURL = url
+                //ดึงรูปโปรไฟล์มาจาก Firebase
+                ImageService.getImage(withURL: URL(string:url)!) { image, url in
+                self.profileImageView.image = image
+                    
+                }
+            }
+        })
+        
     }
     
     func loadmission() {
@@ -134,7 +164,7 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 if let snapshot = snapshot.value as? [String:AnyObject]
                 {
                     var strSenderGame = ""
-                    if let strTemp = snapshot["gamename"] as? String
+                    if let strTemp = snapshot["name"] as? String
                     {
                         strSenderGame = strTemp
                     }

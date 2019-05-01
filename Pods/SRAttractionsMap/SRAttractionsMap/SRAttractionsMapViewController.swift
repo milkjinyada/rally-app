@@ -121,7 +121,7 @@ public class SRAttractionsMapViewController: UIViewController {
             let first = attractions[0]
             let second = attractions[1]
             let radius: CLLocationDistance = first.location.distance(from: second.location) * zoomRadiusMultiplier
-            let region = MKCoordinateRegion(center: first.coordinate, latitudinalMeters: radius, longitudinalMeters: radius)
+            let region = MKCoordinateRegionMakeWithDistance(first.coordinate, radius, radius)
             mapView.setRegion(region, animated: true)
         case .allAttractions:
             mapView.showAnnotations(attractions, animated: true)
@@ -160,7 +160,7 @@ extension SRAttractionsMapViewController: CLLocationManagerDelegate {
             case .userAndFirstAttraction:
                 if let attraction = attractions.first {
                     let radius: CLLocationDistance = location.distance(from: attraction.location) * zoomRadiusMultiplier
-                    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: radius, longitudinalMeters: radius)
+                    let region = MKCoordinateRegionMakeWithDistance(location.coordinate, radius, radius)
                     mapView.setRegion(region, animated: true)
                 }
             case .userAndTheClosestLocation:
@@ -174,7 +174,7 @@ extension SRAttractionsMapViewController: CLLocationManagerDelegate {
 
                 if closestDistance < closestDistanceThreshold {
                     let radius = closestDistance * zoomRadiusMultiplier
-                    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: radius, longitudinalMeters: radius)
+                    let region = MKCoordinateRegionMakeWithDistance(location.coordinate, radius, radius)
                     mapView.setRegion(region, animated: true)
                 } else {
                     displayMode = .allAttractions

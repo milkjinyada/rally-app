@@ -58,9 +58,7 @@ class GameLocationViewController: UIViewController {
                     let attraction = SRAttraction(latitude: latitude , longitude: longitude)
                     attraction.name = locate.title
                     attraction.subname = locate.subtitle
-                    
-                    
-                    
+
                     return attraction
                     
                     
@@ -69,18 +67,28 @@ class GameLocationViewController: UIViewController {
                 let mapVC = SRAttractionsMapViewController(attractions: attractions, displayMode: .allAttractions)
                 mapVC.title = "Rally map"
                 mapVC.calloutDetailButtonTitle = "View Description"
-                
+                mapVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel , target: self,action: #selector(self.clickMe))
                 let nVC = UINavigationController(rootViewController: mapVC)
                 nVC.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17.0, weight: .light),
                                                          NSAttributedString.Key.foregroundColor: UIColor.white]
                 nVC.navigationBar.barTintColor = UIColor(red: 52.0/255.0, green: 52.0/255.0, blue: 52.0/255.0, alpha: 1.0)
                 nVC.navigationBar.tintColor = UIColor.white
                 nVC.navigationBar.isTranslucent = false
+                
                 self.present(nVC, animated: false, completion: nil)
                 
                 
             }
         })
+    }
+    
+    @objc func clickMe()
+    {
+        print("Button Clicked")
+        
+        let AdminVC = self.storyboard?.instantiateViewController(withIdentifier: "admintabbar") as! TabbarViewController
+        self.present(AdminVC, animated: true, completion: nil)
+      
     }
     
     override func viewDidLoad() {
