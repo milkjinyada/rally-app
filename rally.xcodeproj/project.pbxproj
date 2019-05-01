@@ -11,8 +11,6 @@
 		3600649B21E12EFE005FD39C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3600649921E12EFE005FD39C /* GoogleService-Info.plist */; };
 		3600649C21E12EFE005FD39C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3600649921E12EFE005FD39C /* GoogleService-Info.plist */; };
 		3606421C22770AC700470637 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3606421B22770AC700470637 /* ImageService.swift */; };
-		360642202277127000470637 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3606421E2277127000470637 /* UserProfile.swift */; };
-		360642212277127000470637 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3606421F2277127000470637 /* Post.swift */; };
 		361B447E225662D9009AFC09 /* CreateQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B447D225662D9009AFC09 /* CreateQR.swift */; };
 		361B44802257E7DE009AFC09 /* UserHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B447F2257E7DE009AFC09 /* UserHomeTableViewCell.swift */; };
 		3623BFF6224CB13900A57F58 /* StickHeroGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623BFF1224CB13800A57F58 /* StickHeroGameScene.swift */; };
@@ -62,10 +60,12 @@
 		368385AA22132E4500E6A561 /* GameSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368385A922132E4500E6A561 /* GameSettingCell.swift */; };
 		3691E37C222283E200B458A5 /* ChooseGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3691E37B222283E200B458A5 /* ChooseGameView.xib */; };
 		3691E384222327D200B458A5 /* ChooseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3691E383222327D200B458A5 /* ChooseGameViewController.swift */; };
-		36990446227941160094F0BB /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36990442227941160094F0BB /* Geotification.swift */; };
-		36990447227941160094F0BB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36990443227941160094F0BB /* Utilities.swift */; };
-		36990448227941160094F0BB /* GeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36990444227941160094F0BB /* GeofenceViewController.swift */; };
-		36990449227941160094F0BB /* AddGeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36990445227941160094F0BB /* AddGeofenceViewController.swift */; };
+		3699044B22795E730094F0BB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3699044A22795E730094F0BB /* Post.swift */; };
+		3699044D22795E940094F0BB /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3699044C22795E940094F0BB /* UserProfile.swift */; };
+		3699045222795EE00094F0BB /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3699044E22795EDF0094F0BB /* Geotification.swift */; };
+		3699045322795EE00094F0BB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3699044F22795EDF0094F0BB /* Utilities.swift */; };
+		3699045422795EE00094F0BB /* GeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3699045022795EDF0094F0BB /* GeofenceViewController.swift */; };
+		3699045522795EE00094F0BB /* AddGeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3699045122795EDF0094F0BB /* AddGeofenceViewController.swift */; };
 		36A474A4224CB790003B2555 /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A474A0224CB78F003B2555 /* MathViewController.swift */; };
 		36A474A6224CB790003B2555 /* FIRData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A474A2224CB790003B2555 /* FIRData.swift */; };
 		36A474A7224CB790003B2555 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A474A3224CB790003B2555 /* OptionsViewController.swift */; };
@@ -150,8 +150,6 @@
 		332D9422826449797B768FA4 /* Pods_rallyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rallyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3600649921E12EFE005FD39C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3606421B22770AC700470637 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
-		3606421E2277127000470637 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = "../../../SwiftFirebaseTutorials-master/FirebaseApp-9-Refresh-Control-Start/FirebaseApp/Models/UserProfile.swift"; sourceTree = "<group>"; };
-		3606421F2277127000470637 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = "../../../SwiftFirebaseTutorials-master/FirebaseApp-9-Refresh-Control-Start/FirebaseApp/Models/Post.swift"; sourceTree = "<group>"; };
 		361B447D225662D9009AFC09 /* CreateQR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateQR.swift; sourceTree = "<group>"; };
 		361B447F2257E7DE009AFC09 /* UserHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeTableViewCell.swift; sourceTree = "<group>"; };
 		3623BFF1224CB13800A57F58 /* StickHeroGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickHeroGameScene.swift; sourceTree = "<group>"; };
@@ -201,10 +199,12 @@
 		368385A922132E4500E6A561 /* GameSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettingCell.swift; sourceTree = "<group>"; };
 		3691E37B222283E200B458A5 /* ChooseGameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseGameView.xib; sourceTree = "<group>"; };
 		3691E383222327D200B458A5 /* ChooseGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseGameViewController.swift; sourceTree = "<group>"; };
-		36990442227941160094F0BB /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geotification.swift; path = ../../../../Archive/Geotification.swift; sourceTree = "<group>"; };
-		36990443227941160094F0BB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ../../../../Archive/Utilities.swift; sourceTree = "<group>"; };
-		36990444227941160094F0BB /* GeofenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeofenceViewController.swift; path = ../../../../Archive/GeofenceViewController.swift; sourceTree = "<group>"; };
-		36990445227941160094F0BB /* AddGeofenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGeofenceViewController.swift; path = ../../../../Archive/AddGeofenceViewController.swift; sourceTree = "<group>"; };
+		3699044A22795E730094F0BB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		3699044C22795E940094F0BB /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		3699044E22795EDF0094F0BB /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geotification.swift; sourceTree = "<group>"; };
+		3699044F22795EDF0094F0BB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		3699045022795EDF0094F0BB /* GeofenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeofenceViewController.swift; sourceTree = "<group>"; };
+		3699045122795EDF0094F0BB /* AddGeofenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeofenceViewController.swift; sourceTree = "<group>"; };
 		36A474A0224CB78F003B2555 /* MathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
 		36A474A2224CB790003B2555 /* FIRData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRData.swift; sourceTree = "<group>"; };
 		36A474A3224CB790003B2555 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
@@ -296,8 +296,8 @@
 		3606421D2277125800470637 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3606421F2277127000470637 /* Post.swift */,
-				3606421E2277127000470637 /* UserProfile.swift */,
+				3699044A22795E730094F0BB /* Post.swift */,
+				3699044C22795E940094F0BB /* UserProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -439,10 +439,10 @@
 		36990441227940FC0094F0BB /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				36990445227941160094F0BB /* AddGeofenceViewController.swift */,
-				36990444227941160094F0BB /* GeofenceViewController.swift */,
-				36990442227941160094F0BB /* Geotification.swift */,
-				36990443227941160094F0BB /* Utilities.swift */,
+				3699045122795EDF0094F0BB /* AddGeofenceViewController.swift */,
+				3699045022795EDF0094F0BB /* GeofenceViewController.swift */,
+				3699044E22795EDF0094F0BB /* Geotification.swift */,
+				3699044F22795EDF0094F0BB /* Utilities.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -932,24 +932,25 @@
 				368385912212B09100E6A561 /* ScoreModel.swift in Sources */,
 				3644F338226F276F0038E123 /* GroupsTableViewController.swift in Sources */,
 				3669C57D223658E1001A06B8 /* UserTabberViewController.swift in Sources */,
-				36990447227941160094F0BB /* Utilities.swift in Sources */,
-				36990448227941160094F0BB /* GeofenceViewController.swift in Sources */,
+				3699044B22795E730094F0BB /* Post.swift in Sources */,
 				36C8028521F0E8BE009F6877 /* tbMemberCell.swift in Sources */,
 				3644F347226F285B0038E123 /* Member+Convenience.swift in Sources */,
 				36513C1E21E14256001652FF /* LoginViewController.swift in Sources */,
 				36FF8D002275A68C0069250C /* SRAttractionsMapViewController.swift in Sources */,
 				3669C57A223657F7001A06B8 /* UserHomeViewController.swift in Sources */,
+				3699044D22795E940094F0BB /* UserProfile.swift in Sources */,
 				368385982212B5DF00E6A561 /* ARHacheGameViewController.swift in Sources */,
+				3699045422795EE00094F0BB /* GeofenceViewController.swift in Sources */,
 				36513C2121E14274001652FF /* RegisterViewController.swift in Sources */,
 				36FF8CFC2275A5450069250C /* GameLocationViewController.swift in Sources */,
 				36FF8D0F2275A6BB0069250C /* SRAnnotationView.swift in Sources */,
 				36A474AD224CC932003B2555 /* LocationPickerController.swift in Sources */,
 				3623BFF8224CB13900A57F58 /* RunGameViewController.swift in Sources */,
 				3644F337226F276F0038E123 /* Namegroup.swift in Sources */,
-				36990446227941160094F0BB /* Geotification.swift in Sources */,
 				3669C57422363A56001A06B8 /* Scanqr.swift in Sources */,
 				3683859A2212B63200E6A561 /* ARHacheGameHomeViewController.swift in Sources */,
 				362F2F3821F249BC00BCDE96 /* TabbarViewController.swift in Sources */,
+				3699045322795EE00094F0BB /* Utilities.swift in Sources */,
 				3691E384222327D200B458A5 /* ChooseGameViewController.swift in Sources */,
 				36FF8D072275A69C0069250C /* SRTriangleView.swift in Sources */,
 				3644F3522270EDA80038E123 /* ViewcontrollerScore.swift in Sources */,
@@ -958,10 +959,10 @@
 				36C8027F21F0A6B2009F6877 /* SettingsChannelViewController.swift in Sources */,
 				36C8027C21E51CEF009F6877 /* CreateChanelViewController.swift in Sources */,
 				3644F349226F285B0038E123 /* Group+CoreDataProperties.swift in Sources */,
-				36990449227941160094F0BB /* AddGeofenceViewController.swift in Sources */,
 				36F678E321DDEBAB0009977A /* rally.xcdatamodeld in Sources */,
 				3644F34C226F285B0038E123 /* Member+CoreDataProperties.swift in Sources */,
 				3623BFF6224CB13900A57F58 /* StickHeroGameScene.swift in Sources */,
+				3699045522795EE00094F0BB /* AddGeofenceViewController.swift in Sources */,
 				3644F348226F285B0038E123 /* Member+CoreDataClass.swift in Sources */,
 				368385942212B0E000E6A561 /* QuestionGameViewController.swift in Sources */,
 				368385A222132C9900E6A561 /* GameSettingViewController.swift in Sources */,
@@ -971,7 +972,6 @@
 				36FF8D0D2275A6BB0069250C /* SRAttraction.swift in Sources */,
 				368385902212B09100E6A561 /* QuestionModel.swift in Sources */,
 				3644F357227587550038E123 /* TimerManager.swift in Sources */,
-				360642212277127000470637 /* Post.swift in Sources */,
 				36A474AC224CC932003B2555 /* ChooseMapViewController.swift in Sources */,
 				36A474A6224CB790003B2555 /* FIRData.swift in Sources */,
 				3623BFF9224CB13900A57F58 /* Defined.swift in Sources */,
@@ -985,12 +985,12 @@
 				3623BFFA224CB13900A57F58 /* Tools.swift in Sources */,
 				36C8028721F1053A009F6877 /* User.swift in Sources */,
 				36513C2221E14274001652FF /* ResetpassView.swift in Sources */,
-				360642202277127000470637 /* UserProfile.swift in Sources */,
 				3644F34A226F285B0038E123 /* Group+Convenience.swift in Sources */,
 				36513C2421E1435E001652FF /* Const.swift in Sources */,
 				36C8028221F0DFD3009F6877 /* AdminHomeViewController.swift in Sources */,
 				3644F3542270EDA80038E123 /* TableViewCellScore.swift in Sources */,
 				361B44802257E7DE009AFC09 /* UserHomeTableViewCell.swift in Sources */,
+				3699045222795EE00094F0BB /* Geotification.swift in Sources */,
 				3644F34B226F285B0038E123 /* Group.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
