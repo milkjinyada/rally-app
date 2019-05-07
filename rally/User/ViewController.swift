@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     static var UsernameUser:String! = "" //เก็บ Username ผู้ใช้
     static var userEmail:String! = "" //ไว้เก็บบัญชีผู้ใช้
     static var Groupname:String =  ""
+    static var Channelname:String = ""
     var status:Int!
     
 //ดึงข้อมูลจาก firebase
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
             if let snapshot = snapshot.value as? [String:AnyObject]
             {
                 //เอาค่าจาก firbase มาใส่ไว้ในตัวแปร
+                
                 var strSenderDisplayName = ""
                 if let strTemp = snapshot["name"] as? String
                 {
@@ -55,21 +57,19 @@ class ViewController: UIViewController {
                 
                 self.status = Int(strSenderStatus)
                 self.Checkstatus()
+              
+                var group = ""
+                if let strTemp = snapshot["group"] as? String
+                {
+                    group = strTemp
+                }
+                else
+                {
+                    group = ""
+                }
                 
-             
-                    var group = ""
-                    if let strTemp = snapshot["group"] as? String
-                    {
-                        group = strTemp
-                    }
-                    else
-                    {
-                        group = ""
-                    }
-                    
-                    ViewController.Groupname = group
-                    
-            
+                ViewController.Groupname = group
+              
             }
         })
     }
@@ -107,7 +107,6 @@ class ViewController: UIViewController {
         
         getUserEmail()
        
-        
         //เช็คว่ามีการ login ไหมถ้าไม่มีในไปเริ่มที่หน้า login ก่อน
         if (Auth.auth().currentUser == nil) //ไม่มีการ login
         {
@@ -126,7 +125,7 @@ class ViewController: UIViewController {
     // สถานะ =  2 ไปหน้า MemberHome
     func Checkstatus()
     {
-        print("สถานะคือ\(status!)")
+        
         //ให้ไปหน้า admin
         if status! == 1{
             

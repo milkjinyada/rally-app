@@ -11,7 +11,7 @@ import Firebase
 
 class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    static var Channelname:String = "admintest"
+    static var Channelname:String = ""
     static var Username:String = ""
     var Gamename = [String]()
     var Mission:Int = 0
@@ -37,9 +37,6 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
     
-    func SetDetail() {
-        ChannelNamelb.text = "ชื่อห้อง: \(UserHomeViewController.Channelname)"
-    }
     
 //ดึงข้อมูลจาก  Firebase
     var databaseRef:DatabaseReference!
@@ -48,32 +45,9 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var UserRef:DatabaseReference! 
     private var _databaseHandle:DatabaseHandle! = nil //กำหนด  handle
     
+   
     func databaseInit()
     {
-        //ดึงข้อมูลของเจ้าของห้องนั่นๆ
-        databaseRef = Database.database().reference().child("Channel").child(UserHomeViewController.Channelname)
-        
-        databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if let snapshot = snapshot.value as? [String:AnyObject]
-            {
-                //เอาค่าจาก firbase มาใส่ไว้ในตัวแปร
-               
-                var strSenderUser = ""
-                if let strTemp = snapshot["User"] as? String
-                {
-                    strSenderUser = strTemp
-                }
-                else
-                {
-                    strSenderUser = ""
-                }
-                
-               UserHomeViewController.Username = strSenderUser
-               self.loadmission()
-            
-            }
-        })
         
         databaseRef = Database.database().reference().child("Member").child(ViewController.userEmail!) //ดึง ref
         databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -81,6 +55,21 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
             if let snapshot = snapshot.value as? [String:AnyObject]
             {
                 //เอาค่าจาก firbase มาใส่ไว้ในตัวแปร
+                
+                var strSenderChannelName = ""
+                if let strTemp = snapshot["Channel"] as? String
+                {
+                    strSenderChannelName = strTemp
+                }
+                else
+                {
+                    strSenderChannelName = ""
+                }
+                
+                UserHomeViewController.Channelname = strSenderChannelName
+                self.ChannelNamelb.text = strSenderChannelName
+                self.GetChannelName()
+                
                 var group = ""
                 if let strTemp = snapshot["group"] as? String
                 {
@@ -127,6 +116,32 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
     
+    func GetChannelName(){
+        //ดึงข้อมูลของเจ้าของห้องนั่นๆ
+        databaseRef = Database.database().reference().child("Channel").child(UserHomeViewController.Channelname)
+        
+        databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let snapshot = snapshot.value as? [String:AnyObject]
+            {
+                //เอาค่าจาก firbase มาใส่ไว้ในตัวแปร
+                
+                var strSenderUser = ""
+                if let strTemp = snapshot["User"] as? String
+                {
+                    strSenderUser = strTemp
+                }
+                else
+                {
+                    strSenderUser = ""
+                }
+                
+                UserHomeViewController.Username = strSenderUser
+                self.loadmission()
+            }
+        })
+    }
+    
     func loadmission() {
         //เอาชื่อเจ้าของห้องไปดึงข้อมูลเกมของห้อง
         
@@ -164,7 +179,7 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 if let snapshot = snapshot.value as? [String:AnyObject]
                 {
                     var strSenderGame = ""
-                    if let strTemp = snapshot["name"] as? String
+                    if let strTemp = snapshot["gamename"] as? String
                     {
                         strSenderGame = strTemp
                     }
@@ -176,7 +191,6 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     self.Gamename.append(strSenderGame)
                     //self.Gamename[i] = strSenderGame
                     
-                    print(self.Gamename)
                     DispatchQueue.main.async {
                         self.tableview.reloadData()
                     }
@@ -274,7 +288,6 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         super.viewDidLoad()
        databaseRelease()
        databaseInit()
-       SetDetail()
 
     }
     

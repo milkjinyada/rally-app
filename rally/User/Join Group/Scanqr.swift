@@ -125,8 +125,7 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
             //ถ้าสแกนแล้วมีค่า
             if supportCode.contains(object!.type) {
                 if object!.stringValue != nil {
-                    print(object!.stringValue!)//คือค่าที่สแกนได้
-                    
+                
                         let ChannelRef  = Database.database().reference(withPath: "Channel")
                         ChannelRef.observe(.value, with:{ (snapshot: DataSnapshot) in
                             for snap in snapshot.children {
@@ -153,6 +152,7 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
                                             ["Channel" : snapname as AnyObject]
                                         let ScoreItemRef = MemberRef.child("\(ViewController.userEmail!)")
                                         ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+                                
                                         
                                         //สร้าง Rank
                                         self.AddMemberInRanking(roomname: snapname)

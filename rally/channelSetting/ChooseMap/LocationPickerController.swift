@@ -57,10 +57,6 @@ open class LocationPickerController: UIViewController, UITextViewDelegate  {
 
         //ย่อแมพ
         self.mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: 414, height: 896))
-        
-        print("กว้างเท่าไหร่น้าาา\(view.frame.size.width)")
-        print("สูงเท่าไหร่น้าาา\(view.frame.size.height)")
-        
         self.mapView.showsUserLocation = true
         self.mapView.delegate = self
         self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
