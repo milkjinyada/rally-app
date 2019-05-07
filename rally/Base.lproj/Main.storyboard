@@ -588,6 +588,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="2VI-rO-2cf" kind="relationship" relationship="viewControllers" id="Zp5-yI-iS5"/>
+                        <segue destination="5f5-Cw-BMA" kind="relationship" relationship="viewControllers" id="wPE-aG-JGk"/>
+                        <segue destination="ZDi-kP-Y8h" kind="relationship" relationship="viewControllers" id="mG8-FC-4eY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HL7-45-rfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2807,6 +2809,8 @@
         <segue reference="CP3-ug-JWW"/>
         <segue reference="72e-t3-Nd2"/>
         <segue reference="SYg-34-ZKe"/>
+        <segue reference="9vk-ih-tZj"/>
+        <segue reference="tKU-rV-b6b"/>
         <segue reference="0kP-Z7-dgG"/>
         <segue reference="5IX-eY-HNN"/>
     </inferredMetricsTieBreakers>

@@ -190,19 +190,19 @@ class GeofenceViewController: UIViewController {
         //updateGeotificationsCount()
     }
     
-    //  func remove(_ geotification: Geotification) {
-    //    guard let index = geotifications.index(of: geotification) else { return }
-    //    geotifications.remove(at: index)
-    //    mapView.removeAnnotation(geotification)
-    //    removeRadiusOverlay(forGeotification: geotification)
-    //    updateGeotificationsCount()
-    //  }
-    
-    //func updateGeotificationsCount() {
-    //title = "Rally Map"
-    //title = "Geotifications: \(geotifications.count)"
-    //navigationItem.rightBarButtonItem?.isEnabled = (geotifications.count < 20)
-    //}
+      func remove(_ geotification: Geotification) {
+        guard let index = geotifications.index(of: geotification) else { return }
+        geotifications.remove(at: index)
+        mapView.removeAnnotation(geotification)
+        removeRadiusOverlay(forGeotification: geotification)
+        //updateGeotificationsCount()
+      }
+//
+//    func updateGeotificationsCount() {
+//    title = "Rally Map"
+//    title = "Geotifications: \(geotifications.count)"
+//    navigationItem.rightBarButtonItem?.isEnabled = (geotifications.count < 20)
+//    }
     
     // MARK: Map overlay functions
     func addRadiusOverlay(forGeotification geotification: Geotification) {
@@ -287,10 +287,10 @@ extension GeofenceViewController: MKMapViewDelegate {
             if annotationView == nil {
                 annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 annotationView?.canShowCallout = true
-                //        let removeButton = UIButton(type: .custom)
-                //        removeButton.frame = CGRect(x: 0, y: 0, width: 23, height: 23)
-                //        removeButton.setImage(UIImage(named: "DeleteGeotification")!, for: .normal)
-                //        annotationView?.leftCalloutAccessoryView = removeButton
+                        let removeButton = UIButton(type: .custom)
+                        removeButton.frame = CGRect(x: 0, y: 0, width: 23, height: 23)
+                        removeButton.setImage(UIImage(named: "DeleteGeotification")!, for: .normal)
+                        annotationView?.leftCalloutAccessoryView = removeButton
             } else {
                 annotationView?.annotation = annotation
             }
@@ -311,12 +311,12 @@ extension GeofenceViewController: MKMapViewDelegate {
         return MKOverlayRenderer(overlay: overlay)
     }
     
-    //  func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-    //    // Delete geotification
-    //    let geotification = view.annotation as! Geotification
-    //    remove(geotification)
-    //    saveAllGeotifications()
-    //  }
+      func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        // Delete geotification
+        let geotification = view.annotation as! Geotification
+        remove(geotification)
+        saveAllGeotifications()
+      }
     
     
     

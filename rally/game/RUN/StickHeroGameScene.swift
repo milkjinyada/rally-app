@@ -57,7 +57,7 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    var lifelReal:Int = 4 {
+    var lifelReal:Int = 11 {
         willSet {
             let life = childNode(withName: StickHeroGameSceneChildName.life.rawValue) as? SKLabelNode
             life?.text = "Life Stock \(newValue)"
