@@ -25,6 +25,9 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet weak var Timelb: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    @IBAction func scanQRbtn(_ sender: Any) {
+        
+    }
     @IBAction func Logoutbtn(_ sender: Any) {
         Const().logOut()
         
@@ -148,7 +151,7 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func loadmission() {
         //เอาชื่อเจ้าของห้องไปดึงข้อมูลเกมของห้อง
         
-        MemberRef = Database.database().reference().child("Member").child("\( UserHomeViewController.Username)/channeldata")
+        MemberRef = Database.database().reference().child("Member").child("\(UserHomeViewController.Username)/channeldata")
         MemberRef.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let snapshot = snapshot.value as? [String:AnyObject]
@@ -224,7 +227,6 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         {
             num.append(i)
         }
-        
     }
     
     
@@ -247,6 +249,33 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let row = indexPath.row
         cell.gamename.text = Gamename[row]
         cell.gamenum.text = String(num[row])
+        cell.gameimg.image = UIImage(named: "covergamelock")
+        cell.isUserInteractionEnabled = false
+        
+        switch Gamename[row] {
+        case "เกมถามตอบ":
+            if QuestionView.isjoingame == true{
+                cell.gameimg.image = UIImage(named: "covergame")
+            }
+        case "เกมสลับภาพ":
+            if PicScrollingView.isjoingame == true{
+                cell.gameimg.image = UIImage(named: "covergame")
+            }
+        case "เกมปาขวาน":
+            if ARHacheGameView.isjoingame == true{
+                cell.gameimg.image = UIImage(named: "covergame")
+            }
+        case "เกมเดินให้ดี":
+            if RunGameView.isjoingame == true{
+                cell.gameimg.image = UIImage(named: "covergame")
+            }
+        case "เกมบวกเลข":
+            if MathGameView.isjoingame == true{
+                cell.gameimg.image = UIImage(named: "covergame")
+            }
+        default:
+            print("error")
+        }
    
 //        if AppDelegate.checklocation == true {
 //            cell.gameimg.image = UIImage(named: "covergame")

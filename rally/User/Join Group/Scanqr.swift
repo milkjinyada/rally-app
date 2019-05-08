@@ -125,58 +125,54 @@ extension Scanqr: AVCaptureMetadataOutputObjectsDelegate {
             //ถ้าสแกนแล้วมีค่า
             if supportCode.contains(object!.type) {
                 if object!.stringValue != nil {
-                
-                        let ChannelRef  = Database.database().reference(withPath: "Channel")
-                        ChannelRef.observe(.value, with:{ (snapshot: DataSnapshot) in
-                            for snap in snapshot.children {
-                                var snapname = (snap as! DataSnapshot).key
+                                    
+                    let ChannelRef  = Database.database().reference(withPath: "Channel")
+                    ChannelRef.observe(.value, with:{ (snapshot: DataSnapshot) in
+                        for snap in snapshot.children {
+                            var snapname = (snap as! DataSnapshot).key
 
-                                //เช็คว่าค่าที่สแกนได้กับค่าใน DB ตรงกันไหม ถ้าตรงก็ไปหน้าถัดไป
-                                if snapname == object!.stringValue!
-                                    
-                                {
-                                    UserHomeViewController.Channelname = snapname
-                                    let alert = UIAlertController(title: "Success", message: "Now you can join channel name \(snapname) . Do you want to join channel" , preferredStyle: .alert)
-                                    
-                                    alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (nil) in
-                                        
-                                        let homeView = self.storyboard?.instantiateViewController(withIdentifier: "fristview") as! ViewController
-                                        self.present(homeView, animated: true, completion: nil)
-                                        
-                                    }))
-                                    alert.addAction(UIAlertAction(title: "Join Channel", style: .default, handler: { (nil) in
-                                        
-                                        //เก็บ ชื่อห้องที่เข้าร่วม ขึ้น firebase
-                                        let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
-                                        let SettingData: Dictionary<String,AnyObject> =
-                                            ["Channel" : snapname as AnyObject]
-                                        let ScoreItemRef = MemberRef.child("\(ViewController.userEmail!)")
-                                        ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+                            //เช็คว่าค่าที่สแกนได้กับค่าใน DB ตรงกันไหม ถ้าตรงก็ไปหน้าถัดไป
+                            if snapname == object!.stringValue!
+                            {
+                                UserHomeViewController.Channelname = snapname
+                                let alert = UIAlertController(title: "Success", message: "Now you can join channel name \(snapname) . Do you want to join channel" , preferredStyle: .alert)
                                 
-                                        
-                                        //สร้าง Rank
-                                        self.AddMemberInRanking(roomname: snapname)
-                                        
-                                        //เปลื่ยนสถานะ  Join
-                                        let JoinItemRef = self.MemberRef.child(ViewController.userEmail!)
-                                        let JoinData: Dictionary<String,AnyObject> =
-                                            ["join" : "yes" as AnyObject]
-                                        JoinItemRef.updateChildValues(JoinData)
-                                        
-                                        
-                                        
-                                        //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า UserHome
-                                        let homeView = self.storyboard?.instantiateViewController(withIdentifier: "usertabber") as! UserTabberViewController
-                                        self.present(homeView, animated: true, completion: nil)
-                                        
-                                        
-                                        
-                                    }))
+                                alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (nil) in
                                     
-                                    self.present(alert, animated: true, completion: nil)
+                                    let homeView = self.storyboard?.instantiateViewController(withIdentifier: "fristview") as! ViewController
+                                    self.present(homeView, animated: true, completion: nil)
                                     
+                                }))
+                                alert.addAction(UIAlertAction(title: "Join Channel", style: .default, handler: { (nil) in
+                                    
+                                    //เก็บ ชื่อห้องที่เข้าร่วม ขึ้น firebase
+                                    let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
+                                    let SettingData: Dictionary<String,AnyObject> =
+                                        ["Channel" : snapname as AnyObject]
+                                    let ScoreItemRef = MemberRef.child("\(ViewController.userEmail!)")
+                                    ScoreItemRef.updateChildValues(SettingData)//ส่งขึ้น firebase
+                            
+                                    
+                                    //สร้าง Rank
+                                    self.AddMemberInRanking(roomname: snapname)
+                                    
+                                    //เปลื่ยนสถานะ  Join
+                                    let JoinItemRef = self.MemberRef.child(ViewController.userEmail!)
+                                    let JoinData: Dictionary<String,AnyObject> =
+                                        ["join" : "yes" as AnyObject]
+                                    JoinItemRef.updateChildValues(JoinData)
+
+                                    //ถ้าเข้าร่วมกลุ่ม  ให้เด้งไปหน้า UserHome
+                                    let homeView = self.storyboard?.instantiateViewController(withIdentifier: "usertabber") as! UserTabberViewController
+                                    self.present(homeView, animated: true, completion: nil)
+
+                                }))
+                                
+                                self.present(alert, animated: true, completion: nil)
+                                
                                 }
                             }
+                        
                             //ถ้าไม่ตรงให้ขึ้น Alert
                             Const().ShowAlert(title: "Try Again", message: "ไม่พบกลุ่มที่คุณต้องการเข้าร่วม", viewContronller: self)
                         })

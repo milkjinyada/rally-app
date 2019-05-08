@@ -420,12 +420,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-2" translatesAutoresizingMaskIntoConstraints="NO" id="dlC-IA-Yhk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSW-Dy-XLd">
-                                <rect key="frame" x="49" y="49" width="37" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="XG0-SX-1Sm"/>
-                                    <constraint firstAttribute="width" constant="37" id="ofR-aN-naW"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSW-Dy-XLd">
+                                <rect key="frame" x="32" y="54" width="37" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
                                 <state key="normal" title="logout">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -514,16 +511,6 @@
                                     <constraint firstAttribute="width" constant="36" id="JOP-0n-cYp"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ชื่อห้อง" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzT-2q-Uaj">
-                                <rect key="frame" x="0.0" y="54" width="375" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="9AA-w9-Kz4"/>
-                                    <constraint firstAttribute="height" constant="22" id="mOk-f6-NFd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
-                                <color key="textColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-userdisplay" translatesAutoresizingMaskIntoConstraints="NO" id="qfp-8Y-ah9">
                                 <rect key="frame" x="95" y="87" width="183" height="109"/>
                                 <constraints>
@@ -615,19 +602,26 @@
                                     <outlet property="delegate" destination="2VI-rO-2cf" id="EkG-NX-xHP"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notification" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-V4-UfN">
-                                <rect key="frame" x="323" y="59" width="25" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="M7i-hK-Hjc"/>
-                                    <constraint firstAttribute="height" constant="22" id="w7J-ie-iFc"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ชื่อห้อง" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzT-2q-Uaj">
+                                <rect key="frame" x="110" y="54" width="154" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                <color key="textColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAq-Ue-n0S">
+                                <rect key="frame" x="325" y="59" width="23" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="qr-code"/>
+                                <connections>
+                                    <action selector="scanQRbtn:" destination="2VI-rO-2cf" eventType="touchUpInside" id="2z5-tY-Oev"/>
+                                    <segue destination="R0B-Pg-N2J" kind="show" id="yHv-nr-NUk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lFL-zY-MPG" firstAttribute="top" secondItem="dm0-V4-UfN" secondAttribute="bottom" constant="36" id="0ML-Mw-lkq"/>
                             <constraint firstItem="FGo-TW-o7U" firstAttribute="trailing" secondItem="lFL-zY-MPG" secondAttribute="trailing" constant="45" id="1CB-0m-Eq7"/>
-                            <constraint firstItem="Yh0-OU-fY4" firstAttribute="top" secondItem="VzT-2q-Uaj" secondAttribute="bottom" constant="24" id="2QJ-XF-SPT"/>
                             <constraint firstItem="dlC-IA-Yhk" firstAttribute="top" secondItem="Iwd-ri-8Z5" secondAttribute="top" id="2k1-ih-sVt"/>
                             <constraint firstItem="Ti5-uA-jbL" firstAttribute="top" secondItem="Bzl-2T-4Tg" secondAttribute="bottom" constant="84" id="4pd-0G-Pdx"/>
                             <constraint firstItem="qfp-8Y-ah9" firstAttribute="leading" secondItem="opW-ed-N7c" secondAttribute="trailing" constant="26" id="7AF-5k-iQa"/>
@@ -637,22 +631,14 @@
                             <constraint firstAttribute="bottom" secondItem="dlC-IA-Yhk" secondAttribute="bottom" id="Eoq-Fh-AzC"/>
                             <constraint firstItem="ixW-G2-Qsz" firstAttribute="top" secondItem="RHG-2X-cdL" secondAttribute="bottom" constant="48" id="FgK-io-vAV"/>
                             <constraint firstItem="mxw-KY-t7b" firstAttribute="leading" secondItem="qfp-8Y-ah9" secondAttribute="trailing" constant="22" id="GJN-nR-dCr"/>
-                            <constraint firstItem="dm0-V4-UfN" firstAttribute="top" secondItem="FGo-TW-o7U" secondAttribute="top" constant="15" id="Gsu-pk-PmP"/>
-                            <constraint firstItem="VzT-2q-Uaj" firstAttribute="top" secondItem="FGo-TW-o7U" secondAttribute="top" constant="10" id="HDK-M3-GTG"/>
                             <constraint firstItem="mxw-KY-t7b" firstAttribute="top" secondItem="lFL-zY-MPG" secondAttribute="bottom" constant="8" id="IFd-m5-2dP"/>
                             <constraint firstItem="qfp-8Y-ah9" firstAttribute="leading" secondItem="Bzl-2T-4Tg" secondAttribute="trailing" constant="38" id="JXh-rX-ZY9"/>
-                            <constraint firstItem="FGo-TW-o7U" firstAttribute="trailing" secondItem="dm0-V4-UfN" secondAttribute="trailing" constant="27" id="KFo-7v-jEQ"/>
-                            <constraint firstItem="qfp-8Y-ah9" firstAttribute="top" secondItem="VzT-2q-Uaj" secondAttribute="bottom" constant="11" id="Kml-2W-Ju3"/>
-                            <constraint firstItem="opW-ed-N7c" firstAttribute="top" secondItem="SSW-Dy-XLd" secondAttribute="bottom" constant="36" id="Mwq-or-6AM"/>
                             <constraint firstItem="5DH-tv-ctF" firstAttribute="centerX" secondItem="dlC-IA-Yhk" secondAttribute="centerX" id="NGG-y1-ECw"/>
                             <constraint firstItem="mxw-KY-t7b" firstAttribute="leading" secondItem="Yh0-OU-fY4" secondAttribute="trailing" constant="67" id="NMj-f8-XPf"/>
                             <constraint firstItem="FGo-TW-o7U" firstAttribute="trailing" secondItem="L7r-mQ-I3w" secondAttribute="trailing" constant="152" id="OHh-8M-bP5"/>
                             <constraint firstItem="opW-ed-N7c" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="36" id="PdT-dW-6xO"/>
                             <constraint firstItem="5DH-tv-ctF" firstAttribute="top" secondItem="ieO-tc-WJY" secondAttribute="bottom" constant="85" id="PjZ-IP-MW5"/>
                             <constraint firstItem="FGo-TW-o7U" firstAttribute="trailing" secondItem="RHG-2X-cdL" secondAttribute="trailing" constant="127" id="QcQ-El-GBw"/>
-                            <constraint firstItem="VzT-2q-Uaj" firstAttribute="trailing" secondItem="FGo-TW-o7U" secondAttribute="trailing" id="R5C-cw-aZJ"/>
-                            <constraint firstItem="dm0-V4-UfN" firstAttribute="leading" secondItem="SSW-Dy-XLd" secondAttribute="trailing" constant="237" id="SCI-T2-Qfv"/>
-                            <constraint firstItem="qfp-8Y-ah9" firstAttribute="top" secondItem="VzT-2q-Uaj" secondAttribute="bottom" constant="11" id="TBO-5N-bhG"/>
                             <constraint firstItem="Ti5-uA-jbL" firstAttribute="top" secondItem="Bzl-2T-4Tg" secondAttribute="bottom" constant="84" id="VNC-OX-aFS"/>
                             <constraint firstItem="ieO-tc-WJY" firstAttribute="top" secondItem="mxw-KY-t7b" secondAttribute="bottom" constant="87" id="Wz5-jf-OIY"/>
                             <constraint firstItem="Bzl-2T-4Tg" firstAttribute="top" secondItem="opW-ed-N7c" secondAttribute="bottom" constant="8" id="Y0w-f9-VCt"/>
@@ -661,15 +647,11 @@
                             <constraint firstItem="RHG-2X-cdL" firstAttribute="top" secondItem="qfp-8Y-ah9" secondAttribute="bottom" constant="12" id="Z6G-h1-jjV"/>
                             <constraint firstItem="FGo-TW-o7U" firstAttribute="bottom" secondItem="5DH-tv-ctF" secondAttribute="bottom" constant="37" id="ZMe-Qe-yR9"/>
                             <constraint firstItem="L7r-mQ-I3w" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="151" id="anJ-T4-WRd"/>
-                            <constraint firstItem="opW-ed-N7c" firstAttribute="top" secondItem="SSW-Dy-XLd" secondAttribute="bottom" constant="36" id="bwN-18-gND"/>
-                            <constraint firstItem="lFL-zY-MPG" firstAttribute="top" secondItem="dm0-V4-UfN" secondAttribute="bottom" constant="36" id="cZp-VZ-keg"/>
-                            <constraint firstItem="SSW-Dy-XLd" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="49" id="ckM-pa-SS8"/>
                             <constraint firstItem="5DH-tv-ctF" firstAttribute="top" secondItem="L7r-mQ-I3w" secondAttribute="bottom" constant="36" id="dkI-D5-SV1"/>
                             <constraint firstItem="L7r-mQ-I3w" firstAttribute="top" secondItem="ixW-G2-Qsz" secondAttribute="bottom" constant="24" id="eWw-EL-n1z"/>
                             <constraint firstItem="ieO-tc-WJY" firstAttribute="leading" secondItem="Ti5-uA-jbL" secondAttribute="trailing" constant="204" id="edO-xg-62B"/>
                             <constraint firstItem="RHG-2X-cdL" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="127" id="f6z-UD-sZa"/>
                             <constraint firstItem="FGo-TW-o7U" firstAttribute="trailing" secondItem="5DH-tv-ctF" secondAttribute="trailing" constant="15" id="hkj-WI-gWV"/>
-                            <constraint firstItem="dm0-V4-UfN" firstAttribute="leading" secondItem="SSW-Dy-XLd" secondAttribute="trailing" constant="237" id="jGY-bT-6je"/>
                             <constraint firstItem="qfp-8Y-ah9" firstAttribute="leading" secondItem="opW-ed-N7c" secondAttribute="trailing" constant="26" id="jS3-S5-2z1"/>
                             <constraint firstItem="lFL-zY-MPG" firstAttribute="leading" secondItem="qfp-8Y-ah9" secondAttribute="trailing" constant="28" id="kiw-h8-Ufl"/>
                             <constraint firstItem="ieO-tc-WJY" firstAttribute="leading" secondItem="Ti5-uA-jbL" secondAttribute="trailing" constant="204" id="lDC-pZ-HXQ"/>
@@ -680,13 +662,11 @@
                             <constraint firstItem="Ti5-uA-jbL" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="47" id="o82-pK-CJW"/>
                             <constraint firstItem="ixW-G2-Qsz" firstAttribute="leading" secondItem="Iwd-ri-8Z5" secondAttribute="leadingMargin" constant="31" id="qS7-Ij-tYq"/>
                             <constraint firstItem="ixW-G2-Qsz" firstAttribute="top" secondItem="RHG-2X-cdL" secondAttribute="bottom" constant="48" id="qZh-J9-8go"/>
-                            <constraint firstItem="VzT-2q-Uaj" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" id="qq9-rC-SH6"/>
                             <constraint firstItem="Bzl-2T-4Tg" firstAttribute="top" secondItem="opW-ed-N7c" secondAttribute="bottom" constant="8" id="rSp-eO-yCP"/>
                             <constraint firstItem="L7r-mQ-I3w" firstAttribute="top" secondItem="ixW-G2-Qsz" secondAttribute="bottom" constant="24" id="tu8-ZB-uW5"/>
                             <constraint firstItem="dlC-IA-Yhk" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" id="v1Y-e4-A4t"/>
                             <constraint firstItem="mxw-KY-t7b" firstAttribute="leading" secondItem="qfp-8Y-ah9" secondAttribute="trailing" constant="22" id="yBT-cI-hlL"/>
                             <constraint firstItem="ieO-tc-WJY" firstAttribute="top" secondItem="mxw-KY-t7b" secondAttribute="bottom" constant="87" id="ybN-ZO-mDk"/>
-                            <constraint firstItem="SSW-Dy-XLd" firstAttribute="top" secondItem="FGo-TW-o7U" secondAttribute="top" constant="5" id="yd6-fN-agi"/>
                             <constraint firstItem="dlC-IA-Yhk" firstAttribute="trailing" secondItem="FGo-TW-o7U" secondAttribute="trailing" id="zCu-cn-rCD"/>
                             <constraint firstItem="5DH-tv-ctF" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="15" id="zdN-xY-lkd"/>
                         </constraints>
@@ -1311,6 +1291,7 @@
                         <segue destination="hTw-cq-EdZ" kind="relationship" relationship="viewControllers" id="dIb-YD-mvP"/>
                         <segue destination="ZDi-kP-Y8h" kind="relationship" relationship="viewControllers" id="tKU-rV-b6b"/>
                         <segue destination="5f5-Cw-BMA" kind="relationship" relationship="viewControllers" id="9vk-ih-tZj"/>
+                        <segue destination="O5Z-aZ-y9j" kind="relationship" relationship="viewControllers" id="s00-Yt-JvG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRY-gh-wLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1712,7 +1693,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gd4-x7-YOo" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-722.39999999999998" y="1543.5960591133005"/>
+            <point key="canvasLocation" x="4" y="2322"/>
         </scene>
         <!--Hache Game Home View Controller-->
         <scene sceneID="aUR-b5-b08">
@@ -1759,7 +1740,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mhb-ve-7es" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="1544"/>
+            <point key="canvasLocation" x="3142" y="2322"/>
         </scene>
         <!--Hache Game View Controller-->
         <scene sceneID="drZ-KU-2XF">
@@ -1848,7 +1829,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDX-Qu-8i1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="2289.1625615763546"/>
+            <point key="canvasLocation" x="3142" y="3067"/>
         </scene>
         <!--Scanqr-->
         <scene sceneID="DRJ-EF-88Z">
@@ -1909,7 +1890,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zGu-gU-v32" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="1544"/>
+            <point key="canvasLocation" x="1564" y="2322"/>
         </scene>
         <!--Math View Controller-->
         <scene sceneID="dk8-xC-Udc">
@@ -2049,7 +2030,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rip-Mq-BVQ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1573.5999999999999" y="1543.5960591133005"/>
+            <point key="canvasLocation" x="2348" y="2322"/>
         </scene>
         <!--Options View Controller-->
         <scene sceneID="PXR-mO-d0N">
@@ -2129,7 +2110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udx-TT-gWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1573.5999999999999" y="2261.8226600985222"/>
+            <point key="canvasLocation" x="2300" y="3039"/>
         </scene>
         <!--Choose Map View Controller-->
         <scene sceneID="L0G-n1-UvU">
@@ -2270,7 +2251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oY-1P-PnI" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2412" y="1543.5960591133005"/>
+            <point key="canvasLocation" x="833" y="2322"/>
         </scene>
         <!--CreateQR-->
         <scene sceneID="ud3-Hc-fpG">
@@ -2685,6 +2666,114 @@
             </objects>
             <point key="canvasLocation" x="9278" y="27"/>
         </scene>
+        <!--game list-->
+        <scene sceneID="Gn5-DL-Ix5">
+            <objects>
+                <viewController id="O5Z-aZ-y9j" customClass="GamelistViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nwa-AD-hMO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-2" translatesAutoresizingMaskIntoConstraints="NO" id="heX-xz-dp3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game List" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seq-1n-Ff4">
+                                <rect key="frame" x="34" y="60" width="322" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="gIw-94-TZ3"/>
+                                    <constraint firstAttribute="width" constant="322" id="jsB-Ud-4CF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TON-Bq-6ip">
+                                <rect key="frame" x="19" y="102" width="331" height="1"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="331" id="NoP-iU-E1g"/>
+                                    <constraint firstAttribute="height" constant="1" id="SQG-Hf-yWK"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8ZV-v0-l7Z">
+                                <rect key="frame" x="16" y="126" width="343" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gamelist" rowHeight="115" id="opG-6G-Gqb" customClass="GamelistTableViewCell" customModule="rally" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="115"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="opG-6G-Gqb" id="KZa-y1-Swu">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="114.66666666666667"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="covergame" translatesAutoresizingMaskIntoConstraints="NO" id="WIk-8v-ma2">
+                                                    <rect key="frame" x="69" y="4" width="275" height="107"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3V-Ak-BS7">
+                                                    <rect key="frame" x="0.0" y="37" width="81" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="15"/>
+                                                    <color key="textColor" red="0.29411764709999999" green="0.47843137250000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REc-C3-E5c">
+                                                    <rect key="frame" x="0.0" y="56" width="81" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="15"/>
+                                                    <color key="textColor" red="0.29411764709999999" green="0.47843137250000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsJ-ZR-JrG">
+                                                    <rect key="frame" x="104" y="46" width="201" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="gamename" destination="JsJ-ZR-JrG" id="Z0c-SV-Qe4"/>
+                                            <outlet property="gamenum" destination="REc-C3-E5c" id="SLf-3Y-ES4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="O5Z-aZ-y9j" id="N3m-2z-jlR"/>
+                                    <outlet property="delegate" destination="O5Z-aZ-y9j" id="RcS-GG-5BT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8ZV-v0-l7Z" firstAttribute="bottom" secondItem="mqE-sI-gg0" secondAttribute="bottom" id="8ln-is-zBt"/>
+                            <constraint firstItem="TON-Bq-6ip" firstAttribute="top" secondItem="seq-1n-Ff4" secondAttribute="bottom" constant="4" id="AcY-Gi-DPa"/>
+                            <constraint firstItem="heX-xz-dp3" firstAttribute="trailing" secondItem="mqE-sI-gg0" secondAttribute="trailing" id="Ekh-GM-Rkb"/>
+                            <constraint firstItem="heX-xz-dp3" firstAttribute="leading" secondItem="mqE-sI-gg0" secondAttribute="leading" id="G9z-5x-1kd"/>
+                            <constraint firstItem="8ZV-v0-l7Z" firstAttribute="leading" secondItem="mqE-sI-gg0" secondAttribute="leading" constant="16" id="Ib2-U7-2Lq"/>
+                            <constraint firstItem="TON-Bq-6ip" firstAttribute="leading" secondItem="Nwa-AD-hMO" secondAttribute="leadingMargin" constant="3" id="KgY-0N-VqY"/>
+                            <constraint firstItem="mqE-sI-gg0" firstAttribute="trailing" secondItem="8ZV-v0-l7Z" secondAttribute="trailing" constant="16" id="Nbg-N6-MF0"/>
+                            <constraint firstItem="mqE-sI-gg0" firstAttribute="trailing" secondItem="seq-1n-Ff4" secondAttribute="trailing" constant="19" id="NmD-i9-tHg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TON-Bq-6ip" secondAttribute="trailing" constant="9" id="dvT-ZY-Peg"/>
+                            <constraint firstAttribute="bottom" secondItem="heX-xz-dp3" secondAttribute="bottom" id="iLc-jB-hik"/>
+                            <constraint firstItem="8ZV-v0-l7Z" firstAttribute="top" secondItem="TON-Bq-6ip" secondAttribute="bottom" constant="23" id="kDf-8I-YIy"/>
+                            <constraint firstItem="seq-1n-Ff4" firstAttribute="leading" secondItem="mqE-sI-gg0" secondAttribute="leading" constant="34" id="kTk-9B-fu8"/>
+                            <constraint firstItem="TON-Bq-6ip" firstAttribute="top" secondItem="seq-1n-Ff4" secondAttribute="bottom" constant="4" id="pXb-cK-lD8"/>
+                            <constraint firstItem="seq-1n-Ff4" firstAttribute="top" secondItem="mqE-sI-gg0" secondAttribute="top" constant="16" id="taE-UT-EnR"/>
+                            <constraint firstItem="heX-xz-dp3" firstAttribute="top" secondItem="Nwa-AD-hMO" secondAttribute="top" id="xiH-N0-vHe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mqE-sI-gg0"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="game list" image="game-controller" id="HuJ-XO-xe4"/>
+                    <connections>
+                        <outlet property="tableview" destination="8ZV-v0-l7Z" id="pRB-5f-DAo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PAk-c2-D7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10103" y="27"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="k97-pK-AZB">
             <objects>
@@ -2871,11 +2960,508 @@
             </objects>
             <point key="canvasLocation" x="4241" y="-672"/>
         </scene>
+        <!--Question View-->
+        <scene sceneID="5i9-jS-rrF">
+            <objects>
+                <viewController storyboardIdentifier="question" id="w2r-Bo-JCx" customClass="QuestionView" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Ui-Oz-Roi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Llq-x1-xe4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eSU-A8-KP7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quiz" translatesAutoresizingMaskIntoConstraints="NO" id="2Ct-xY-YbD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="823"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTu-zf-070">
+                                <rect key="frame" x="10" y="42" width="61" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="18"/>
+                                <state key="normal" title="&lt; back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backbtn:" destination="w2r-Bo-JCx" eventType="touchUpInside" id="Pco-4m-Xaa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="เกมถามตอบ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8k-HQ-1y1">
+                                <rect key="frame" x="68" y="82" width="239" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizhowto" translatesAutoresizingMaskIntoConstraints="NO" id="hZU-gy-CFH">
+                                <rect key="frame" x="24" y="333" width="327" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizScore" translatesAutoresizingMaskIntoConstraints="NO" id="GEn-Yc-f8Z">
+                                <rect key="frame" x="60" y="541" width="254" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-bA-mGL">
+                                <rect key="frame" x="83" y="595" width="209" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">ถ้าตอบถูก 1 ข้อ เท่ากับ 1 คะแนน 
+ถ้าตอบผิดจะไม่ได้คะแนน 
+(คะแนนเต็ม 10 คะแนน) </string>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ตอบคำถาม 10 คำถามภายในเวลา 60 วินาที                                     ยิ่งตอบถูกมากคะแนนจะยิ่งมาก" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSU-bS-5h8">
+                                <rect key="frame" x="41" y="421" width="293" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quiz2" translatesAutoresizingMaskIntoConstraints="NO" id="D1X-e7-oGa">
+                                <rect key="frame" x="115" y="148" width="144" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9D-rs-ddf">
+                                <rect key="frame" x="24" y="701" width="323" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="startgamebtn"/>
+                                <connections>
+                                    <action selector="StartGamebtn:" destination="w2r-Bo-JCx" eventType="touchUpInside" id="rVJ-hv-XfZ"/>
+                                    <segue destination="Le5-6U-uZq" kind="show" id="3JC-1h-UVG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ws8-U9-FQV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGc-f3-60H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4" y="1551.7241379310346"/>
+        </scene>
+        <!--Pic Scrolling View-->
+        <scene sceneID="sHD-iU-ENw">
+            <objects>
+                <viewController storyboardIdentifier="picscrolling" id="aWG-Jh-GA0" customClass="PicScrollingView" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jkg-LV-2F8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Io7-zS-77K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CoA-J1-Kh1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgpic" translatesAutoresizingMaskIntoConstraints="NO" id="Wwh-lL-qaT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="823"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5P-z3-iyG">
+                                <rect key="frame" x="10" y="40" width="61" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="18"/>
+                                <state key="normal" title="&lt; back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backbtn:" destination="aWG-Jh-GA0" eventType="touchUpInside" id="yw4-0Q-f1x"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="เกมสลับภาพ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-3Q-gEs">
+                                <rect key="frame" x="68" y="86" width="239" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizhowto" translatesAutoresizingMaskIntoConstraints="NO" id="Wyg-zL-hNo">
+                                <rect key="frame" x="24" y="329" width="327" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="เรียงภาพให้สมบูรณ์ภายในเวลา 400 วินาที " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLk-w7-nqo">
+                                <rect key="frame" x="41" y="417" width="293" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizScore" translatesAutoresizingMaskIntoConstraints="NO" id="NVR-1p-Kv9">
+                                <rect key="frame" x="60" y="537" width="254" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="คะแนนจะลดลง 1 คะแนนต่อ 40 วินาที  (คะแนนเต็ม 10 คะแนน)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZE-Wq-iJR">
+                                <rect key="frame" x="86" y="586" width="203" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picpic" translatesAutoresizingMaskIntoConstraints="NO" id="qNY-z4-SxT">
+                                <rect key="frame" x="77" y="155" width="220" height="209"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgl-GP-grE">
+                                <rect key="frame" x="26" y="696" width="323" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="startgamebtn"/>
+                                <connections>
+                                    <action selector="StartGamebtn:" destination="aWG-Jh-GA0" eventType="touchUpInside" id="RPI-12-0OB"/>
+                                    <segue destination="PBK-u8-O5f" kind="show" id="vnf-CS-26e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mI5-Oh-rII"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GiW-QE-e56" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832.79999999999995" y="1551.7241379310346"/>
+        </scene>
+        <!--Run Game View-->
+        <scene sceneID="kgZ-3d-KKx">
+            <objects>
+                <viewController storyboardIdentifier="run" id="62d-eE-8Jc" customClass="RunGameView" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rPI-LJ-UWz"/>
+                        <viewControllerLayoutGuide type="bottom" id="YKK-Uw-vBT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y2f-0v-7Wy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgRun" translatesAutoresizingMaskIntoConstraints="NO" id="Zlb-mu-ktv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="823"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWK-lh-Z4H">
+                                <rect key="frame" x="10" y="44" width="61" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="18"/>
+                                <state key="normal" title="&lt; back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backbtn:" destination="62d-eE-8Jc" eventType="touchUpInside" id="6eV-je-fxS"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizhowto" translatesAutoresizingMaskIntoConstraints="NO" id="Why-88-h5r">
+                                <rect key="frame" x="20" y="303" width="335" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGC-Oi-6HT">
+                                <rect key="frame" x="46" y="394" width="282" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">กดค้างที่หน้าจอเพื่อสร้างสะพานให้คนเดินข้ามไปยังฝั่งหนึ่งได้อย่างปลอดภัย โดยสะพานห้ามสั้นหรือยาวเกินความกว้างของอีกฝั่ง ไม่อย่างนั้นคนจะตกจากสะพาน คุณมีชีวิตเพียง 3 ชีวิตเท่านั้น</string>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizScore" translatesAutoresizingMaskIntoConstraints="NO" id="h0a-s9-mar">
+                                <rect key="frame" x="47" y="527" width="280" height="161"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="เกมเดินให้ดี" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzd-bg-eDy">
+                                <rect key="frame" x="68" y="89" width="239" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fko-PE-gUe">
+                                <rect key="frame" x="72" y="559" width="231" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">ทุกๆ 5 คะแนนในเกมคิดเป็น 1 คะแนนจริง (หากสามารถทำให้สะพานอยู่กึ่งกลางของอีกฝั่งได้คะแนนจะบวกเพิ่ม 1 คะแนนในเกม)  (คะแนนเต็ม 10 คะแนน)</string>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Artboard 1" translatesAutoresizingMaskIntoConstraints="NO" id="bAV-nB-JoF">
+                                <rect key="frame" x="81" y="153" width="212" height="201"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmF-Ug-0al">
+                                <rect key="frame" x="26" y="697" width="323" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="startgamebtn"/>
+                                <connections>
+                                    <action selector="startgamebtn:" destination="62d-eE-8Jc" eventType="touchUpInside" id="8CU-3i-W7o"/>
+                                    <segue destination="nrD-SA-ZGC" kind="show" id="LYq-Oy-fgE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jqw-8D-QHf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PoF-t0-63b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1572" y="1551.7241379310346"/>
+        </scene>
+        <!--Math Game View-->
+        <scene sceneID="OaQ-rO-F5J">
+            <objects>
+                <viewController storyboardIdentifier="math" id="C1G-w2-Miu" customClass="MathGameView" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mvX-X4-9UQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="XOs-vt-kKq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4KC-33-7aZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgplus" translatesAutoresizingMaskIntoConstraints="NO" id="ai5-62-7aM">
+                                <rect key="frame" x="0.0" y="-5" width="398" height="823"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phN-zO-iCC">
+                                <rect key="frame" x="25" y="691" width="323" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="startgamebtn"/>
+                                <connections>
+                                    <action selector="startgamebtn:" destination="C1G-w2-Miu" eventType="touchUpInside" id="HmU-XZ-QlU"/>
+                                    <segue destination="5bW-Yw-qqn" kind="show" id="tDs-Gk-eTw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwq-gf-ufL">
+                                <rect key="frame" x="10" y="45" width="61" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="18"/>
+                                <state key="normal" title="&lt; back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backbtn:" destination="C1G-w2-Miu" eventType="touchUpInside" id="u4q-qY-88r"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizScore" translatesAutoresizingMaskIntoConstraints="NO" id="rUO-CP-E1s">
+                                <rect key="frame" x="62" y="528" width="254" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" ถ้าตอบถูก 1 ข้อ เท่ากับ 1 คะแนน ถ้าตอบผิดจะไม่ได้คะแนน (คะแนนเต็ม 10 คะแนน)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmu-IC-O4M">
+                                <rect key="frame" x="79" y="574" width="216" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="เกมบวกเลข" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0j-vn-9mQ">
+                                <rect key="frame" x="68" y="90" width="239" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizhowto" translatesAutoresizingMaskIntoConstraints="NO" id="a6J-b7-yDr">
+                                <rect key="frame" x="24" y="326" width="327" height="194"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="บวก,ลบ,คูณ ตัวเลขภายในเวลาที่กำหนด จำนวน 10 ข้อ " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I77-jm-ACh">
+                                <rect key="frame" x="50" y="414" width="274" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picplus" translatesAutoresizingMaskIntoConstraints="NO" id="f0W-xI-yWd">
+                                <rect key="frame" x="104" y="155" width="189" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MWR-IF-lUY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wh0-Gb-EsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2348" y="1551.7241379310346"/>
+        </scene>
+        <!--Hache Game View-->
+        <scene sceneID="3rv-2S-lsb">
+            <objects>
+                <viewController storyboardIdentifier="ARHache" id="tyX-bN-gkk" customClass="ARHacheGameView" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ffu-Kw-U6O"/>
+                        <viewControllerLayoutGuide type="bottom" id="O4o-cd-lQN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XjT-Ur-zVH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgRun" translatesAutoresizingMaskIntoConstraints="NO" id="sid-DF-z2Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="823"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="เกมปาขวาน" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSf-xl-Jl6">
+                                <rect key="frame" x="68" y="95" width="239" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizhowto" translatesAutoresizingMaskIntoConstraints="NO" id="YCO-Q8-5po">
+                                <rect key="frame" x="24" y="314" width="335" height="214"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppf-KG-c1W">
+                                <rect key="frame" x="47" y="404" width="281" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">กดเริ่มเกมจากนั้นเล็งเป้าไปที่ฉลามหรืออ่างน้ำ หากยิงโดนฉลามจะได้ 5 คะแนน หากยิงโดนอ่างน้ำจะได้ 1 คะแนน 
+ภายในเวลา 40 วินาที โดยสามารถกดปาขวานได้รัวๆไม่จำกัด 
+</string>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizScore" translatesAutoresizingMaskIntoConstraints="NO" id="lRl-eN-YdS">
+                                <rect key="frame" x="60" y="531" width="254" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ทุกๆ 10 คะแนนในเกมจะคิดเป็น 1 คะแนนจริง (คะแนนเต็ม 10 คะแนน)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjW-ye-TMX">
+                                <rect key="frame" x="78" y="584" width="218" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVE-Q5-Rlg">
+                                <rect key="frame" x="16" y="44" width="61" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="18"/>
+                                <state key="normal" title="&lt; back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backbtn:" destination="tyX-bN-gkk" eventType="touchUpInside" id="7EN-yy-fpi"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AR-game" translatesAutoresizingMaskIntoConstraints="NO" id="Z8G-HB-UGP">
+                                <rect key="frame" x="99" y="144" width="185" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLD-jy-qgO">
+                                <rect key="frame" x="26" y="690" width="323" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="startgamebtn"/>
+                                <connections>
+                                    <action selector="startgamebtn:" destination="tyX-bN-gkk" eventType="touchUpInside" id="WFW-Ag-GlF"/>
+                                    <segue destination="0a3-vT-ND8" kind="show" id="UCP-Rj-gxa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3Za-t8-Dy9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WZV-A6-lOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3141.5999999999999" y="1551.7241379310346"/>
+        </scene>
+        <!--Gamedetail View Controller-->
+        <scene sceneID="cI1-X3-p2A">
+            <objects>
+                <viewController storyboardIdentifier="gamedetail" id="OnE-aj-aWv" customClass="GamedetailViewController" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R5U-Gn-etK"/>
+                        <viewControllerLayoutGuide type="bottom" id="OWv-dp-fZE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RGB-Sj-9GG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgRun" translatesAutoresizingMaskIntoConstraints="NO" id="Yn4-cL-kOf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="823"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fame" translatesAutoresizingMaskIntoConstraints="NO" id="r4H-4r-eVS">
+                                <rect key="frame" x="12" y="247" width="351" height="332"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfE-sp-4vO">
+                                <rect key="frame" x="10" y="44" width="61" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="18"/>
+                                <state key="normal" title="&lt; back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backbtn:" destination="OnE-aj-aWv" eventType="touchUpInside" id="3b7-di-EzW"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="run" translatesAutoresizingMaskIntoConstraints="NO" id="s41-MA-RuF">
+                                <rect key="frame" x="67" y="300" width="240" height="223"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="เกมเดินให้ดี" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NX6-6h-hps">
+                                <rect key="frame" x="68" y="198" width="239" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hZ4-Xd-s8b"/>
+                    </view>
+                    <connections>
+                        <outlet property="gamename" destination="NX6-6h-hps" id="aU9-qq-etf"/>
+                        <outlet property="gameqr" destination="s41-MA-RuF" id="IeA-aJ-Sh1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GJu-8w-HJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10872.799999999999" y="26.600985221674879"/>
+        </scene>
+        <!--ScanQR Join Game-->
+        <scene sceneID="boe-89-HlY">
+            <objects>
+                <viewController id="R0B-Pg-N2J" customClass="ScanQRJoinGame" customModule="rally" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8eS-rf-qZE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mbu-Pw-JoT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dci-A8-Maw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sq" translatesAutoresizingMaskIntoConstraints="NO" id="X8f-Eb-R9e">
+                                <rect key="frame" x="27.666666666666657" y="246" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="1SR-2y-fSp"/>
+                                    <constraint firstAttribute="height" constant="320" id="3iT-qJ-6ss"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Join Game" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBz-X4-jsM">
+                                <rect key="frame" x="37" y="135" width="322" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="35"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="X8f-Eb-R9e" firstAttribute="centerY" secondItem="dci-A8-Maw" secondAttribute="centerY" id="RMR-ec-GMm"/>
+                            <constraint firstItem="X8f-Eb-R9e" firstAttribute="centerX" secondItem="dci-A8-Maw" secondAttribute="centerX" id="omz-de-JGr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oMh-Qu-rIW"/>
+                    </view>
+                    <connections>
+                        <outlet property="square" destination="X8f-Eb-R9e" id="zOF-2c-cIX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfK-jT-PT8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2300" y="776"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AR-Time" width="135" height="158"/>
+        <image name="AR-game" width="1" height="1"/>
         <image name="AddPin" width="75" height="75"/>
         <image name="Arrow" width="13" height="8"/>
+        <image name="Artboard 1" width="800" height="800"/>
         <image name="BG-1" width="377" height="381"/>
         <image name="BG-2" width="375" height="812"/>
         <image name="BG-Game-1" width="375" height="812"/>
@@ -2898,6 +3484,9 @@
         <image name="WhiteCreateChannalbtn" width="305" height="47"/>
         <image name="ans-math" width="367" height="65"/>
         <image name="axe" width="96" height="96"/>
+        <image name="bgRun" width="375" height="812"/>
+        <image name="bgpic" width="375" height="812"/>
+        <image name="bgplus" width="393" height="812"/>
         <image name="btn-Quiz" width="300" height="52"/>
         <image name="button-blue" width="305" height="47"/>
         <image name="button-white" width="305" height="47"/>
@@ -4313,12 +4902,20 @@ p3GscblxvHHJcc5x1nHZcd5x5nHpcftx/nIDAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAcgU
         <image name="mission" width="40" height="40"/>
         <image name="next" width="305" height="47"/>
         <image name="no" width="120" height="120"/>
-        <image name="notification" width="29" height="22"/>
         <image name="pic-lose" width="305" height="47"/>
+        <image name="picpic" width="228" height="222"/>
+        <image name="picplus" width="207" height="195"/>
         <image name="playButtonIcon" width="100" height="100"/>
+        <image name="qr-code" width="128" height="128"/>
+        <image name="quiz" width="375" height="819"/>
+        <image name="quiz2" width="168" height="243"/>
+        <image name="quizScore" width="280" height="165"/>
+        <image name="quizhowto" width="335" height="219"/>
+        <image name="run" width="200" height="200"/>
         <image name="sign up btn" width="156" height="63"/>
         <image name="sq" width="1333" height="1333"/>
         <image name="startbtn" width="74" height="74"/>
+        <image name="startgamebtn" width="323" height="65"/>
         <image name="target" width="100" height="100"/>
         <image name="textF-math-Ans" width="349" height="52"/>
         <image name="textfield" width="345" height="63"/>
@@ -4330,12 +4927,12 @@ p3GscblxvHHJcc5x1nHZcd5x5nHpcftx/nIDAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAcgU
         <image name="whitefame" width="306" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="72e-t3-Nd2"/>
         <segue reference="SYg-34-ZKe"/>
-        <segue reference="CP3-ug-JWW"/>
-        <segue reference="OY4-8N-giN"/>
         <segue reference="9vk-ih-tZj"/>
         <segue reference="tKU-rV-b6b"/>
         <segue reference="0kP-Z7-dgG"/>
+        <segue reference="tDs-Gk-eTw"/>
         <segue reference="5IX-eY-HNN"/>
     </inferredMetricsTieBreakers>
 </document>
