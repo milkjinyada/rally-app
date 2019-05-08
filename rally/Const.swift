@@ -56,16 +56,18 @@ class member{
     var join: String!
     var sex:String!
     let group: String!
+    var photoURL:String!
    
     var conpleted: Bool!
     let ref: DatabaseReference!
-    init(name: String, email: String, status:Int, join: String, sex:String, group:String) {
+    init(name: String, email: String, status:Int, join: String, sex:String, group:String, photoURL:String) {
         self.group = group
         self.name = name
         self.email = email
         self.status = status
         self.join = join
         self.sex = sex
+        self.photoURL = photoURL
         
         self.ref = nil
     }
@@ -78,6 +80,7 @@ class member{
         join = snapshotValue["join"] as! String
         sex = snapshotValue["sex"] as! String
         group = snapshotValue["group"] as! String
+        photoURL = snapshotValue["photoURL"] as! String
         ref = snapshot.ref
         
     }
@@ -89,7 +92,8 @@ class member{
             "status": status,
             "join": join,
             "sex": sex,
-            "group": group
+            "group": group,
+            "photoURL": photoURL
         ]
     }
 }

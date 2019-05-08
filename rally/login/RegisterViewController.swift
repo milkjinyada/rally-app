@@ -113,6 +113,7 @@ class RegisterViewController: UIViewController {
             var join = "no"
             let name = regisName.text
             var group = "no"
+            var photourl = ""
             
 
 //Auth เอาไว้เช็คว่า email นี้เคยมีคนสมัครรึยัง
@@ -125,15 +126,15 @@ class RegisterViewController: UIViewController {
                 }
             //ถ้ายัง ก็ทำการสมัครและเก็บขึ้น DB
                 else{
-                    self.handleSignUp()
+                    
                     var MemberEmail = email
                     MemberEmail = replaceSpacialCharacter(inputStr:email!)
                     self.useremail = MemberEmail!
                     self.ref = Database.database().reference(withPath: "Member")
-                    let memberData = member(name: name!, email: MemberEmail!, status: status, join:join, sex:self.sex, group: group)
+                    let memberData = member(name: name!, email: MemberEmail!, status: status, join:join, sex:self.sex, group: group, photoURL:photourl)
                     let memberItemRef = self.ref.child(MemberEmail!) //เอาไว้แยกข้อมูลของแต่ละ user ผ่านอีเมล ถ้าไม่มีตัวนี้ข้อมูลของทุกคนจะรวมกันหมดเลย
                     memberItemRef.setValue(memberData.toAnyObject())
-                    
+                    self.handleSignUp()
 
                     let alert = UIAlertController(title: "Succeed", message: "Sign in Succeed", preferredStyle: .alert)
                     let resultAlert = UIAlertAction(title: "OK", style: .default, handler: { (alertAction) in
@@ -261,6 +262,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    //เก็บ URL ของรูปโปรไฟล์ขึ้น Firebase
     func saveProfile(username:String, profileImageURL:URL, completion: @escaping ((_ success:Bool)->())) {
         // guard let uid = Auth.auth().currentUser?.uid else { return }
         let databaseRef = Database.database().reference().child("users/profile/\(useremail)")
@@ -273,6 +275,12 @@ class RegisterViewController: UIViewController {
         databaseRef.setValue(userObject) { error, ref in
             completion(error == nil)
         }
+        
+        let MemberRef : DatabaseReference! = Database.database().reference(withPath: "Member")
+        let photoItemRef = MemberRef.child(useremail)
+        print(useremail)
+        let imgurl = ["photoURL": profileImageURL.absoluteString] as [String:Any]
+        photoItemRef.updateChildValues(imgurl)
     }
 
 }

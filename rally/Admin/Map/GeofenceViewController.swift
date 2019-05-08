@@ -17,52 +17,38 @@ class GeofenceViewController: UIViewController {
     
     var ref = DatabaseReference.init()
     var create: DatabaseReference!
-    
-    @IBOutlet weak var mapView: MKMapView!
-    
     var geotifications: [Geotification] = []
     var locationManager = CLLocationManager()
     
+    @IBOutlet weak var mapView: MKMapView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         loadAllGeotifications()
         getAllFIRData()
-        //fetch()
         
+        //ลบมุด
+        let allAnnotations = self.mapView.annotations
+        self.mapView.removeAnnotations(allAnnotations)
+        
+        //ลบแอร์เรียลสีม่วง
+        let allarea = self.mapView.overlays
+        self.mapView.removeOverlays(allarea)
+       
     }
-    
-    //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //    if segue.identifier == "addGeotification" {
-    //      let navigationController = segue.destination as! UINavigationController
-    //      let vc = navigationController.viewControllers.first as! AddGeofenceViewController
-    //      vc.delegate = self
-    //    }
-    
-    //  }
     
     
     func getAllFIRData() {
-        
-        
-        //            let databaseRef = Database.database().reference()
-        ////            databaseRef.child("Member").child("\(AdminHomeViewController.ChannelName)").queryOrdered(byChild:"Group").observeSingleEvent(of: .value, with: { snapshot in
-        //            databaseRef.child("Member").child("admintest3@gmaildotcom/channeldata/game").queryOrdered(byChild:"Group").observeSingleEvent(of: .value, with: { snapshot in
-        
+    
         self.create = Database.database().reference().child("Member").child("\(ViewController.userEmail!)/channeldata/game")
         self.create.observe(DataEventType.value, with: {(snapshot) in
-            //self.arrData.removeAll()
+
             if let snapShort = snapshot.children.allObjects as? [DataSnapshot]{
                 for snap in snapShort{
                     if let mainDict = snap.value as? [String: AnyObject]{
-                        //                                    let  Groupname = mainDict["Groupname"] as? String
-                        //                                    let  Picture = mainDict["Picture"] as? Int
-                        //                                    let  Math = mainDict["Math"] as? Int
-                        //                                    let  Run = mainDict["Run"] as? Int
-                        //                                    let  AR = mainDict["AR"] as? Int
-                        //                                    let  Question = mainDict["Question"] as? Int
-                        
+                       
                         let latitude = Double(mainDict["latitude"] as! String)
                         let longitude = Double(mainDict["longitude"] as! String)
                         let note = mainDict["note"] as? String
@@ -80,91 +66,14 @@ class GeofenceViewController: UIViewController {
                         
                         print(latitude!)
                         
-                        //self.arrData.append(RankScoree(Groupname: Groupname!, gameSum: gameSum))
-                        
-                        //                                    DispatchQueue.main.async {
-                        //                                        self.tableView.reloadData()
-                        //                                    }
+                       
                     }
                 }
             }
         })
-        
-        //})
-        
-        
-        
-        
-        
     }
     
-    //    func fetch() {
-    //
-    //
-    //        //create = Database.database().reference().child("Member").child("\(ViewController.userEmail!)/channeldata/game")
-    //        create = Database.database().reference().child("Member").child("admintest3@gmaildotcom/channeldata/game")
-    //        create.observe(DataEventType.value, with: {(snapshot) in
-    //
-    //            print("snap")
-    //
-    //
-    //            var snapshotArray: [DataSnapshot] = []
-    //
-    //            for item in snapshot.children {
-    //
-    //                snapshotArray.append(item as! DataSnapshot)
-    //            }
-    //
-    //            snapshotArray.reverse()
-    //
-    //
-    //            var locationArray: [LocationFIR] = []
-    //
-    //            for snap in snapshotArray {
-    //
-    //                let locate = LocationFIR(dic: snap.value as! [String: Any])
-    //                locationArray.append(locate)
-    //            }
-    //
-    //            for (index, locate) in locationArray.enumerated()  {
-    //
-    //
-    //                let attractions = locationArray.enumerated().compactMap  { (index, locate) in
-    //
-    //                    let latitude = Double(locate.latitude)!
-    //                    let longitude = Double(locate.longitude)!
-    //                    let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-    //                    let note = String(locate.note)
-    //                    let radius = Double(locate.radius)!
-    //                    let identifier = String(locate.identifier)
-    //                    let eventType = String(locate.eventType)
-    //
-    //
-    //
-    //                    //                    let attraction = SRAttraction(latitude: Latitude , longitude: Longitude)
-    //                    //                    attraction.name = locate.title
-    //                    //                    attraction.subname = locate.subtitle
-    //                    //
-    //
-    //
-    //                    //return attraction
-    //
-    //
-    //                }
-    //                func addGeotificationViewController(_ controller: AddGeofenceViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: Geotification.EventType) {
-    //                    controller.dismiss(animated: true, completion: nil)
-    //                    let clampedRadius = min(radius, self.locationManager.maximumRegionMonitoringDistance)
-    //                    let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier, note: note, eventType: eventType)
-    //                    self.add(geotification)
-    //                    self.startMonitoring(geotification: geotification)
-    //                    self.saveAllGeotifications()
-    //                }
-    //            }
-    //
-    //        })
-    //    }
-    
-    
+
     // MARK: Loading and saving functions
     func loadAllGeotifications() {
         geotifications.removeAll()
@@ -197,12 +106,7 @@ class GeofenceViewController: UIViewController {
         removeRadiusOverlay(forGeotification: geotification)
         //updateGeotificationsCount()
       }
-//
-//    func updateGeotificationsCount() {
-//    title = "Rally Map"
-//    title = "Geotifications: \(geotifications.count)"
-//    navigationItem.rightBarButtonItem?.isEnabled = (geotifications.count < 20)
-//    }
+
     
     // MARK: Map overlay functions
     func addRadiusOverlay(forGeotification geotification: Geotification) {
@@ -225,6 +129,7 @@ class GeofenceViewController: UIViewController {
     // MARK: Other mapview functions
     @IBAction func zoomToCurrentLocation(sender: AnyObject) {
         mapView.zoomToUserLocation()
+        mapView.showsUserLocation = true
     }
     
     func region(with geotification: Geotification) -> CLCircularRegion {
@@ -340,29 +245,6 @@ extension GeofenceViewController: AddGeofenceViewControllerDelegate {
     }
     
 }
-
-//class LocationFIR {
-//
-//    var note: String = ""
-//    var radius: String = ""
-//    var latitude: String = ""
-//    var longitude: String = ""
-//    var identifier: String = ""
-//    var eventType: String = ""
-//    var gamename: String = ""
-//
-//
-//    init(dic: [String: Any]) {
-//
-//        self.latitude = dic["latitude"] as? String ?? ""
-//        self.longitude = dic["longitude"] as? String ?? ""
-//        self.note = dic["note"] as? String ?? ""
-//        self.radius = dic["radius"] as? String ?? ""
-//        self.identifier = dic["identifier"] as? String ?? ""
-//        self.eventType = dic["eventType"] as? String ?? ""
-//        self.gamename = dic["gamename"] as? String ?? ""
-//    }
-//}
 
 extension Geotification {
     public class func allGeotifications() -> [Geotification] {

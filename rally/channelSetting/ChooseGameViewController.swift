@@ -30,35 +30,9 @@ class ChooseGameViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var datail: UITextView!
     
     @IBAction func chooselocationbtn(_ sender: Any) {
-        
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "NavigationMap") as! UINavigationController
         self.present(viewController, animated: true, completion: nil)
-        
-//        counter = true
-//
-//        var gamename: String = Gamenamelb.text!
-//        var desgame: String = datail.text!
-//        let viewController = LocationPickerController(success: {
-//            [weak self] (coordinate: CLLocationCoordinate2D) -> Void in
-//
-//            var lat : String
-//            var long : String
-//            lat = "".appendingFormat("%.8f", coordinate.latitude)
-//            long = "".appendingFormat("%.8f", coordinate.longitude)
-//
-//            print(lat)
-//            print(long)
-//
-//            //SAVE ข้อมูลเกมขึ้น Firebase
-//            let dict = ["name":"\(gamename)","lat": lat,"long": long,"Description":"\(desgame)"] as [String: Any]
-//            self?.ref.child("\(ViewController.userEmail!)/channeldata/game/\(GameSettingViewController.n)").setValue(dict)
-//
-//
-//        })
-//        let navigationController = UINavigationController(rootViewController: viewController)
-//        self.present(navigationController, animated: true, completion: nil)
-        
-        
+
     }
     
     @IBAction func savegamebtn(_ sender: Any) {
@@ -73,14 +47,11 @@ class ChooseGameViewController: UIViewController, UIPickerViewDataSource, UIPick
             ChooseGameViewController.counter = false
             
             var gamename: String = Gamenamelb.text!
-            // SAVE ข้อมูลเกมขึ้น Firebase
             
+            // SAVE ข้อมูลเกมขึ้น Firebase
             let dict = ["gamename":"\(gamename)","latitude": AddGeofenceViewController.lat,"longitude":AddGeofenceViewController.long,"radius":AddGeofenceViewController.radiusString,"identifier":AddGeofenceViewController.identifierString,"note":AddGeofenceViewController.noteString,"eventType":AddGeofenceViewController.eventTypeString] as [String: Any]
             self.ref.child("\(ViewController.userEmail!)/channeldata/game/\(GameSettingViewController.n)").setValue(dict)
-            //
-            
-            
-            
+   
             let homeView = self.storyboard?.instantiateViewController(withIdentifier: "gamesetting") as! GameSettingViewController
             self.present(homeView, animated: true, completion: nil)
             

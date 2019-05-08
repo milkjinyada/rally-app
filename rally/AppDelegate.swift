@@ -10,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     let locationManager = CLLocationManager()
+    static var checklocation: Bool = false
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -61,6 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UIApplication.shared.applicationState == .active {
             guard let message = note(from: region.identifier) else { return }
             window?.rootViewController?.showAlert(withTitle: nil, message: message)
+            AppDelegate.checklocation = true
+            
         } else {
             // Otherwise present a local notification
             guard let body = note(from: region.identifier) else { return }

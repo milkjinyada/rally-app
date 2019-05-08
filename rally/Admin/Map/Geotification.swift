@@ -72,13 +72,3 @@ class Geotification: NSObject, Codable, MKAnnotation {
     
 }
 
-//extension Geotification {
-//  public class func allGeotifications() -> [Geotification] {
-//    guard let savedData = UserDefaults.standard.data(forKey: PreferencesKeys.savedItems) else { return [] }
-//    let decoder = JSONDecoder()
-//    if let savedGeotifications = try? decoder.decode(Array.self, from: savedData) as [Geotification] {
-//      return savedGeotifications
-//    }
-//    return []
-//  }
-//}

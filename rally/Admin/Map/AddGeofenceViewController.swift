@@ -12,9 +12,6 @@ import MapKit
 protocol AddGeofenceViewControllerDelegate {
     func addGeotificationViewController(_ controller: AddGeofenceViewController, didAddCoordinate coordinate: CLLocationCoordinate2D,radius: Double, identifier: String, note: String, eventType: Geotification.EventType)
     
-    //เพิ่มฟังชั่นส่งค่าไปหน้าสอง
-    //    func sendDataToFirstViewController(myData: [String])
-    
 }
 
 class AddGeofenceViewController: UITableViewController {
@@ -25,7 +22,6 @@ class AddGeofenceViewController: UITableViewController {
     static var identifierString: String = ""
     static var noteString: String = ""
     static var eventTypeString: String = ""
-    //var choosegamevc: ChooseGameViewController
     
     @IBOutlet var addButton: UIBarButtonItem!
     @IBOutlet var zoomButton: UIBarButtonItem!
@@ -89,17 +85,6 @@ class AddGeofenceViewController: UITableViewController {
         
         let homeView = self.storyboard?.instantiateViewController(withIdentifier: "ChooseGame") as! UIViewController
         self.present(homeView, animated: true, completion: nil)
-        
-        
-        //    //ส่งค่าไปหน้า2
-        //    if self.delegate != nil {
-        //        let dataToBeSent = [lat,long,radiusString,identifierString, noteString, eventTypeString]
-        //        print("ปริ้นส่งค่าไปหน้าแรก = \(dataToBeSent)")
-        //        self.delegate?.sendDataToFirstViewController(myData:dataToBeSent)
-        //        dismiss(animated: true, completion: nil)
-        //
-        //
-        //    }
         
     }
     

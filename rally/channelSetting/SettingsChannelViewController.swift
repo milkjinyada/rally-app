@@ -170,7 +170,7 @@ class SettingsChannelViewController: UIViewController {
         super.viewDidLoad()
         
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
-        profileImageView.isUserInteractionEnabled = true
+        profileImageView.isUserInteractionEnabled = false
         profileImageView.addGestureRecognizer(imageTap)
         profileImageView.layer.cornerRadius = profileImageView.bounds.height / 2
         profileImageView.clipsToBounds = true

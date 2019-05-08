@@ -86,27 +86,28 @@ class GroupsTableViewController: UITableViewController {
                     if israndom == true{
                         //update ชื่อกลุ่มของสมาชิก
                         Database.database().reference().child("Member").observeSingleEvent(of: .value, with: { (snapshot) in
-                            if let dictionary = snapshot.value as? [String: Any]{
-                                let user = User()
-                                user.email = dictionary["email"] as? String
-                                user.name = dictionary["name"] as? String
+                            
+                            for snap in snapshot.children {
                                 
-                                if user.name == (member.name)  {
-                                    Database.database().reference().child("Member").child(user.email ?? "").updateChildValues(["group": String(indexPath.section+1)])
+                                let recipeSnap = snap as! DataSnapshot
+                                let dict = recipeSnap.value as! [String:AnyObject]
+                                let recipeName = dict["name"] as! String
+                                let recipeEmail = dict["email"] as! String
+                                
+                                print(recipeName)
+                                print(recipeEmail)
+                                
+                                if recipeName == (member.name)  {
+                                    Database.database().reference().child("Member").child(recipeEmail ?? "").updateChildValues(["group": String(indexPath.section+1)])
                                     self.israndom = false
                                 }
                             }
                         })
                     }
-                   
-                    
                 }
-        
         return cell
-
     }
-    
-    
+        
     //เลือกว่าต้องการให้มีกี่กลุ่ม
     @IBAction func groupSizeStepperValueChanged(_ sender: UIStepper) {
         groupController.sizeTarget = Int(sender.value)

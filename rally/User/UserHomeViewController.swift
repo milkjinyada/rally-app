@@ -108,7 +108,10 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 self.PhotoURL = url
                 //ดึงรูปโปรไฟล์มาจาก Firebase
                 ImageService.getImage(withURL: URL(string:url)!) { image, url in
+                //ทำรูปให้เป็นวงกลม
                 self.profileImageView.image = image
+                self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.height / 2
+                self.profileImageView.clipsToBounds = true
                     
                 }
             }
@@ -244,7 +247,16 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let row = indexPath.row
         cell.gamename.text = Gamename[row]
         cell.gamenum.text = String(num[row])
-    
+   
+//        if AppDelegate.checklocation == true {
+//            cell.gameimg.image = UIImage(named: "covergame")
+//            cell.isUserInteractionEnabled = true
+//        }
+//        else{
+//            cell.gameimg.image = UIImage(named: "covergamelock")
+//            cell.isUserInteractionEnabled = false
+//        }
+        
         return cell
     }
     

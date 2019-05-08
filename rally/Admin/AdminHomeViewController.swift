@@ -189,6 +189,20 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
         cell.membergroup.text = user.group
         cell.membersex.image = UIImage(named: user.sex!)
         cell.memberstatus.image = UIImage(named: user.join!)
+        
+        print(user.photoURL)
+        if user.photoURL != nil{
+            //ดึงรูปโปรไฟล์มาจาก Firebase
+            ImageService.getImage(withURL: URL(string:user.photoURL!)!) { image, url in
+                //ทำรูปให้เป็นวงกลม
+                cell.memberimg.image = image
+                cell.memberimg.layer.cornerRadius =  cell.memberimg.bounds.height / 2
+                cell.memberimg.clipsToBounds = true
+                
+            }
+        }
+        
+        
 
         return cell
     }
@@ -212,11 +226,12 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
                             user.join = dictionary["join"] as? String
                             user.status = dictionary["status"] as? Int
                             user.Channel = dictionary["Channel"] as? String
+                            user.photoURL = dictionary["photoURL"] as? String
                             
                             //เช็คว่า member ไหนเป็น สมาชิกของห้องนี้บ้าง ถึงค่อยเพิ่มชื่อเข้าไปใน tb
                             if user.Channel == (AdminHomeViewController.ChannelName) {
                                 self.users.append(user)
-                               
+                                
                             }
                         }
                     }
