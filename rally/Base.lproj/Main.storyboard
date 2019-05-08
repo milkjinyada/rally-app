@@ -1061,6 +1061,13 @@
                                 <rect key="frame" x="0.0" y="42" width="375" height="770"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose Game's Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSX-Ae-GLk">
+                                <rect key="frame" x="90" y="303" width="195" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose Game " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqr-e3-eIZ">
                                 <rect key="frame" x="34" y="79" width="322" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1074,11 +1081,11 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fame" translatesAutoresizingMaskIntoConstraints="NO" id="9Nk-eU-3bt">
-                                <rect key="frame" x="-2" y="161" width="378" height="357"/>
+                                <rect key="frame" x="0.0" y="338" width="378" height="357"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="71g-oU-bL1">
-                                <rect key="frame" x="34" y="280" width="305" height="171"/>
+                                <rect key="frame" x="36" y="457" width="305" height="171"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="23g-Fv-zxS" id="3Oe-5P-9OA"/>
@@ -1086,17 +1093,17 @@
                                 </connections>
                             </pickerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitefame" translatesAutoresizingMaskIntoConstraints="NO" id="QXv-jE-8nM">
-                                <rect key="frame" x="43" y="239" width="288" height="47"/>
+                                <rect key="frame" x="45" y="416" width="288" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKW-JL-Lfa">
-                                <rect key="frame" x="57" y="251" width="261" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Select game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKW-JL-Lfa">
+                                <rect key="frame" x="59" y="428" width="261" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGY-Md-kB3">
-                                <rect key="frame" x="292" y="251" width="13" height="22"/>
+                                <rect key="frame" x="294" y="428" width="13" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Arrow"/>
                                 <connections>
@@ -1104,20 +1111,12 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="คำอธิบายเกม" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="REC-9L-KoX">
-                                <rect key="frame" x="67" y="301" width="240" height="128"/>
+                                <rect key="frame" x="69" y="478" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baG-5W-ZEk">
-                                <rect key="frame" x="57" y="493" width="254" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Choose Location of Game"/>
-                                <connections>
-                                    <action selector="chooselocationbtn:" destination="23g-Fv-zxS" eventType="touchUpInside" id="1jh-1M-vRh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e11-CS-CG8">
                                 <rect key="frame" x="57" y="713" width="254" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1134,12 +1133,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emK-YP-ddj">
-                                <rect key="frame" x="56" y="534" width="257" height="19"/>
+                                <rect key="frame" x="61" y="331" width="257" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baG-5W-ZEk">
+                                <rect key="frame" x="107" y="156" width="160" height="136"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Choose Location of Game" image="map"/>
+                                <connections>
+                                    <action selector="chooselocationbtn:" destination="23g-Fv-zxS" eventType="touchUpInside" id="1jh-1M-vRh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Hd-2W-3oM"/>
@@ -1148,8 +1155,11 @@
                         <outlet property="Alertlb" destination="emK-YP-ddj" id="8go-K3-wHH"/>
                         <outlet property="GameListpicker" destination="71g-oU-bL1" id="jS4-8H-OgO"/>
                         <outlet property="Gamenamelb" destination="yKW-JL-Lfa" id="6EB-R0-oBt"/>
+                        <outlet property="buttonselectgame" destination="BGY-Md-kB3" id="zL8-dM-2Kh"/>
                         <outlet property="datail" destination="REC-9L-KoX" id="V7w-aR-vc0"/>
+                        <outlet property="fame" destination="9Nk-eU-3bt" id="Pxb-5H-FLf"/>
                         <outlet property="titel" destination="yqr-e3-eIZ" id="p7O-AU-79i"/>
+                        <outlet property="whitefame" destination="QXv-jE-8nM" id="3IJ-9T-xdO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HL-jf-lra" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4295,6 +4305,7 @@ p3GscblxvHHJcc5x1nHZcd5x5nHpcftx/nIDAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAcgU
         </image>
         <image name="logo" width="125" height="125"/>
         <image name="man" width="512" height="512"/>
+        <image name="map" width="512" height="512"/>
         <image name="math-Question" width="36" height="54"/>
         <image name="math-nextProblem" width="367" height="65"/>
         <image name="math-save" width="367" height="65"/>
@@ -4321,7 +4332,7 @@ p3GscblxvHHJcc5x1nHZcd5x5nHpcftx/nIDAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAcgU
     <inferredMetricsTieBreakers>
         <segue reference="SYg-34-ZKe"/>
         <segue reference="CP3-ug-JWW"/>
-        <segue reference="72e-t3-Nd2"/>
+        <segue reference="OY4-8N-giN"/>
         <segue reference="9vk-ih-tZj"/>
         <segue reference="tKU-rV-b6b"/>
         <segue reference="0kP-Z7-dgG"/>
