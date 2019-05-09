@@ -166,8 +166,6 @@ class ViewcontrollerScore: UIViewController{
 }
 
 
-
-
 extension ViewcontrollerScore: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {

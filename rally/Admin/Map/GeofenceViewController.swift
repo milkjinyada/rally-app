@@ -44,32 +44,76 @@ class GeofenceViewController: UIViewController {
     
         self.create = Database.database().reference().child("Member").child("\(ViewController.userEmail!)/channeldata/game")
         self.create.observe(DataEventType.value, with: {(snapshot) in
+            
+            //ถ้า snapshot=0 แสดงว่าเป็น User ให้ดึงข้อมูลอีเมลมาจาก UserHomeViewController.Channelname แทน
+            if snapshot.childrenCount == 0{
+                self.create = Database.database().reference().child("Channel").child(UserHomeViewController.Channelname)
+                self.create.observe(DataEventType.value, with: {(snapshot) in
+                    
+                    let dict = snapshot.value as! [String:AnyObject]
+                    let recipeName = dict["User"] as! String
+                    print(recipeName)
+                    
+                    self.create = Database.database().reference().child("Member").child("\(recipeName)/channeldata/game")
+                    self.create.observe(DataEventType.value, with: {(snapshot) in
+                        
+                        if let snapShort = snapshot.children.allObjects as? [DataSnapshot]{
+                            for snap in snapShort{
+                                if let mainDict = snap.value as? [String: AnyObject]{
+                                    
+                                    let latitude = Double(mainDict["latitude"] as! String)
+                                    let longitude = Double(mainDict["longitude"] as! String)
+                                    let note = mainDict["note"] as? String
+                                    let radius = Double(mainDict["radius"] as! String)
+                                    let identifier = mainDict["identifier"] as? String
+                                    let eventType = mainDict["eventType"] as? String
+                                    let gamename = mainDict["gamename"] as? String
+                                    
+                                    let coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
+                                    let clampedRadius = min(radius!, self.locationManager.maximumRegionMonitoringDistance)
+                                    let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier!, note: note!, eventType: Geotification.EventType(rawValue: eventType!)!)
+                                    self.add(geotification)
+                                    self.startMonitoring(geotification: geotification)
+                                    self.saveAllGeotifications()
+                                    
+                                    print(latitude!)
 
-            if let snapShort = snapshot.children.allObjects as? [DataSnapshot]{
-                for snap in snapShort{
-                    if let mainDict = snap.value as? [String: AnyObject]{
-                       
-                        let latitude = Double(mainDict["latitude"] as! String)
-                        let longitude = Double(mainDict["longitude"] as! String)
-                        let note = mainDict["note"] as? String
-                        let radius = Double(mainDict["radius"] as! String)
-                        let identifier = mainDict["identifier"] as? String
-                        let eventType = mainDict["eventType"] as? String
-                        let gamename = mainDict["gamename"] as? String
-                        
-                        let coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
-                        let clampedRadius = min(radius!, self.locationManager.maximumRegionMonitoringDistance)
-                        let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier!, note: note!, eventType: Geotification.EventType(rawValue: eventType!)!)
-                        self.add(geotification)
-                        self.startMonitoring(geotification: geotification)
-                        self.saveAllGeotifications()
-                        
-                        print(latitude!)
-                        
-                       
+                                }
+                            }
+                        }
+                    })
+                    
+                })
+            }
+            else{
+                
+                if let snapShort = snapshot.children.allObjects as? [DataSnapshot]{
+                    for snap in snapShort{
+                        if let mainDict = snap.value as? [String: AnyObject]{
+                            
+                            let latitude = Double(mainDict["latitude"] as! String)
+                            let longitude = Double(mainDict["longitude"] as! String)
+                            let note = mainDict["note"] as? String
+                            let radius = Double(mainDict["radius"] as! String)
+                            let identifier = mainDict["identifier"] as? String
+                            let eventType = mainDict["eventType"] as? String
+                            let gamename = mainDict["gamename"] as? String
+                            
+                            let coordinate = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
+                            let clampedRadius = min(radius!, self.locationManager.maximumRegionMonitoringDistance)
+                            let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier!, note: note!, eventType: Geotification.EventType(rawValue: eventType!)!)
+                            self.add(geotification)
+                            self.startMonitoring(geotification: geotification)
+                            self.saveAllGeotifications()
+                            
+                            print(latitude!)
+                            
+                            
+                        }
                     }
                 }
             }
+  
         })
     }
     
