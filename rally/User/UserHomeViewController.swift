@@ -53,7 +53,7 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     {
         
         databaseRef = Database.database().reference().child("Member").child(ViewController.userEmail!) //ดึง ref
-        databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        databaseRef.observe(.value, with: { (snapshot) in
             
             if let snapshot = snapshot.value as? [String:AnyObject]
             {

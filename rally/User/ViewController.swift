@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     static var userEmail:String! = "" //ไว้เก็บบัญชีผู้ใช้
     static var Groupname:String =  ""
     static var Channelname:String = ""
+    static var PhotoURL:String = ""
     var status:Int!
     
 //ดึงข้อมูลจาก firebase
@@ -69,7 +70,17 @@ class ViewController: UIViewController {
                 }
                 
                 ViewController.Groupname = group
-              
+                
+                var url = ""
+                if let strTemp = snapshot["photoURL"] as? String
+                {
+                    url = strTemp
+                }
+                else
+                {
+                    url = ""
+                }
+                ViewController.PhotoURL = url              
             }
         })
     }

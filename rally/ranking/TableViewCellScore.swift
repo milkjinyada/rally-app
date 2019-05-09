@@ -14,12 +14,13 @@ class TableViewCellScore: UITableViewCell {
     @IBOutlet var NumberFourtoN: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet weak var memberPic: UIImageView!
     
     var  RankScore: RankScoree?{
         
         didSet{
             
-            nameLabel.text =  RankScore?.Groupname
+            nameLabel.text =  RankScore?.Username
             scoreLabel.text = String(describing: RankScore!.gameSum)
         }
     }

@@ -948,22 +948,6 @@
                                     <action selector="logout:" destination="HBQ-e5-jEa" eventType="touchUpInside" id="vNf-qF-Ckk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYN-M1-gYj">
-                                <rect key="frame" x="335" y="58" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="editprofile"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn7-12-eVs">
-                                <rect key="frame" x="281" y="56" width="45" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="15"/>
-                                <state key="normal" title="QR CODE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0dp-fd-p5C" kind="show" id="9Pw-CR-tO3"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Settingicon" translatesAutoresizingMaskIntoConstraints="NO" id="ViD-Kh-8LK">
                                 <rect key="frame" x="137" y="356" width="21" height="13"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1009,6 +993,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn7-12-eVs">
+                                <rect key="frame" x="307" y="56" width="45" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="15"/>
+                                <state key="normal" title="QR CODE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0dp-fd-p5C" kind="show" id="9Pw-CR-tO3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="7qO-ce-XTG"/>
@@ -2501,7 +2496,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group : B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09a-Zg-vOl">
                                 <rect key="frame" x="155" y="263" width="64" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2515,7 +2510,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group : C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5r1-eg-BlN">
                                 <rect key="frame" x="64" y="370" width="64" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2529,7 +2524,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group : A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYO-6P-mfa">
                                 <rect key="frame" x="248" y="370" width="64" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2559,7 +2554,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjQ-f8-BRS">
                                                     <rect key="frame" x="115" y="21" width="125" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2575,6 +2570,7 @@
                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="NumberFourtoN" destination="cZi-Lw-XA0" id="3Mz-q9-QZT"/>
+                                            <outlet property="memberPic" destination="Xad-Kn-QBV" id="9r1-AM-YMf"/>
                                             <outlet property="nameLabel" destination="fjQ-f8-BRS" id="1fO-nX-NOT"/>
                                             <outlet property="scoreLabel" destination="eVn-FZ-p4M" id="Ae6-Ha-PKG"/>
                                         </connections>
@@ -2592,11 +2588,14 @@
                     <tabBarItem key="tabBarItem" title="Ranking" image="icon-rank" id="Gmf-UH-qv6"/>
                     <connections>
                         <outlet property="firstName" destination="09a-Zg-vOl" id="yZ1-hi-0fa"/>
+                        <outlet property="firstPic" destination="8kl-ME-XVB" id="A3s-F3-RfH"/>
                         <outlet property="firstScore" destination="QRt-Nn-vgw" id="lNE-XP-bPR"/>
                         <outlet property="secondName" destination="5r1-eg-BlN" id="M4n-3M-Tb1"/>
+                        <outlet property="secondPic" destination="5fZ-hg-WW2" id="EEK-Pd-aXW"/>
                         <outlet property="secondScore" destination="Jmv-o3-GdJ" id="w9k-jN-f1I"/>
                         <outlet property="tableView" destination="Gca-2r-ZSb" id="8fK-o4-MDR"/>
                         <outlet property="thirdName" destination="nYO-6P-mfa" id="NNc-O8-9Tg"/>
+                        <outlet property="thirdPic" destination="NhD-KD-NrB" id="ept-Q0-2z7"/>
                         <outlet property="thirdScore" destination="h8c-bw-Fzp" id="q9O-D0-dNU"/>
                     </connections>
                 </viewController>
@@ -3495,7 +3494,6 @@
         <image name="covergame" width="312" height="107"/>
         <image name="display-1" width="74" height="74"/>
         <image name="edit" width="19" height="18"/>
-        <image name="editprofile" width="24" height="24"/>
         <image name="fame" width="384" height="280"/>
         <image name="finish-line" width="512" height="512"/>
         <image name="game-controller" width="20" height="20"/>

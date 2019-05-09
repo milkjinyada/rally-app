@@ -11,14 +11,15 @@ import Firebase
 
 class ViewcontrollerScore: UIViewController{
     
+    var channelname:String = ""
     var ref = DatabaseReference.init()
     var create: DatabaseReference!
     var arrData = [RankScoree]()
     var numOfGroup = [Int]()
     
-    
-    
-    
+    @IBOutlet weak var firstPic: UIImageView!
+    @IBOutlet weak var secondPic: UIImageView!
+    @IBOutlet weak var thirdPic: UIImageView!
     @IBOutlet var firstScore: UILabel!
     @IBOutlet var secondScore: UILabel!
     @IBOutlet var thirdScore: UILabel!
@@ -30,6 +31,13 @@ class ViewcontrollerScore: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if AdminHomeViewController.ChannelName.isEmpty == false{
+             self.channelname = AdminHomeViewController.ChannelName
+        }
+        else{
+            self.channelname = UserHomeViewController.Channelname
+        }
         
         self.ref = Database.database().reference()
         self.fetchScore()
@@ -46,19 +54,21 @@ class ViewcontrollerScore: UIViewController{
     
     
     func getAllFIRData() {
-        
-        if (AdminHomeViewController.ChannelName.isEmpty == false){
+       
+        if (channelname.isEmpty == false){
             let databaseRef = Database.database().reference()
-            databaseRef.child("Ranking").child("\(AdminHomeViewController.ChannelName)").queryOrdered(byChild:"Group").observeSingleEvent(of: .value, with: { snapshot in
+            databaseRef.child("Ranking").child("\(channelname)").queryOrdered(byChild:"Group").observeSingleEvent(of: .value, with: { snapshot in
                 
                 if snapshot.exists(){
-                    self.create = Database.database().reference().child("Ranking").child("\(AdminHomeViewController.ChannelName)").child("Group")
+                    self.create = Database.database().reference().child("Ranking").child("\(self.channelname)").child("Group")
                     self.create.observe(DataEventType.value, with: {(snapshot) in
                         self.arrData.removeAll()
                         if let snapShort = snapshot.children.allObjects as? [DataSnapshot]{
                             for snap in snapShort{
                                 if let mainDict = snap.value as? [String: AnyObject]{
-                                    let  Groupname = mainDict["Groupname"] as? String
+                                    let  Username = mainDict["Username"] as? String
+                                    let  Email = mainDict["Email"] as? String
+                                    let  Photourl = mainDict["photoURL"] as? String
                                     let  Picture = mainDict["Picture"] as? Int
                                     let  Math = mainDict["Math"] as? Int
                                     let  Run = mainDict["Run"] as? Int
@@ -69,7 +79,7 @@ class ViewcontrollerScore: UIViewController{
                                     gameSum = Int(Picture!+Math!+Run!+AR!+Question!)
                                     print(gameSum)
                                     
-                                    self.arrData.append(RankScoree(Groupname: Groupname!, gameSum: gameSum))
+                                    self.arrData.append(RankScoree(Username: Username!, gameSum: gameSum, photoURL: Photourl!, Email: Email!))
                                     
                                     DispatchQueue.main.async {
                                         self.tableView.reloadData()
@@ -81,24 +91,21 @@ class ViewcontrollerScore: UIViewController{
                 }
             })
         }
-        
-        
-        
-        
+
     }
     
     
     
     func fetchScore() {
         
-        if (AdminHomeViewController.ChannelName.isEmpty == false){
+        if (channelname.isEmpty == false){
             let databaseRef = Database.database().reference()
             
-            databaseRef.child("Ranking").child("\(AdminHomeViewController.ChannelName)").queryOrdered(byChild:"Group").observeSingleEvent(of: .value, with: { snapshot in
+            databaseRef.child("Ranking").child("\(channelname)").queryOrdered(byChild:"Group").observeSingleEvent(of: .value, with: { snapshot in
                 
                 if snapshot.exists(){
                     
-                    self.create = Database.database().reference().child("Ranking").child("\(AdminHomeViewController.ChannelName)").child("Group")
+                    self.create = Database.database().reference().child("Ranking").child("\(self.channelname)").child("Group")
                     self.create.observe(DataEventType.value, with: {(snapshot) in
                         
                         print("snap")
@@ -119,16 +126,70 @@ class ViewcontrollerScore: UIViewController{
                         
                         
                         for (index, ranking) in rankArray.enumerated() {
-                            
+                            var sumscore:Int = 0
                             if index == 0 {
-                                self.firstName.text = "Group: \(ranking.Groupname)"
+                                self.firstName.text = (ranking.Username)
                                 self.firstScore.text = "\(ranking.Picture+ranking.Math+ranking.Run+ranking.AR+ranking.Question) P"
+                                sumscore = ranking.Picture+ranking.Math+ranking.Run+ranking.AR+ranking.Question
+                                //ดึงรูปโปรไฟล์มาจาก Firebase
+                                ImageService.getImage(withURL: URL(string:ranking.PhotoURL)!) { image, url in
+                                    //ทำรูปให้เป็นวงกลม
+                                    self.firstPic.image = image
+                                    self.firstPic.layer.cornerRadius = self.firstPic.bounds.height / 2
+                                    self.firstPic.clipsToBounds = true
+                                }
+                                
+                                //เก็บคะแนนขึ้น firebase
+                                let MemberRef : DatabaseReference! = Database.database().reference().child("Ranking").child("\(self.channelname)").child("Group")
+                                let SetScoreData: Dictionary<String,AnyObject> =
+                                    ["SUMScore" : sumscore as AnyObject]
+                                print(ranking.Email)
+                                if ranking.Email.isEmpty == false{
+                                    let ScoreItemRef = MemberRef.child(ranking.Email)
+                                    ScoreItemRef.updateChildValues(SetScoreData)
+                                }
+                                
                             }else if index == 1 {
-                                self.secondName.text = "Group: \(ranking.Groupname)"
+                                self.secondName.text = (ranking.Username)
                                 self.secondScore.text = "\(ranking.Picture+ranking.Math+ranking.Run+ranking.AR+ranking.Question) P"
+                                sumscore = ranking.Picture+ranking.Math+ranking.Run+ranking.AR+ranking.Question
+                                //ดึงรูปโปรไฟล์มาจาก Firebase
+                                ImageService.getImage(withURL: URL(string:ranking.PhotoURL)!) { image, url in
+                                    //ทำรูปให้เป็นวงกลม
+                                    self.secondPic.image = image
+                                    self.secondPic.layer.cornerRadius = self.secondPic.bounds.height / 2
+                                    self.secondPic.clipsToBounds = true
+                                }
+                                //เก็บคะแนนขึ้น firebase
+                                let MemberRef : DatabaseReference! = Database.database().reference().child("Ranking").child("\(self.channelname)").child("Group")
+                                let SetScoreData: Dictionary<String,AnyObject> =
+                                    ["SUMScore" : sumscore as AnyObject]
+                                print(ranking.Email)
+                                if ranking.Email.isEmpty == false{
+                                    let ScoreItemRef = MemberRef.child(ranking.Email)
+                                    ScoreItemRef.updateChildValues(SetScoreData)
+                                }
                             }else if index == 2 {
-                                self.thirdName.text = "Group: \(ranking.Groupname)"
+                                self.thirdName.text = (ranking.Username)
                                 self.thirdScore.text = "\(ranking.Picture+ranking.Math+ranking.Run+ranking.AR+ranking.Question) P"
+                                sumscore = ranking.Picture+ranking.Math+ranking.Run+ranking.AR+ranking.Question
+                                //ดึงรูปโปรไฟล์มาจาก Firebase
+                                ImageService.getImage(withURL: URL(string:ranking.PhotoURL)!) { image, url in
+                                    //ทำรูปให้เป็นวงกลม
+                                    self.thirdPic.image = image
+                                    self.thirdPic.layer.cornerRadius = self.thirdPic.bounds.height / 2
+                                    self.thirdPic.clipsToBounds = true
+                                }
+                                //เก็บคะแนนขึ้น firebase
+                                let MemberRef : DatabaseReference! = Database.database().reference().child("Ranking").child("\(self.channelname)").child("Group")
+                                let SetScoreData: Dictionary<String,AnyObject> =
+                                    ["SUMScore" : sumscore as AnyObject]
+                                print(ranking.Email)
+                                if ranking.Email.isEmpty == false{
+                                    let ScoreItemRef = MemberRef.child(ranking.Email)
+                                    ScoreItemRef.updateChildValues(SetScoreData)
+                                }
+                                
                             }else{
                                 self.getAllFIRData()
                             }
@@ -145,7 +206,9 @@ class ViewcontrollerScore: UIViewController{
     
     class Ranking {
         
-        var Groupname: String = ""
+        var Username: String = ""
+        var Email: String = ""
+        var PhotoURL:String = ""
         var Picture: Int = 0
         var Math: Int = 0
         var Run: Int = 0
@@ -154,7 +217,9 @@ class ViewcontrollerScore: UIViewController{
         
         init(dic: [String: Any]) {
             
-            self.Groupname = dic["Groupname"] as? String ?? ""
+            self.Username = dic["Username"] as? String ?? ""
+            self.Email = dic["Email"] as? String ?? ""
+            self.PhotoURL = dic["photoURL"] as? String ?? ""
             self.Picture = dic["Picture"] as? Int ?? 0
             self.Math = dic["Math"] as? Int ?? 0
             self.Run = dic["Run"] as? Int ?? 0
@@ -180,9 +245,29 @@ extension ViewcontrollerScore: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCellScore
         
         arrData.sort(by: {$0.gameSum > $1.gameSum})
+        print(arrData.sort(by: {$0.gameSum > $1.gameSum}))
         let test = arrData[indexPath.row+3]
-        cell.nameLabel.text = ("Group: \(String(describing: test.Groupname!))")
+        cell.nameLabel.text = (String(describing: test.Username!))
         cell.scoreLabel.text = ("\(String(describing: test.gameSum)) P")
+        var sumscore = test.gameSum
+        
+        //เก็บคะแนนขึ้น firebase
+        let MemberRef : DatabaseReference! = Database.database().reference().child("Ranking").child("\(self.channelname)").child("Group")
+        let SetScoreData: Dictionary<String,AnyObject> =
+            ["SUMScore" : sumscore as AnyObject]
+     
+        if test.Email!.isEmpty == false{
+            let ScoreItemRef = MemberRef.child(test.Email!)
+            ScoreItemRef.updateChildValues(SetScoreData)
+        }
+        
+        //ดึงรูปโปรไฟล์มาจาก Firebase
+        ImageService.getImage(withURL: URL(string:test.photoUrl!)!) { image, url in
+            //ทำรูปให้เป็นวงกลม
+            cell.memberPic.image = image
+            cell.memberPic.layer.cornerRadius = cell.memberPic.bounds.height / 2
+            cell.memberPic.clipsToBounds = true
+        }
         
         for i in 0...indexPath.row{
             cell.NumberFourtoN.text! = String(i+4)

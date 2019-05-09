@@ -13,11 +13,16 @@ import UIKit
 
 class RankScoree {
     
-    var Groupname: String?
+    var Username: String?
     var gameSum: Int
-    init(Groupname: String, gameSum: Int) {
-        self.Groupname = Groupname
+    var photoUrl: String?
+    var Email:String?
+    
+    init(Username: String, gameSum: Int, photoURL:String, Email:String) {
+        self.Username = Username
         self.gameSum = gameSum
+        self.photoUrl = photoURL
+        self.Email = Email
     }
     
 }

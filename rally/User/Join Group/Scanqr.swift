@@ -42,12 +42,15 @@ class Scanqr: UIViewController {
                     let ScoreItem : DatabaseReference! = Database.database().reference().child("Ranking").child(room).child("Group").child(ViewController.userEmail)
                     
                     let ScoreData: Dictionary<String,AnyObject> =
-                        [   "Groupname" : ViewController.Groupname as AnyObject,
+                        [   "Username" : ViewController.UsernameUser as AnyObject,
+                            "Email" : ViewController.userEmail as AnyObject,
+                            "photoURL" : ViewController.PhotoURL as AnyObject,
                             "AR" : Int(0) as AnyObject,
                             "Math" : Int(0) as AnyObject,
                             "Picture": Int(0) as AnyObject,
                             "Question": Int(0) as AnyObject,
-                            "Run": Int(0) as AnyObject
+                            "Run": Int(0) as AnyObject,
+                            "SUMScore": Int(0) as AnyObject
                         ]
                     
                     ScoreItem.setValue(ScoreData)//ส่งขึ้น firebase
