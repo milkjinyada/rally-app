@@ -146,7 +146,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="รหัสผ่าน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fke-3V-5CU">
                                 <rect key="frame" x="67" y="417" width="53" height="22"/>
@@ -160,7 +160,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ยืนยันรหัสผ่าน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yta-vs-twe">
                                 <rect key="frame" x="67" y="487" width="88" height="22"/>
@@ -417,8 +417,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-2" translatesAutoresizingMaskIntoConstraints="NO" id="dlC-IA-Yhk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-2" translatesAutoresizingMaskIntoConstraints="NO" id="dlC-IA-Yhk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSW-Dy-XLd">
                                 <rect key="frame" x="32" y="54" width="37" height="32"/>
@@ -432,109 +433,66 @@
                                     <action selector="logout:" destination="HBQ-e5-jEa" eventType="touchUpInside" id="lpl-KI-hH9"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="display-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yh0-OU-fY4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="display-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yh0-OU-fY4">
                                 <rect key="frame" x="141" y="100" width="92" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="92" id="GJG-Ad-Sbf"/>
-                                    <constraint firstAttribute="height" constant="83" id="mb6-PI-g9p"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="คะแนน" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opW-ed-N7c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="คะแนน" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opW-ed-N7c">
                                 <rect key="frame" x="36" y="117" width="33" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="33" id="pgR-vp-c96"/>
-                                    <constraint firstAttribute="height" constant="19" id="vlQ-LU-YC6"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzl-2T-4Tg">
-                                <rect key="frame" x="48" y="144" width="9" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="9" id="Jth-UY-dv6"/>
-                                    <constraint firstAttribute="height" constant="22" id="YlA-av-B62"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เวลา" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFL-zY-MPG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="เวลา" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFL-zY-MPG">
                                 <rect key="frame" x="306" y="117" width="24" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="0eX-kc-GGP"/>
-                                    <constraint firstAttribute="height" constant="19" id="Ahv-9U-CUZ"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxw-KY-t7b">
-                                <rect key="frame" x="300" y="144" width="36" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="0Y2-lA-baX"/>
-                                    <constraint firstAttribute="width" constant="36" id="iOh-uX-njq"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxw-KY-t7b">
+                                <rect key="frame" x="288" y="144" width="60" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ชื่อกลุ่ม" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHG-2X-cdL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ชื่อกลุ่ม" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHG-2X-cdL">
                                 <rect key="frame" x="127" y="208" width="121" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="9Eo-MZ-2dh"/>
-                                    <constraint firstAttribute="width" constant="121" id="tkM-rn-C9t"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="ixW-G2-Qsz">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="ixW-G2-Qsz">
                                 <rect key="frame" x="47" y="276" width="241" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="QM2-Hf-vGD"/>
-                                    <constraint firstAttribute="height" constant="2" id="zUq-al-mop"/>
-                                </constraints>
                             </progressView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="Ti5-uA-jbL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="Ti5-uA-jbL">
                                 <rect key="frame" x="47" y="250" width="40" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="RkV-ST-nre"/>
-                                    <constraint firstAttribute="height" constant="28" id="n1U-pL-CUb"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finish-line" translatesAutoresizingMaskIntoConstraints="NO" id="ieO-tc-WJY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="finish-line" translatesAutoresizingMaskIntoConstraints="NO" id="ieO-tc-WJY">
                                 <rect key="frame" x="291" y="253" width="36" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="FYg-b8-pnJ"/>
-                                    <constraint firstAttribute="width" constant="36" id="JOP-0n-cYp"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-userdisplay" translatesAutoresizingMaskIntoConstraints="NO" id="qfp-8Y-ah9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG-userdisplay" translatesAutoresizingMaskIntoConstraints="NO" id="qfp-8Y-ah9">
                                 <rect key="frame" x="95" y="87" width="183" height="109"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="183" id="GcU-GO-wgb"/>
-                                    <constraint firstAttribute="height" constant="109" id="iF3-hJ-a2b"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7r-mQ-I3w">
-                                <rect key="frame" x="151" y="302" width="72" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="AkW-p7-xub"/>
-                                    <constraint firstAttribute="height" constant="25" id="Ui3-m8-fkB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7r-mQ-I3w">
+                                <rect key="frame" x="150" y="320" width="76" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5DH-tv-ctF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5DH-tv-ctF">
                                 <rect key="frame" x="15" y="363" width="345" height="329"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="329" id="ALE-Gd-Ly8"/>
-                                    <constraint firstAttribute="width" constant="345" id="Ie7-Zu-J86"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="gamecell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Usergame" rowHeight="115" id="Csl-uu-jxD" customClass="UserHomeTableViewCell" customModule="rally" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="345" height="115"/>
@@ -605,7 +563,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ชื่อห้อง" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzT-2q-Uaj">
                                 <rect key="frame" x="110" y="54" width="154" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX-Bold" family="DB Adman X" pointSize="20"/>
                                 <color key="textColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -618,58 +576,15 @@
                                     <segue destination="R0B-Pg-N2J" kind="show" id="yHv-nr-NUk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzl-2T-4Tg">
+                                <rect key="frame" x="33" y="144" width="39" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DBAdmanX" family="DB Adman X" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="FGo-TW-o7U" firstAttribute="trailing" secondItem="lFL-zY-MPG" secondAttribute="trailing" constant="45" id="1CB-0m-Eq7"/>
-                            <constraint firstItem="dlC-IA-Yhk" firstAttribute="top" secondItem="Iwd-ri-8Z5" secondAttribute="top" id="2k1-ih-sVt"/>
-                            <constraint firstItem="Ti5-uA-jbL" firstAttribute="top" secondItem="Bzl-2T-4Tg" secondAttribute="bottom" constant="84" id="4pd-0G-Pdx"/>
-                            <constraint firstItem="qfp-8Y-ah9" firstAttribute="leading" secondItem="opW-ed-N7c" secondAttribute="trailing" constant="26" id="7AF-5k-iQa"/>
-                            <constraint firstItem="FGo-TW-o7U" firstAttribute="trailing" secondItem="ieO-tc-WJY" secondAttribute="trailing" constant="48" id="AUY-2p-ecW"/>
-                            <constraint firstItem="mxw-KY-t7b" firstAttribute="top" secondItem="lFL-zY-MPG" secondAttribute="bottom" constant="8" id="ByS-0B-ICY"/>
-                            <constraint firstItem="RHG-2X-cdL" firstAttribute="top" secondItem="qfp-8Y-ah9" secondAttribute="bottom" constant="12" id="Dwl-f5-kQc"/>
-                            <constraint firstAttribute="bottom" secondItem="dlC-IA-Yhk" secondAttribute="bottom" id="Eoq-Fh-AzC"/>
-                            <constraint firstItem="ixW-G2-Qsz" firstAttribute="top" secondItem="RHG-2X-cdL" secondAttribute="bottom" constant="48" id="FgK-io-vAV"/>
-                            <constraint firstItem="mxw-KY-t7b" firstAttribute="leading" secondItem="qfp-8Y-ah9" secondAttribute="trailing" constant="22" id="GJN-nR-dCr"/>
-                            <constraint firstItem="mxw-KY-t7b" firstAttribute="top" secondItem="lFL-zY-MPG" secondAttribute="bottom" constant="8" id="IFd-m5-2dP"/>
-                            <constraint firstItem="qfp-8Y-ah9" firstAttribute="leading" secondItem="Bzl-2T-4Tg" secondAttribute="trailing" constant="38" id="JXh-rX-ZY9"/>
-                            <constraint firstItem="5DH-tv-ctF" firstAttribute="centerX" secondItem="dlC-IA-Yhk" secondAttribute="centerX" id="NGG-y1-ECw"/>
-                            <constraint firstItem="mxw-KY-t7b" firstAttribute="leading" secondItem="Yh0-OU-fY4" secondAttribute="trailing" constant="67" id="NMj-f8-XPf"/>
-                            <constraint firstItem="FGo-TW-o7U" firstAttribute="trailing" secondItem="L7r-mQ-I3w" secondAttribute="trailing" constant="152" id="OHh-8M-bP5"/>
-                            <constraint firstItem="opW-ed-N7c" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="36" id="PdT-dW-6xO"/>
-                            <constraint firstItem="5DH-tv-ctF" firstAttribute="top" secondItem="ieO-tc-WJY" secondAttribute="bottom" constant="85" id="PjZ-IP-MW5"/>
-                            <constraint firstItem="FGo-TW-o7U" firstAttribute="trailing" secondItem="RHG-2X-cdL" secondAttribute="trailing" constant="127" id="QcQ-El-GBw"/>
-                            <constraint firstItem="Ti5-uA-jbL" firstAttribute="top" secondItem="Bzl-2T-4Tg" secondAttribute="bottom" constant="84" id="VNC-OX-aFS"/>
-                            <constraint firstItem="ieO-tc-WJY" firstAttribute="top" secondItem="mxw-KY-t7b" secondAttribute="bottom" constant="87" id="Wz5-jf-OIY"/>
-                            <constraint firstItem="Bzl-2T-4Tg" firstAttribute="top" secondItem="opW-ed-N7c" secondAttribute="bottom" constant="8" id="Y0w-f9-VCt"/>
-                            <constraint firstItem="FGo-TW-o7U" firstAttribute="trailing" secondItem="mxw-KY-t7b" secondAttribute="trailing" constant="39" id="Ygk-7o-tr7"/>
-                            <constraint firstItem="5DH-tv-ctF" firstAttribute="top" secondItem="Ti5-uA-jbL" secondAttribute="bottom" constant="85" id="YhF-o2-SSJ"/>
-                            <constraint firstItem="RHG-2X-cdL" firstAttribute="top" secondItem="qfp-8Y-ah9" secondAttribute="bottom" constant="12" id="Z6G-h1-jjV"/>
-                            <constraint firstItem="FGo-TW-o7U" firstAttribute="bottom" secondItem="5DH-tv-ctF" secondAttribute="bottom" constant="37" id="ZMe-Qe-yR9"/>
-                            <constraint firstItem="L7r-mQ-I3w" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="151" id="anJ-T4-WRd"/>
-                            <constraint firstItem="5DH-tv-ctF" firstAttribute="top" secondItem="L7r-mQ-I3w" secondAttribute="bottom" constant="36" id="dkI-D5-SV1"/>
-                            <constraint firstItem="L7r-mQ-I3w" firstAttribute="top" secondItem="ixW-G2-Qsz" secondAttribute="bottom" constant="24" id="eWw-EL-n1z"/>
-                            <constraint firstItem="ieO-tc-WJY" firstAttribute="leading" secondItem="Ti5-uA-jbL" secondAttribute="trailing" constant="204" id="edO-xg-62B"/>
-                            <constraint firstItem="RHG-2X-cdL" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="127" id="f6z-UD-sZa"/>
-                            <constraint firstItem="FGo-TW-o7U" firstAttribute="trailing" secondItem="5DH-tv-ctF" secondAttribute="trailing" constant="15" id="hkj-WI-gWV"/>
-                            <constraint firstItem="qfp-8Y-ah9" firstAttribute="leading" secondItem="opW-ed-N7c" secondAttribute="trailing" constant="26" id="jS3-S5-2z1"/>
-                            <constraint firstItem="lFL-zY-MPG" firstAttribute="leading" secondItem="qfp-8Y-ah9" secondAttribute="trailing" constant="28" id="kiw-h8-Ufl"/>
-                            <constraint firstItem="ieO-tc-WJY" firstAttribute="leading" secondItem="Ti5-uA-jbL" secondAttribute="trailing" constant="204" id="lDC-pZ-HXQ"/>
-                            <constraint firstItem="Bzl-2T-4Tg" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="48" id="lyf-O4-6Us"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ixW-G2-Qsz" secondAttribute="trailing" constant="71" id="mWN-4y-hfB"/>
-                            <constraint firstItem="Yh0-OU-fY4" firstAttribute="leading" secondItem="opW-ed-N7c" secondAttribute="trailing" constant="72" id="n6S-gu-eWS"/>
-                            <constraint firstItem="RHG-2X-cdL" firstAttribute="top" secondItem="Yh0-OU-fY4" secondAttribute="bottom" constant="25" id="o0Y-Cg-2oZ"/>
-                            <constraint firstItem="Ti5-uA-jbL" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="47" id="o82-pK-CJW"/>
-                            <constraint firstItem="ixW-G2-Qsz" firstAttribute="leading" secondItem="Iwd-ri-8Z5" secondAttribute="leadingMargin" constant="31" id="qS7-Ij-tYq"/>
-                            <constraint firstItem="ixW-G2-Qsz" firstAttribute="top" secondItem="RHG-2X-cdL" secondAttribute="bottom" constant="48" id="qZh-J9-8go"/>
-                            <constraint firstItem="Bzl-2T-4Tg" firstAttribute="top" secondItem="opW-ed-N7c" secondAttribute="bottom" constant="8" id="rSp-eO-yCP"/>
-                            <constraint firstItem="L7r-mQ-I3w" firstAttribute="top" secondItem="ixW-G2-Qsz" secondAttribute="bottom" constant="24" id="tu8-ZB-uW5"/>
-                            <constraint firstItem="dlC-IA-Yhk" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" id="v1Y-e4-A4t"/>
-                            <constraint firstItem="mxw-KY-t7b" firstAttribute="leading" secondItem="qfp-8Y-ah9" secondAttribute="trailing" constant="22" id="yBT-cI-hlL"/>
-                            <constraint firstItem="ieO-tc-WJY" firstAttribute="top" secondItem="mxw-KY-t7b" secondAttribute="bottom" constant="87" id="ybN-ZO-mDk"/>
-                            <constraint firstItem="dlC-IA-Yhk" firstAttribute="trailing" secondItem="FGo-TW-o7U" secondAttribute="trailing" id="zCu-cn-rCD"/>
-                            <constraint firstItem="5DH-tv-ctF" firstAttribute="leading" secondItem="FGo-TW-o7U" secondAttribute="leading" constant="15" id="zdN-xY-lkd"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FGo-TW-o7U"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" image="game-controller" id="bvb-gb-QgZ"/>
@@ -4925,7 +4840,7 @@ p3GscblxvHHJcc5x1nHZcd5x5nHpcftx/nIDAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAcgU
         <image name="whitefame" width="306" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SYg-34-ZKe"/>
+        <segue reference="ZME-hI-vVj"/>
         <segue reference="72e-t3-Nd2"/>
         <segue reference="GxS-K7-BlI"/>
         <segue reference="mG8-FC-4eY"/>

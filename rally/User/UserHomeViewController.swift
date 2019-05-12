@@ -45,7 +45,9 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var databaseRef:DatabaseReference!
     var MemberRef:DatabaseReference!
     var GameRef:DatabaseReference!
-    var UserRef:DatabaseReference! 
+    var UserRef:DatabaseReference!
+    var RankingRef:DatabaseReference!
+    
     private var _databaseHandle:DatabaseHandle! = nil //กำหนด  handle
     
    
@@ -119,14 +121,14 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 }
             }
         })
-        
+
     }
     
     func GetChannelName(){
         //ดึงข้อมูลของเจ้าของห้องนั่นๆ
         databaseRef = Database.database().reference().child("Channel").child(UserHomeViewController.Channelname)
         
-        databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        databaseRef.observe(.value, with: { (snapshot) in
             
             if let snapshot = snapshot.value as? [String:AnyObject]
             {
@@ -144,6 +146,43 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
                 UserHomeViewController.Username = strSenderUser
                 self.loadmission()
+                
+                var strSenderTime = ""
+                if let strTemp = snapshot["GameTime"] as? String
+                {
+                    strSenderTime = strTemp
+                }
+                else
+                {
+                    strSenderTime = ""
+                }
+                
+                self.Timelb.text = strSenderTime
+
+            }
+        })
+        
+        //ดึงคะแนนรวม
+        RankingRef = Database.database().reference().child("Ranking").child(UserHomeViewController.Channelname).child("Group").child(ViewController.userEmail!)
+        RankingRef.observe(.value, with: { (snapshot) in
+            
+            if let snapshot = snapshot.value as? [String:AnyObject]
+            {
+                //เอาค่าจาก firbase มาใส่ไว้ในตัวแปร
+                
+                var score = 0
+                
+                if let strTemp = snapshot["SUMScore"] as? Int
+                {
+                    score = strTemp
+                }
+                else
+                {
+                    score = 0
+                }
+                
+                self.Scorelb.text = String(score)
+
             }
         })
     }
@@ -276,16 +315,7 @@ class UserHomeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         default:
             print("error")
         }
-   
-//        if AppDelegate.checklocation == true {
-//            cell.gameimg.image = UIImage(named: "covergame")
-//            cell.isUserInteractionEnabled = true
-//        }
-//        else{
-//            cell.gameimg.image = UIImage(named: "covergamelock")
-//            cell.isUserInteractionEnabled = false
-//        }
-        
+
         return cell
     }
     

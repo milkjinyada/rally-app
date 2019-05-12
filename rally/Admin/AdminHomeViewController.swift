@@ -24,7 +24,7 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
     var GameTime:Int = 0
     var cnt:Int=1
     @IBOutlet weak var Timerlb: UILabel!
-   
+    var ChannelRef : DatabaseReference! = Database.database().reference(withPath: "Channel")
     //จับเวลาเล่นเกมจากเวลาที่ admin ใส่
     @IBAction func StartTimeBtn(_ sender: UIButton) {
         cnt+=1
@@ -34,6 +34,14 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
             TimerManager.timeString = { time, ends in
                 if ends == false {
                     self.Timerlb.text = time
+                    
+                    //เก็บเวลาเกมขึ้น Firebase
+                    let ChannelData: Dictionary<String,AnyObject> =
+                        [
+                            "GameTime": time as AnyObject
+                        ]
+                    let ChannelItemRef = self.ChannelRef.child(AdminHomeViewController.ChannelName)
+                    ChannelItemRef.updateChildValues(ChannelData)
                 }
                 else {
                     // Perform here the task you want to do after timer finishes.
@@ -41,6 +49,8 @@ class AdminHomeViewController: UIViewController,UITableViewDelegate, UITableView
             }
         }else{
             sender.setImage(UIImage(named: "startbtn"), for: .normal)
+             TimerManager.start(withSeconds: 0)
+             self.Timerlb.text = ""
         }
     }
     
